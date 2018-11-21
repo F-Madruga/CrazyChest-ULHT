@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9b5d16e-54be-48d9-afda-c7599019a591" name="Default Changelist" comment="" />
+    <list default="true" id="b1be8c10-7646-4fc7-9e53-9891c1a8ac13" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../CrazyChest/.idea/libraries/LP2GUIViewer1819_v002.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrazyChest/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrazyChest/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrazyChest/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrazyChest/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrazyChest/CrazyChest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrazyChest/lib/LP2GUIViewer1819-v002.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrazyChest/out/production/CrazyChest/pt/ulusofona/lp2/crazyChess/Simulador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrazyChest/src/pt/ulusofona/lp2/crazyChess/Simulador.java" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,11 +20,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="992939347">
+    <session id="1189452851">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
@@ -28,37 +37,7 @@
           <entry key="JAVA" value="3" />
         </counts>
       </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="1" />
-        </counts>
-      </usages-collector>
     </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Simulador.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -83,52 +62,41 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="CrazyChest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CrazyChest" type="462c0819:PsiDirectoryNode" />
+              <item name="CrazyChess" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CrazyChess" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CrazyChest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CrazyChest" type="462c0819:PsiDirectoryNode" />
+              <item name="CrazyChess" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CrazyChess" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CrazyChest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CrazyChest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CrazyChest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CrazyChest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="crazyChess" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542276132246" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542813008969" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/LP2GUIViewer1819-v002.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="flex.compiler" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\madru\OneDrive\Documentos\GitHub\LP2-21705328-21703091\CrazyChest\lib" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\madru\OneDrive\Documentos\GitHub\LP2-21705328-21703091\CrazyChess\lib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -145,10 +113,8 @@
   </component>
   <component name="RunManager">
     <configuration name="AppLauncher" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="11" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.guiSimulator.AppLauncher" />
-      <module name="CrazyChest" />
+      <module name="CrazyChess" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -159,17 +125,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e9b5d16e-54be-48d9-afda-c7599019a591" name="Default Changelist" comment="" />
-      <created>1542275131610</created>
+      <changelist id="b1be8c10-7646-4fc7-9e53-9891c1a8ac13" name="Default Changelist" comment="" />
+      <created>1542812408637</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1542275131610</updated>
-      <workItem from="1542275134821" duration="999000" />
+      <updated>1542812408637</updated>
+      <workItem from="1542812411636" duration="537000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="999000" />
+    <option name="totallyTimeSpent" value="537000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
@@ -181,14 +147,13 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494331" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.45755967" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -209,15 +174,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Simulador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>
@@ -270,12 +226,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>CrazyChest</last-edited>
+          <last-edited>CrazyChess</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -283,7 +238,6 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>LP2GUIViewer1819-v002</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
