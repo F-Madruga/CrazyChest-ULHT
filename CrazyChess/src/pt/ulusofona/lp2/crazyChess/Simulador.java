@@ -23,7 +23,7 @@ public class Simulador {
                 }
                 else {
                     String dados[] = linha.split(":");
-                    if (numLinha == numPecas) {
+                    if (numLinha == numPecas + 2) {
                         for (int i = 0; i < dados.length; i++){
                             if (Integer.parseInt(dados[i]) != 0) {
                                 CrazyPiece peca = pecas.get(dados[i]);
