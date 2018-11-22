@@ -4,24 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tabuleiro {
-    List<CrazyPiece> pecas;
     int tamanho;
+    List<CrazyPiece> pieces;
 
     Tabuleiro (int tamanho) {
         this.tamanho = tamanho;
-        this.pecas = new ArrayList<>();
+        this.pieces = new ArrayList<>();
     }
 
     public int getTamanho() {
         return tamanho;
     }
 
-    public List<CrazyPiece> getPecas() {
-        return pecas;
+    public List<CrazyPiece> getPieces() {
+        return pieces;
     }
 
     void adicionarPeca(CrazyPiece peca) {
-        this.pecas.add(peca);
+        this.pieces.add(peca);
     }
 
     boolean coordenadasExitem(int x, int y) {
@@ -31,5 +31,14 @@ public class Tabuleiro {
         else {
             return false;
         }
+    }
+
+    boolean existePecaDaEquipaAtiva(int idEquipa, int x, int y) {
+        for (CrazyPiece piece: this.pieces) {
+            if (piece.getPosX() == x && piece.getPosY() == y) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -24,6 +24,19 @@ public class CrazyPiece {
         }
     }
 
+    public int getPosX() {
+        return posX;
+    }
+
+    public int getPosY() {
+        return posY;
+    }
+
+    void setCoordenadas(int x, int y) {
+        this.posX = x;
+        this.posY = y;
+    }
+
     public boolean isCapturada() {
         return capturada;
     }
@@ -42,6 +55,16 @@ public class CrazyPiece {
 
     public String getImagePNG() {
         return imagePNG;
+    }
+
+    boolean movePiece(int xO, int yO, int xD, int yD) {
+        if (((xD == xO + 1 || xD == xO - 1) && yO == yD) || (yD == yO + 1 || (yD == yO - 1) && xO == xD) || (xD == xO + 1 || xD == xO - 1) && (yD == yO + 1 || (yD == yO - 1))) {
+            this.setCoordenadas(xD,xO);
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     @Override
