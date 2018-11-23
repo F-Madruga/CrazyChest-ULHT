@@ -2,14 +2,12 @@ package pt.ulusofona.lp2.crazyChess;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Simulador {
     Tabuleiro tabuleiro;
 
-    boolean iniciaJogo(File ficheiroInicial) {
+    public boolean iniciaJogo(File ficheiroInicial) {
         try {
             Scanner scanner = new Scanner(ficheiroInicial);
             Map<Integer, CrazyPiece> pecas = new HashMap<>();
@@ -18,9 +16,11 @@ public class Simulador {
             while (scanner.hasNextLine()) {
                 String linha = scanner.nextLine();
                 if (numLinha == 0) {
+                    System.out.printf("Tamanho do Tabuleiro = " + Integer.parseInt(linha));
                     this.tabuleiro = new Tabuleiro(Integer.parseInt(linha));
                 }
                 else if (numLinha == 1) {
+                    System.out.println("Numero de peças = " + Integer.parseInt(linha));
                     numPecas = Integer.parseInt(linha);
                 }
                 else {
@@ -49,5 +49,39 @@ public class Simulador {
         catch (FileNotFoundException exception) {
             return false;
         }
+    }
+
+    public int getTamanhoTabuleiro() {
+        return this.tabuleiro.getTamanho();
+    }
+
+    public List<CrazyPiece> getPecasMalucas() {
+        return this.tabuleiro.getPecas();
+    }
+
+    public int getIDPeca(int x, int y) {
+        if (this.tabuleiro.getPeca(x, y) == null) {
+            return 0;
+        }
+        else {
+            return this.tabuleiro.getPeca(x, y).getId();
+        }
+    }
+
+    public int getIDEquipaAJogar() {
+        return this.tabuleiro.getIdEquipaAJogar();
+    }
+
+    public List<String> getAutores() {
+        List<String> autores = new ArrayList<>();
+        String autor1 = "Francisco Silva";
+        autores.add(autor1);
+        String autor2 = "Rodrigo Cassanheira";
+        autores.add(autor2);
+        return autores;
+    }
+
+    public boolean processaJogada(int xO, int yO, int xD, int yD) {
+        return this.tabuleiro.processaJogada(xO, yO, xD, yD);
     }
 }

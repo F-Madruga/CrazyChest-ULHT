@@ -15,17 +15,39 @@ public class CrazyPiece {
         this.alcunha = alcunha;
     }
 
-    void setCoordenadas(int x, int y) {
+    public void setCoordenadas(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    int getId() {
+    public int getId() {
         return idPeca;
     }
 
-    String getImagePNG() {
-        return null;
+    int getIdEquipa() {
+        return idEquipa;
+    }
+
+    public String getImagePNG() {
+        if (this.idEquipa == 0) {
+            return "trihard.png";
+        }
+        else if (this.idEquipa == 1) {
+            return "kappa.png";
+        }
+        else {
+            return null;
+        }
+    }
+
+    boolean move(int xD, int yD) {
+        if ((this.x - xD == 1 || this.x - xD == -1 || this.y - yD == 1 || this.y - yD == -1) && (this.x != xD || this.y != yD)) {
+            this.setCoordenadas(xD,yD);
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     @Override
