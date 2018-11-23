@@ -14,11 +14,15 @@ public class Tabuleiro {
         this.pecas = new ArrayList<>();
     }
 
-    public List<CrazyPiece> getPecas() {
+    void inserirPeca(CrazyPiece peca) {
+        this.pecas.add(peca);
+    }
+
+    List<CrazyPiece> getPecas() {
         return pecas;
     }
 
-    public int getTamanho() {
+    int getTamanho() {
         return tamanho;
     }
 
