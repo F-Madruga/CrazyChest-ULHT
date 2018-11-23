@@ -25,6 +25,11 @@ public class CrazyPiece {
     }
 
     String getImagePNG() {
-        return "";
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return this.idPeca + " | " + this.idTipo + " | " + this.idEquipa + " | " + this.alcunha + " @ (" + this.x+ ", " + this.y + ")";
     }
 }

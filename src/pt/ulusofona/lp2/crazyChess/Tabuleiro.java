@@ -5,21 +5,29 @@ import java.util.List;
 
 public class Tabuleiro {
     int tamanho;
-    List<CrazyPiece> pecas;
+    CrazyPiece pecas [][];
     int turno;
 
     Tabuleiro(int tamanho) {
         this.tamanho = tamanho;
         this.turno = 1;
-        this.pecas = new ArrayList<>();
+        this.pecas = new CrazyPiece[tamanho][tamanho];
     }
 
-    void inserirPeca(CrazyPiece peca) {
-        this.pecas.add(peca);
+    void inserirPeca(CrazyPiece peca, int x, int y) {
+        this.pecas[x][y] = peca;
     }
 
     List<CrazyPiece> getPecas() {
-        return pecas;
+        List<CrazyPiece> pieces = new ArrayList<>();
+        for (int coluna = 0; coluna < this.tamanho; coluna++) {
+            for (int linha = 0; linha < this.tamanho; linha++) {
+                if (this.pecas[coluna][linha] != null) {
+                    pieces.add(this.pecas[coluna][linha]);
+                }
+            }
+        }
+        return pieces;
     }
 
     int getTamanho() {
