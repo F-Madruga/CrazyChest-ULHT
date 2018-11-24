@@ -57,30 +57,32 @@ public class GestorDeJogo {
         }
     }
 
-    void naoHouveCaptura() {
-        this.numTurnoSemCapturas++;;
-    }
-
-    void adicionaCaptura(int equipaQueCaptura) {
-        if (equipaQueCaptura == 0) {
-            numBrancas--;
-        }
-        if (equipaQueCaptura == 1) {
-            numPretas--;
-        }
-        if (!this.capturas.containsKey(equipaQueCaptura)) {
-            this.capturas.put(equipaQueCaptura, 0);
-        }
-        this.capturas.put(equipaQueCaptura, this.capturas.get(equipaQueCaptura) + 1);
-        this.numTurnoSemCapturas = 0;
-    }
-
-    void validaJogada(int equipaQueJoga) {
+    void naoHouveCaptura(int equipaQueJoga) {
         if (!this.jogadasValidas.containsKey(equipaQueJoga)) {
             this.jogadasValidas.put(equipaQueJoga,0);
         }
         this.jogadasValidas.put(equipaQueJoga,this.jogadasValidas.get(equipaQueJoga) + 1);
         this.turno++;
+        this.numTurnoSemCapturas++;
+    }
+
+    void adicionaCaptura(int equipaQueJoga) {
+        if (!this.jogadasValidas.containsKey(equipaQueJoga)) {
+            this.jogadasValidas.put(equipaQueJoga,0);
+        }
+        this.jogadasValidas.put(equipaQueJoga,this.jogadasValidas.get(equipaQueJoga) + 1);
+        this.turno++;
+        if (equipaQueJoga == 0) {
+            numBrancas--;
+        }
+        if (equipaQueJoga == 1) {
+            numPretas--;
+        }
+        if (!this.capturas.containsKey(equipaQueJoga)) {
+            this.capturas.put(equipaQueJoga, 0);
+        }
+        this.capturas.put(equipaQueJoga, this.capturas.get(equipaQueJoga) + 1);
+        this.numTurnoSemCapturas = 0;
     }
 
     void invalidaJogada(int equipaQueJoga) {

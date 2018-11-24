@@ -102,9 +102,8 @@ public class Simulador {
                             this.gestor.adicionaCaptura(getIDEquipaAJogar());
                         }
                         else {
-                            this.gestor.naoHouveCaptura();
+                            this.gestor.naoHouveCaptura(getIDEquipaAJogar());
                         }
-                        this.gestor.validaJogada(this.getIDEquipaAJogar());
                         return true;
                     }
                 }
@@ -122,7 +121,7 @@ public class Simulador {
         List<String> resultados = new ArrayList<>();
         String resultado = "JOGO DE CRAZY CHESS";
         resultados.add(resultado);
-        resultado = "RESULTADO: ";
+        resultado = "Resultado: ";
         if (this.gestor.getResultado() == 0) {
             resultado += "VENCERAM AS PRETAS";
         }
