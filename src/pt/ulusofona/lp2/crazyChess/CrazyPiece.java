@@ -23,7 +23,7 @@ public class CrazyPiece {
     }
 
     void capturada() {
-        this.setCoordenadas(-1,-1);
+        setCoordenadas(-1,-1);
     }
 
     int getX() {
@@ -55,7 +55,7 @@ public class CrazyPiece {
     }
 
     boolean move(int xD, int yD) {
-        if ((this.x - xD == 1 || this.x - xD == -1 || this.y - yD == 1 || this.y - yD == -1) && (this.x != xD || this.y != yD)) {
+        if (((this.x - xD == 1 || this.x - xD == -1) && (this.y - yD == 1 || this.y - yD == -1)) || ((this.x - xD == 1 || this.x - xD == -1) && this.y == yD) || ((this.y - yD == 1 || this.y - yD == -1) && this.x == xD)) {
             this.setCoordenadas(xD,yD);
             return true;
         }
