@@ -45,4 +45,8 @@ public class Tabuleiro {
             return false;
         }
     }
+
+    void removerPeca(CrazyPiece peca) {
+        this.pecas.remove(peca);
+    }
 }
