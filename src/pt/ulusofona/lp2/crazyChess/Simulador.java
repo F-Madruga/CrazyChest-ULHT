@@ -97,7 +97,6 @@ public class Simulador {
                 CrazyPiece destino = this.tabuleiro.getPeca(xD,yD);
                 if (destino == null || destino.getIdEquipa() != this.getIDEquipaAJogar()) {
                     if (origem.move(xD, yD)) {
-                        this.gestor.validaJogada(this.getIDEquipaAJogar());
                         if (destino != null) {
                             destino.capturada();
                             this.gestor.adicionaCaptura(getIDEquipaAJogar());
@@ -105,6 +104,7 @@ public class Simulador {
                         else {
                             this.gestor.naoHouveCaptura();
                         }
+                        this.gestor.validaJogada(this.getIDEquipaAJogar());
                         return true;
                     }
                 }

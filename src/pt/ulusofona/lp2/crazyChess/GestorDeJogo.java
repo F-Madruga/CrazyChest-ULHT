@@ -58,7 +58,7 @@ public class GestorDeJogo {
     }
 
     void naoHouveCaptura() {
-        this.numTurnoSemCapturas++;
+        this.numTurnoSemCapturas++;;
     }
 
     void adicionaCaptura(int equipaQueCaptura) {
