@@ -92,10 +92,10 @@ public class GestorDeJogo {
 
     boolean possoTerminarJogo() {
         if (numTurnoSemCapturas >= 10 || (numBrancas == 1 && numPretas == 1) || numBrancas <= 0 || numPretas <= 0) {
-            if (numBrancas <= 0) {
+            if (numPretas >= 1 && numBrancas <= 0) {
                 resultado = 0;
             }
-            else if (numPretas <= 0) {
+            else if (numBrancas >= 1 &&numPretas <= 0) {
                 resultado = 1;
             }
             else {
