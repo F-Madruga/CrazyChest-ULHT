@@ -22,10 +22,6 @@ public class CrazyPiece {
         this.y = y;
     }
 
-    void capturada() {
-        setCoordenadas(-1,-1);
-    }
-
     int getX() {
         return x;
     }

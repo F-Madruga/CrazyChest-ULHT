@@ -20,6 +20,7 @@ public class Tabuleiro {
     }
 
     List<CrazyPiece> getPecas() {
+        List<CrazyPiece> pecasEmJogo = new ArrayList<>();
         return this.pecas;
     }
 

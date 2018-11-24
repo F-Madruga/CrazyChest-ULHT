@@ -98,7 +98,7 @@ public class Simulador {
                 if (destino == null || destino.getIdEquipa() != this.getIDEquipaAJogar()) {
                     if (origem.move(xD, yD)) {
                         if (destino != null) {
-                            destino.capturada();
+                            this.tabuleiro.getPecas().remove(destino);
                             this.gestor.adicionaCaptura(getIDEquipaAJogar());
                         }
                         else {
