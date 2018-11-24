@@ -18,7 +18,6 @@ public class Tabuleiro {
     }
 
     List<CrazyPiece> getPecas() {
-        List<CrazyPiece> pecasEmJogo = new ArrayList<>();
         return this.pecas;
     }
 
@@ -45,6 +44,6 @@ public class Tabuleiro {
     }
 
     void removerPeca(CrazyPiece peca) {
-        this.pecas.remove(peca);
+        peca.setCoordenadas(-1, -1);
     }
 }
