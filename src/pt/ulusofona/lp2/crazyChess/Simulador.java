@@ -35,7 +35,6 @@ public class Simulador {
                         for (int coluna = 0; coluna < dados.length; coluna++) {
                             if (Integer.parseInt(dados[coluna]) != 0) {
                                 CrazyPiece peca = pecas.get(Integer.parseInt(dados[coluna]));
-                                peca.setCoordenadas(coluna,numLinha - numPecas - 2);
                                 this.tabuleiro.inserirPeca(peca, coluna,numLinha - numPecas - 2);
                             }
                         }
@@ -60,11 +59,12 @@ public class Simulador {
     }
 
     public int getIDPeca(int x, int y) {
-        if (this.tabuleiro.getPeca(x, y) == null) {
+        CrazyPiece peca = this.tabuleiro.getPeca(x, y);
+        if (peca == null) {
             return 0;
         }
         else {
-            return this.tabuleiro.getPeca(x, y).getId();
+            return peca.getId();
         }
     }
 

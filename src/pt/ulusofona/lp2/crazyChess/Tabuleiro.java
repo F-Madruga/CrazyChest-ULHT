@@ -1,47 +1,41 @@
 package pt.ulusofona.lp2.crazyChess;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Tabuleiro {
     int tamanho;
-    CrazyPiece pecas [][];
-    List<CrazyPiece> pecasPretasCapturadas;
-    List<CrazyPiece> pecasBrancasCapturadas;
+    List<CrazyPiece> pecas;
+    Map<Integer,List<Boolean>> jogadas;
     int turno;
-    int resultado;
+    int numTurnosSemCapturas;
 
     Tabuleiro(int tamanho) {
         this.tamanho = tamanho;
-        this.turno = 1;
-        this.pecas = new CrazyPiece[tamanho][tamanho];
-        this.pecasPretasCapturadas = new ArrayList<>();
-        this.pecasBrancasCapturadas = new ArrayList<>();
-        this.resultado = -1;
+        this.pecas = new ArrayList<>();
+        this.turno = 0;
+        this.jogadas = new HashMap<>();
+        this.numTurnosSemCapturas = 0;
     }
 
     void inserirPeca(CrazyPiece peca, int x, int y) {
-        if (peca.getIdEquipa() == 0) {
-        }
-        if (peca.getIdEquipa() == 1) {
-        }
-        this.pecas[x][y] = peca;
+        peca.setCoordenadas(x, y);
+        this.pecas.add(peca);
     }
 
     List<CrazyPiece> getPecas() {
-        List<CrazyPiece> pieces = new ArrayList<>();
-        for (int coluna = 0; coluna < this.tamanho; coluna++) {
-            for (int linha = 0; linha < this.tamanho; linha++) {
-                if (this.pecas[coluna][linha] != null) {
-                    pieces.add(this.pecas[coluna][linha]);
-                }
-            }
-        }
-        return pieces;
+        return this.pecas;
     }
 
     CrazyPiece getPeca(int x, int y) {
-        return this.pecas[x][y];
+        for (CrazyPiece peca: this.pecas) {
+            if (peca.getX() == x && peca.getY() == y) {
+                return peca;
+            }
+        }
+        return null;
     }
 
     int getTamanho() {
@@ -57,27 +51,45 @@ public class Tabuleiro {
         }
     }
 
-    void removePeca(CrazyPiece peca) {
-        if (peca.idEquipa == 0) {
-            this.pecasPretasCapturadas.add(peca);
-        }
-        if (peca.idEquipa == 1) {
-            this.pecasBrancasCapturadas.add(peca);
-        }
-    }
-
     boolean processaJogada(int xO, int yO, int xD, int yD) {
-        if (xO >= 0 && xD < this.tamanho && yO >=0 && yD < this.tamanho) {
-            if (this.getPeca(xD,yD) == null) {
-                return this.getPeca(xO, yO).move(xD, yD);
-            }
-            else {
-                if (this.getPeca(xO,yO).idEquipa != this.getPeca(xD,yD).idEquipa) {
-                    this.removePeca(this.getPeca(xD,yD));
-                    return this.getPeca(xO,yO).move(xD,yD);
+        if (xO >= 0 && xO < this.tamanho && xD >= 0 && xD < this.tamanho && yO >=0 && yO < this.tamanho && yD >= 0 && yD < this.tamanho) {
+            CrazyPiece origem = this.getPeca(xO, yO);
+            if (origem != null && origem.getIdEquipa() == this.getIdEquipaAJogar()) {
+                CrazyPiece destino = this.getPeca(xD,yD);
+                if (destino == null) {
+                    if (origem.move(xD, yD)) {
+                        numTurnosSemCapturas++;
+                        turno++;
+                        if (!this.jogadas.containsKey(origem.getIdEquipa())) {
+                            this.jogadas.put(origem.getIdEquipa(),new ArrayList<>());
+                        }
+                        this.jogadas.get(origem.getIdEquipa()).add(true);
+                        return true;
+                    }
+                } else if (origem.getIdEquipa() != destino.getIdEquipa()) {
+                    if (origem.move(xD, yD)) {
+                        destino.capturada();
+                        numTurnosSemCapturas = 0;
+                        turno++;
+                        if (!this.jogadas.containsKey(origem.getIdEquipa())) {
+                            this.jogadas.put(origem.getIdEquipa(),new ArrayList<>());
+                        }
+                        this.jogadas.get(origem.getIdEquipa()).add(true);
+                        return true;
+                    }
+                }
+                else {
+                    if (!this.jogadas.containsKey(origem.getIdEquipa())) {
+                        this.jogadas.put(origem.getIdEquipa(),new ArrayList<>());
+                    }
+                    this.jogadas.get(origem.getIdEquipa()).add(false);
                 }
             }
         }
         return false;
+    }
+
+    boolean jogoTerminado() {
+
     }
 }

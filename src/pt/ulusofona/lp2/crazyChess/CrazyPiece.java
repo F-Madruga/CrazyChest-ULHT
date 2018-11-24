@@ -13,11 +13,25 @@ public class CrazyPiece {
         this.idTipo = idTipo;
         this.idEquipa = idEquipa;
         this.alcunha = alcunha;
+        this.x = -1;
+        this.y = -1;
     }
 
-    public void setCoordenadas(int x, int y) {
+    void setCoordenadas(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    void capturada() {
+        this.setCoordenadas(-1,-1);
+    }
+
+    int getX() {
+        return x;
+    }
+
+    int getY() {
+        return y;
     }
 
     public int getId() {
@@ -52,6 +66,11 @@ public class CrazyPiece {
 
     @Override
     public String toString() {
-        return this.idPeca + " | " + this.idTipo + " | " + this.idEquipa + " | " + this.alcunha + " @ (" + this.x+ ", " + this.y + ")";
+        if (x == -1 && y== -1) {
+            return this.idPeca + " | " + this.idTipo + " | " + this.idEquipa + " | " + this.alcunha + " @ (n/a)";
+        }
+        else {
+            return this.idPeca + " | " + this.idTipo + " | " + this.idEquipa + " | " + this.alcunha + " @ (" + this.x + ", " + this.y + ")";
+        }
     }
 }
