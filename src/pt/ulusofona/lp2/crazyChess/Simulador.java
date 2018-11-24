@@ -102,8 +102,9 @@ public class Simulador {
                             this.gestor.adicionaCaptura(getIDEquipaAJogar());
                         }
                         else {
-                            this.gestor.naoHouveCaptura(getIDEquipaAJogar());
+                            this.gestor.naoHouveCaptura();
                         }
+                        this.gestor.validaJogada(getIDEquipaAJogar());
                         return true;
                     }
                 }

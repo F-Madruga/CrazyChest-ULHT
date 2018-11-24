@@ -57,21 +57,11 @@ public class GestorDeJogo {
         }
     }
 
-    void naoHouveCaptura(int equipaQueJoga) {
-        if (!this.jogadasValidas.containsKey(equipaQueJoga)) {
-            this.jogadasValidas.put(equipaQueJoga,0);
-        }
-        this.jogadasValidas.put(equipaQueJoga,this.jogadasValidas.get(equipaQueJoga) + 1);
-        this.turno++;
+    void naoHouveCaptura() {
         this.numTurnoSemCapturas++;
     }
 
     void adicionaCaptura(int equipaQueJoga) {
-        if (!this.jogadasValidas.containsKey(equipaQueJoga)) {
-            this.jogadasValidas.put(equipaQueJoga,0);
-        }
-        this.jogadasValidas.put(equipaQueJoga,this.jogadasValidas.get(equipaQueJoga) + 1);
-        this.turno++;
         if (equipaQueJoga == 0) {
             numBrancas--;
         }
@@ -83,6 +73,14 @@ public class GestorDeJogo {
         }
         this.capturas.put(equipaQueJoga, this.capturas.get(equipaQueJoga) + 1);
         this.numTurnoSemCapturas = 0;
+    }
+
+    void validaJogada(int equipaQueJoga) {
+        if (!this.jogadasValidas.containsKey(equipaQueJoga)) {
+            this.jogadasValidas.put(equipaQueJoga,0);
+        }
+        this.jogadasValidas.put(equipaQueJoga,this.jogadasValidas.get(equipaQueJoga) + 1);
+        this.turno++;
     }
 
     void invalidaJogada(int equipaQueJoga) {
