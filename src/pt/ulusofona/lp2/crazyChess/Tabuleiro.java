@@ -13,8 +13,10 @@ public class Tabuleiro {
     }
 
     void inserirPeca(CrazyPiece peca, int x, int y) {
-        peca.setCoordenadas(x, y);
-        this.pecas.add(peca);
+        if (x < this.tamanho && x >= 0 && y < this.tamanho && y >= 0) {
+            peca.setCoordenadas(x, y);
+            this.pecas.add(peca);
+        }
     }
 
     List<CrazyPiece> getPecas() {
