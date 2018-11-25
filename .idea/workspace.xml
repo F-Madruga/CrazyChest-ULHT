@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1be8c10-7646-4fc7-9e53-9891c1a8ac13" name="Default Changelist" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Simulador.java" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Simulador.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyChess/pt/ulusofona/lp2/crazyChess/Simulador.class" afterPath="$PROJECT_DIR$/out/production/CrazyChess/pt/ulusofona/lp2/crazyChess/Simulador.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyChess/pt/ulusofona/lp2/crazyChess/TesteSimulador.class" afterPath="$PROJECT_DIR$/out/production/CrazyChess/pt/ulusofona/lp2/crazyChess/TesteSimulador.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,18 +110,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Simulador.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Simulador.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Simulador.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
-              <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+              <caret line="99" column="29" lean-forward="true" selection-start-line="99" selection-start-column="29" selection-end-line="99" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#iniciaJogo#0;class#Simulador#0" expanded="false" />
                 <element signature="method#getIDPeca#0;class#Simulador#0" expanded="false" />
                 <element signature="method#getAutores#0;class#Simulador#0" expanded="false" />
-                <element signature="method#processaJogada#0;class#Simulador#0" expanded="false" />
                 <element signature="method#getResultados#0;class#Simulador#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TesteSimulador.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,10 +141,9 @@
       <file leaf-file-name="GestorDeJogo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="109" column="1" lean-forward="false" selection-start-line="109" selection-start-column="1" selection-end-line="109" selection-end-column="1" />
+            <state relative-caret-position="196">
+              <caret line="50" column="32" lean-forward="false" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#GestorDeJogo#0;class#GestorDeJogo#0" expanded="false" />
                 <element signature="method#getCapturas#0;class#GestorDeJogo#0" expanded="false" />
                 <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
@@ -150,30 +161,15 @@
       <file leaf-file-name="Tabuleiro.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
+            <state relative-caret-position="385">
               <caret line="45" column="37" lean-forward="false" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#Tabuleiro#0;class#Tabuleiro#0" expanded="false" />
                 <element signature="method#inserirPeca#0;class#Tabuleiro#0" expanded="false" />
                 <element signature="method#getPeca#0;class#Tabuleiro#0" expanded="false" />
                 <element signature="method#existemCoordenadas#0;class#Tabuleiro#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CrazyPiece.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="71" column="1" lean-forward="false" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
-              <folding>
-                <element signature="method#CrazyPiece#0;class#CrazyPiece#0" expanded="false" />
-                <element signature="method#setCoordenadas#0;class#CrazyPiece#0" expanded="false" />
-                <element signature="method#getImagePNG#0;class#CrazyPiece#0" expanded="false" />
-                <element signature="method#move#0;class#CrazyPiece#0" expanded="false" />
-                <element signature="method#toString#0;class#CrazyPiece#0" expanded="false" />
+                <element signature="e#1007#1008#0" expanded="true" />
+                <element signature="e#1050#1051#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -212,11 +208,11 @@
         <option value="$PROJECT_DIR$/Empatado4x4.txt" />
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteCrazyPiece.java" />
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteTabuleiro.java" />
-        <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java" />
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java" />
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java" />
-        <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Simulador.java" />
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java" />
+        <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Simulador.java" />
+        <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java" />
       </list>
     </option>
   </component>
@@ -250,10 +246,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -276,6 +269,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -308,7 +304,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AppLauncher">
+  <component name="RunManager" selected="JUnit.TesteSimulador.test03ProcessaJogada">
     <configuration name="AppLauncher" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.guiSimulator.AppLauncher" />
@@ -373,15 +369,96 @@
       <envs />
       <patterns />
     </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.TesteCrazyPiece" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.TesteCrazyPiece.test02Move" />
-      <item index="2" class="java.lang.String" itemvalue="Application.AppLauncher" />
+    <configuration name="TesteSimulador.test01ProcessaJogada" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="pt.ulusofona.lp2.crazyChess.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="CrazyChess" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="pt.ulusofona.lp2.crazyChess" />
+      <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.crazyChess.TesteSimulador" />
+      <option name="METHOD_NAME" value="test01ProcessaJogada" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TesteSimulador.test02ProcessaJogada" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="pt.ulusofona.lp2.crazyChess.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="CrazyChess" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="pt.ulusofona.lp2.crazyChess" />
+      <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.crazyChess.TesteSimulador" />
+      <option name="METHOD_NAME" value="test02ProcessaJogada" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TesteSimulador.test03ProcessaJogada" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="pt.ulusofona.lp2.crazyChess.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="CrazyChess" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="pt.ulusofona.lp2.crazyChess" />
+      <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.crazyChess.TesteSimulador" />
+      <option name="METHOD_NAME" value="test03ProcessaJogada" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Application.AppLauncher" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TesteCrazyPiece" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TesteCrazyPiece.test02Move" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TesteSimulador.test01ProcessaJogada" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TesteSimulador.test02ProcessaJogada" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.TesteSimulador.test03ProcessaJogada" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TesteCrazyPiece.test02Move" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TesteCrazyPiece" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TesteSimulador.test03ProcessaJogada" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TesteSimulador.test02ProcessaJogada" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TesteSimulador.test01ProcessaJogada" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TesteCrazyPiece.test02Move" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TesteCrazyPiece" />
       </list>
     </recent_temporary>
   </component>
@@ -416,75 +493,106 @@
       <workItem from="1543157964047" duration="446000" />
       <workItem from="1543158477513" duration="88000" />
       <workItem from="1543174457625" duration="1028000" />
+      <workItem from="1543175601072" duration="330000" />
+      <workItem from="1543177539485" duration="2091000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TesteCrazyPiece_test02Move - 2018.11.25 at 11h 48m 35s.xml">
-      <configuration name="TesteCrazyPiece.test02Move" configurationId="JUnit" />
+    <history-entry file="TesteSimulador_test01ProcessaJogada - 2018.11.25 at 20h 43m 45s.xml">
+      <configuration name="TesteSimulador.test01ProcessaJogada" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TesteCrazyPiece_test02Move - 2018.11.25 at 11h 48m 56s.xml">
-      <configuration name="TesteCrazyPiece.test02Move" configurationId="JUnit" />
+    <history-entry file="TesteSimulador_test01ProcessaJogada - 2018.11.25 at 20h 46m 25s.xml">
+      <configuration name="TesteSimulador.test01ProcessaJogada" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TesteCrazyPiece_test02Move - 2018.11.25 at 11h 49m 47s.xml">
-      <configuration name="TesteCrazyPiece.test02Move" configurationId="JUnit" />
+    <history-entry file="TesteSimulador_test01ProcessaJogada - 2018.11.25 at 20h 46m 38s.xml">
+      <configuration name="TesteSimulador.test01ProcessaJogada" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TesteCrazyPiece_test02Move - 2018.11.25 at 11h 50m 11s.xml">
-      <configuration name="TesteCrazyPiece.test02Move" configurationId="JUnit" />
+    <history-entry file="TesteSimulador_test01ProcessaJogada - 2018.11.25 at 20h 47m 16s.xml">
+      <configuration name="TesteSimulador.test01ProcessaJogada" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TesteCrazyPiece_test02Move - 2018.11.25 at 11h 50m 21s.xml">
-      <configuration name="TesteCrazyPiece.test02Move" configurationId="JUnit" />
+    <history-entry file="TesteSimulador_test01ProcessaJogada - 2018.11.25 at 20h 53m 25s.xml">
+      <configuration name="TesteSimulador.test01ProcessaJogada" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TesteCrazyPiece_test02Move - 2018.11.25 at 11h 50m 34s.xml">
-      <configuration name="TesteCrazyPiece.test02Move" configurationId="JUnit" />
+    <history-entry file="TesteSimulador_test02ProcessaJogada - 2018.11.25 at 20h 53m 30s.xml">
+      <configuration name="TesteSimulador.test02ProcessaJogada" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TesteCrazyPiece_test02Move - 2018.11.25 at 12h 00m 25s.xml">
-      <configuration name="TesteCrazyPiece.test02Move" configurationId="JUnit" />
+    <history-entry file="TesteSimulador_test02ProcessaJogada - 2018.11.25 at 20h 53m 43s.xml">
+      <configuration name="TesteSimulador.test02ProcessaJogada" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TesteCrazyPiece_test02Move - 2018.11.25 at 12h 00m 44s.xml">
-      <configuration name="TesteCrazyPiece.test02Move" configurationId="JUnit" />
+    <history-entry file="TesteSimulador_test02ProcessaJogada - 2018.11.25 at 20h 53m 51s.xml">
+      <configuration name="TesteSimulador.test02ProcessaJogada" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TesteCrazyPiece_test02Move - 2018.11.25 at 12h 01m 00s.xml">
-      <configuration name="TesteCrazyPiece.test02Move" configurationId="JUnit" />
+    <history-entry file="TesteSimulador_test02ProcessaJogada - 2018.11.25 at 20h 58m 50s.xml">
+      <configuration name="TesteSimulador.test02ProcessaJogada" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TesteCrazyPiece_test02Move - 2018.11.25 at 12h 01m 22s.xml">
-      <configuration name="TesteCrazyPiece.test02Move" configurationId="JUnit" />
+    <history-entry file="TesteSimulador_test03ProcessaJogada - 2018.11.25 at 20h 58m 54s.xml">
+      <configuration name="TesteSimulador.test03ProcessaJogada" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103793000" />
+    <option name="totallyTimeSpent" value="106214000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.058637083" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14494875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.058637083" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17908083" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14494875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.058637083" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41204438" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14494875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -494,16 +602,142 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Simulador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#iniciaJogo#0;class#Simulador#0" expanded="false" />
+            <element signature="method#getIDPeca#0;class#Simulador#0" expanded="false" />
+            <element signature="method#getAutores#0;class#Simulador#0" expanded="false" />
+            <element signature="method#getResultados#0;class#Simulador#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2398">
+          <caret line="109" column="1" lean-forward="false" selection-start-line="109" selection-start-column="1" selection-end-line="109" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#GestorDeJogo#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#getCapturas#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#getJogadasInvalidas#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#quemEstaAJogar#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#adicionaCaptura#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#validaJogada#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#invalidaJogada#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#possoTerminarJogo#0;class#GestorDeJogo#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="45" column="37" lean-forward="false" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#Tabuleiro#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="method#inserirPeca#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="method#getPeca#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="method#existemCoordenadas#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1050#1051#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+          <folding>
+            <element signature="method#CrazyPiece#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#setCoordenadas#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#move#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#toString#0;class#CrazyPiece#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Simulador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#iniciaJogo#0;class#Simulador#0" expanded="false" />
+            <element signature="method#getIDPeca#0;class#Simulador#0" expanded="false" />
+            <element signature="method#getAutores#0;class#Simulador#0" expanded="false" />
+            <element signature="method#getResultados#0;class#Simulador#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="109" column="1" lean-forward="false" selection-start-line="109" selection-start-column="1" selection-end-line="109" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#GestorDeJogo#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#getCapturas#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#getJogadasInvalidas#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#quemEstaAJogar#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#adicionaCaptura#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#validaJogada#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#invalidaJogada#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#possoTerminarJogo#0;class#GestorDeJogo#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="45" column="37" lean-forward="false" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#Tabuleiro#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="method#inserirPeca#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="method#getPeca#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="method#existemCoordenadas#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1050#1051#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="71" column="1" lean-forward="false" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+          <folding>
+            <element signature="method#CrazyPiece#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#setCoordenadas#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#move#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#toString#0;class#CrazyPiece#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -526,7 +760,6 @@
             <element signature="method#iniciaJogo#0;class#Simulador#0" expanded="false" />
             <element signature="method#getIDPeca#0;class#Simulador#0" expanded="false" />
             <element signature="method#getAutores#0;class#Simulador#0" expanded="false" />
-            <element signature="method#processaJogada#0;class#Simulador#0" expanded="false" />
             <element signature="method#getResultados#0;class#Simulador#0" expanded="false" />
           </folding>
         </state>
@@ -537,11 +770,13 @@
         <state relative-caret-position="462">
           <caret line="45" column="39" lean-forward="true" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#Tabuleiro#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#inserirPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#getPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#existemCoordenadas#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1050#1051#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -553,7 +788,6 @@
           <folding>
             <element signature="method#CrazyPiece#0;class#CrazyPiece#0" expanded="false" />
             <element signature="method#setCoordenadas#0;class#CrazyPiece#0" expanded="false" />
-            <element signature="method#getImagePNG#0;class#CrazyPiece#0" expanded="false" />
             <element signature="method#move#0;class#CrazyPiece#0" expanded="false" />
             <element signature="method#toString#0;class#CrazyPiece#0" expanded="false" />
           </folding>
@@ -648,18 +882,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteTabuleiro.java" />
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteGestorDeJogo.java" />
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java">
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="174">
+          <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+          <folding>
+            <element signature="method#CrazyPiece#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#setCoordenadas#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#move#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#toString#0;class#CrazyPiece#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteCrazyPiece.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        <state relative-caret-position="151">
+          <caret line="16" column="27" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="16" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -668,10 +907,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="109" column="1" lean-forward="false" selection-start-line="109" selection-start-column="1" selection-end-line="109" selection-end-column="1" />
+        <state relative-caret-position="196">
+          <caret line="50" column="32" lean-forward="false" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#GestorDeJogo#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getCapturas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
@@ -687,28 +925,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
+        <state relative-caret-position="385">
           <caret line="45" column="37" lean-forward="false" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#Tabuleiro#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#inserirPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#getPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#existemCoordenadas#0;class#Tabuleiro#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="71" column="1" lean-forward="false" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
-          <folding>
-            <element signature="method#CrazyPiece#0;class#CrazyPiece#0" expanded="false" />
-            <element signature="method#setCoordenadas#0;class#CrazyPiece#0" expanded="false" />
-            <element signature="method#getImagePNG#0;class#CrazyPiece#0" expanded="false" />
-            <element signature="method#move#0;class#CrazyPiece#0" expanded="false" />
-            <element signature="method#toString#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1050#1051#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -716,14 +941,23 @@
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Simulador.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
-          <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+          <caret line="99" column="29" lean-forward="true" selection-start-line="99" selection-start-column="29" selection-end-line="99" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#iniciaJogo#0;class#Simulador#0" expanded="false" />
             <element signature="method#getIDPeca#0;class#Simulador#0" expanded="false" />
             <element signature="method#getAutores#0;class#Simulador#0" expanded="false" />
-            <element signature="method#processaJogada#0;class#Simulador#0" expanded="false" />
             <element signature="method#getResultados#0;class#Simulador#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
