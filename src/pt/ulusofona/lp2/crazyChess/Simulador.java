@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-
 public class Simulador {
     Tabuleiro tabuleiro;
     GestorDeJogo gestor;
@@ -92,7 +91,7 @@ public class Simulador {
         return autores;
     }
 
-   public boolean processaJogada(int xO, int yO, int xD, int yD) {
+    public boolean processaJogada(int xO, int yO, int xD, int yD) {
         if (this.tabuleiro.existemCoordenadas(xO,yO) && this.tabuleiro.existemCoordenadas(xD,yD)) {
             CrazyPiece origem = this.tabuleiro.getPeca(xO,yO);
             if(origem != null && origem.getIdEquipa() == this.getIDEquipaAJogar()) {
@@ -135,7 +134,7 @@ public class Simulador {
             resultado += "EMPATE";
         }
         resultados.add(resultado);
-        resultado = "---";
+        resultado = "-----";
         resultados.add(resultado);
         resultado = "Equipa das Pretas";
         resultados.add(resultado);
