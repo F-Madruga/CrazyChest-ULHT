@@ -134,7 +134,7 @@ public class Simulador {
             resultado += "EMPATE";
         }
         resultados.add(resultado);
-        resultado = "-----";
+        resultado = "---";
         resultados.add(resultado);
         resultado = "Equipa das Pretas";
         resultados.add(resultado);
