@@ -51,15 +51,13 @@ public class CrazyPiece {
     }
 
     boolean move(int xD, int yD) {
-        if (x == xD && (y == yD - 1 || y == yD + 1)) {
-            this.setCoordenadas(xD, yD);
+        if ((this.x - xD == 1 || this.x - xD == -1 || this.y - yD == 1 || this.y - yD == -1) && (this.x != xD || this.y != yD)) {
+            this.setCoordenadas(xD,yD);
             return true;
         }
-        else if (y == yD && (x == xD - 1 || x == xD + 1)) {
-            this.setCoordenadas(xD, yD);
-            return true;
+        else {
+            return false;
         }
-        return false;
     }
 
     @Override
