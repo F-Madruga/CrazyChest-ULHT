@@ -95,7 +95,7 @@ public class GestorDeJogo {
             if (numPretas >= 1 && numBrancas <= 0) {
                 resultado = 0;
             }
-            else if (numBrancas >= 1 &&numPretas <= 0) {
+            else if (numBrancas >= 1 && numPretas <= 0) {
                 resultado = 1;
             }
             else {
