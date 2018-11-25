@@ -62,7 +62,7 @@ public class CrazyPiece {
 
     @Override
     public String toString() {
-        if (x == -1 && y== -1) {
+        if (x == -1 && y == -1) {
             return this.idPeca + " | " + this.idTipo + " | " + this.idEquipa + " | " + this.alcunha + " @ (n/a)";
         }
         else {
