@@ -8,9 +8,11 @@ import java.util.*;
 public class Simulador {
     Tabuleiro tabuleiro;
     GestorDeJogo gestor;
+    List<CrazyPiece> pecas;
 
     public boolean iniciaJogo(File ficheiroInicial) {
         try {
+            this.pecas = new ArrayList<>();
             Scanner scanner = new Scanner(ficheiroInicial);
             Map<Integer, CrazyPiece> pecas = new HashMap<>();
             int numPecas = 0;
@@ -37,6 +39,7 @@ public class Simulador {
                         for (int coluna = 0; coluna < dados.length; coluna++) {
                             if (Integer.parseInt(dados[coluna]) != 0) {
                                 CrazyPiece peca = pecas.get(Integer.parseInt(dados[coluna]));
+                                this.pecas.add(peca);
                                 this.tabuleiro.inserirPeca(peca, coluna,numLinha - numPecas - 2);
                                 if (peca.getIdEquipa() == 0) {
                                     numPretas++;
@@ -64,7 +67,7 @@ public class Simulador {
     }
 
     public List<CrazyPiece> getPecasMalucas() {
-        return this.tabuleiro.getPecas();
+        return this.pecas;
     }
 
     public int getIDPeca(int x, int y) {
