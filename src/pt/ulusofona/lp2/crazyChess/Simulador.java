@@ -8,6 +8,7 @@ import java.util.*;
 public class Simulador {
     Tabuleiro tabuleiro;
     GestorDeJogo gestor;
+    List<CrazyPiece> pecas = new ArrayList<>();
 
     public boolean iniciaJogo(File ficheiroInicial) {
         try {
@@ -30,6 +31,7 @@ public class Simulador {
                     //Caracterizaçao das pecas
                     if (numLinha < numPecas + 2) {
                         CrazyPiece peca = new CrazyPiece(Integer.parseInt(dados[0]), Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), dados[3]);
+                        this.pecas.add(peca);
                         pecas.put(Integer.parseInt(dados[0]), peca);
                     }
                     //Estado inicial do tabuleiro
@@ -64,7 +66,7 @@ public class Simulador {
     }
 
     public List<CrazyPiece> getPecasMalucas() {
-        return this.tabuleiro.getPecas();
+        return this.pecas;
     }
 
     public int getIDPeca(int x, int y) {
