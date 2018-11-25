@@ -44,6 +44,6 @@ public class Tabuleiro {
     }
 
     void removerPeca(CrazyPiece peca) {
-        this.pecas.remove(peca);
+        peca.setCoordenadas(-1, -1);
     }
 }
