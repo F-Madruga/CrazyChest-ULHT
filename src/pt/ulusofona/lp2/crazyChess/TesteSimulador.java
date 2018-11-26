@@ -44,7 +44,7 @@ public class TesteSimulador {
         reiAliado.setCoordenadas(1,0);
         rei.move(1,0);
 
-        gestorDeJogo.turno = 2;
+        gestorDeJogo.turno = 1;
         tabuleiro.pecas.add(rei);
         tabuleiro.pecas.add(reiAliado);
         simulador.tabuleiro = tabuleiro;

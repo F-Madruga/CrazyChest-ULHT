@@ -25,5 +25,4 @@ public class TesteCrazyPiece {
         rei.setCoordenadas(1, 0);
         assertTrue(rei.move(1, 1));
     }
-
 }
