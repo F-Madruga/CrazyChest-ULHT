@@ -2,6 +2,7 @@ package pt.ulusofona.lp2.crazyChess;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -51,7 +52,7 @@ public class TesteSimulador {
 
         assertFalse(simulador.processaJogada(0,0,1,0));
     }
-    /*@Test
+    @Test
     public void test04ProcessaJogada(){
         Simulador simulador = new Simulador();
         GestorDeJogo gestorDeJogo = new GestorDeJogo(0,0);
@@ -64,7 +65,7 @@ public class TesteSimulador {
         tabuleiro.pecas.add(rei);
         tabuleiro.pecas.add(reiHostil);
 
-        gestorDeJogo.turno = 2;
+        gestorDeJogo.turno = 1;
         gestorDeJogo.numBrancas = 1;
         gestorDeJogo.numPretas = 1;
 
@@ -72,5 +73,7 @@ public class TesteSimulador {
         simulador.gestor = gestorDeJogo;
 
         assertTrue(simulador.processaJogada(0,0,1,0));
-    }*/
+        assertEquals(-1, reiHostil.getX());
+        assertEquals(-1, reiHostil.getY());
+    }
 }
