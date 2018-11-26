@@ -99,7 +99,7 @@ public class GestorDeJogo {
             resultado = 1;
             return true;
         }
-        else if(numTurnoSemCapturas > 10 && (getCapturas(0) > 1 || getCapturas(1) > 1) || (numBrancas == 1 && numPretas == 1)){
+        else if((numTurnoSemCapturas > 10 && (getCapturas(0) > 1 || getCapturas(1) > 1)) || (numBrancas == 1 && numPretas == 1)){
             this.resultado = -1;
             return true;
         }

@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1be8c10-7646-4fc7-9e53-9891c1a8ac13" name="Default Changelist" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyChess/pt/ulusofona/lp2/crazyChess/Simulador.class" afterPath="$PROJECT_DIR$/out/production/CrazyChess/pt/ulusofona/lp2/crazyChess/Simulador.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyChess/pt/ulusofona/lp2/crazyChess/TesteSimulador.class" afterPath="$PROJECT_DIR$/out/production/CrazyChess/pt/ulusofona/lp2/crazyChess/TesteSimulador.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Empatado4x4.txt" afterPath="$PROJECT_DIR$/Empatado4x4.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -127,10 +124,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TesteSimulador.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TesteSimulador.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
+            <state relative-caret-position="737">
               <caret line="74" column="7" lean-forward="false" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -142,11 +139,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GestorDeJogo.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GestorDeJogo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="101" column="45" lean-forward="false" selection-start-line="101" selection-start-column="45" selection-end-line="101" selection-end-column="45" />
+            <state relative-caret-position="275">
+              <caret line="101" column="17" lean-forward="false" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
               <folding>
                 <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
                 <element signature="method#getJogadasInvalidas#0;class#GestorDeJogo#0" expanded="false" />
@@ -212,8 +209,8 @@
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java" />
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java" />
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Simulador.java" />
-        <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java" />
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java" />
+        <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java" />
       </list>
     </option>
   </component>
@@ -305,7 +302,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TesteSimulador.test04ProcessaJogada">
+  <component name="RunManager" selected="Application.AppLauncher">
     <configuration name="AppLauncher" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.guiSimulator.AppLauncher" />
@@ -498,7 +495,7 @@
       <workItem from="1543177539485" duration="2091000" />
       <workItem from="1543179882191" duration="1620000" />
       <workItem from="1543190204974" duration="371000" />
-      <workItem from="1543190610838" duration="53000" />
+      <workItem from="1543190610838" duration="546000" />
     </task>
     <servers />
   </component>
@@ -535,7 +532,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108258000" />
+    <option name="totallyTimeSpent" value="108751000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -543,12 +540,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31061807" sideWeight="0.1068814" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31061807" sideWeight="0.8931186" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0570523" sideWeight="0.8931186" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -565,7 +563,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1099,10 +1096,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="737">
+          <caret line="74" column="7" lean-forward="false" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#test01ProcessaJogada#0;class#TesteSimulador#0" expanded="false" />
+            <element signature="method#test02ProcessaJogada#0;class#TesteSimulador#0" expanded="false" />
+            <element signature="method#test03ProcessaJogada#0;class#TesteSimulador#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="101" column="45" lean-forward="false" selection-start-line="101" selection-start-column="45" selection-end-line="101" selection-end-column="45" />
+        <state relative-caret-position="275">
+          <caret line="101" column="17" lean-forward="false" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
           <folding>
             <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getJogadasInvalidas#0;class#GestorDeJogo#0" expanded="false" />
@@ -1110,19 +1120,6 @@
             <element signature="method#adicionaCaptura#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#validaJogada#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#invalidaJogada#0;class#GestorDeJogo#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="74" column="7" lean-forward="false" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#test01ProcessaJogada#0;class#TesteSimulador#0" expanded="false" />
-            <element signature="method#test02ProcessaJogada#0;class#TesteSimulador#0" expanded="false" />
-            <element signature="method#test03ProcessaJogada#0;class#TesteSimulador#0" expanded="false" />
           </folding>
         </state>
       </provider>
