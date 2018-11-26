@@ -110,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="194">
-              <caret line="93" column="64" selection-start-line="93" selection-start-column="64" selection-end-line="93" selection-end-column="64" />
+              <caret line="93" column="33" selection-start-line="93" selection-start-column="33" selection-end-line="93" selection-end-column="33" />
               <folding>
                 <element signature="method#getCapturas#0;class#GestorDeJogo#0" />
                 <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" />
@@ -438,7 +438,7 @@
       <workItem from="1543190610838" duration="1121000" />
       <workItem from="1543192212573" duration="199000" />
       <workItem from="1543192658586" duration="485000" />
-      <workItem from="1543194557665" duration="575000" />
+      <workItem from="1543194557665" duration="639000" />
     </task>
     <servers />
   </component>
@@ -475,7 +475,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110585000" />
+    <option name="totallyTimeSpent" value="110649000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
@@ -704,7 +704,7 @@
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
-          <caret line="93" column="64" selection-start-line="93" selection-start-column="64" selection-end-line="93" selection-end-column="64" />
+          <caret line="93" column="33" selection-start-line="93" selection-start-column="33" selection-end-line="93" selection-end-column="33" />
           <folding>
             <element signature="method#getCapturas#0;class#GestorDeJogo#0" />
             <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" />
