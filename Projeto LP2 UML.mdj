@@ -288,7 +288,7 @@
 											"top": 350,
 											"width": 335.6259765625,
 											"height": 13,
-											"text": "+getAtutores(): List<String>",
+											"text": "+getAutores(): List<String>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2031,7 +2031,7 @@
 											"top": 331,
 											"width": 285.04150390625,
 											"height": 13,
-											"text": "+getJogadasInvalidas(idEquia: int): int",
+											"text": "+getJogadasInvalidas(idEquipa: int): int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2812,7 +2812,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnP+/+/kJl3aI="
 							},
-							"name": "getAtutores",
+							"name": "getAutores",
 							"documentation": "Devolve a lista dos autores do projeto (só nome)",
 							"parameters": [
 								{
@@ -3641,7 +3641,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFnR8zSrSFup6k="
 									},
-									"name": "idEquia",
+									"name": "idEquipa",
 									"type": "int"
 								},
 								{
