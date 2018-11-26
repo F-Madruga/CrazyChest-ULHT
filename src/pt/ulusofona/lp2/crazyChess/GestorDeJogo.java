@@ -58,7 +58,9 @@ public class GestorDeJogo {
     }
 
     void naoHouveCaptura() {
-        this.numTurnoSemCapturas++;
+        if (this.capturas.get(0) != null || this.capturas.get(1) != null) {
+            this.numTurnoSemCapturas++;
+        }
     }
 
     void adicionaCaptura(int equipaQueJoga) {
@@ -91,7 +93,7 @@ public class GestorDeJogo {
     }
 
     boolean possoTerminarJogo() {
-        if (numTurnoSemCapturas > 10 && (this.capturas.get(0) >= 1 || this.capturas.get(1) >= 1) || (numBrancas == 1 && numPretas == 1) || numBrancas <= 0 || numPretas <= 0) {
+        if (numTurnoSemCapturas > 10 || (numBrancas == 1 && numPretas == 1) || numBrancas <= 0 || numPretas <= 0) {
             if (numPretas >= 1 && numBrancas <= 0) {
                 resultado = 0;
             } else if (numBrancas >= 1 && numPretas <= 0) {
