@@ -91,16 +91,16 @@ public class GestorDeJogo {
     }
 
     boolean possoTerminarJogo() {
-        if (numTurnoSemCapturas >= 10 || (numBrancas == 1 && numPretas == 1) || numBrancas <= 0 || numPretas <= 0) {
-            if (numPretas >= 1 && numBrancas <= 0) {
-                resultado = 0;
-            }
-            else if (numBrancas >= 1 && numPretas <= 0) {
-                resultado = 1;
-            }
-            else {
-                this.resultado = -1;
-            }
+        if (numPretas >= 1 && numBrancas <= 0) {
+            resultado = 0;
+            return true;
+        }
+        else if (numBrancas >= 1 && numPretas <= 0) {
+            resultado = 1;
+            return true;
+        }
+        else if(numTurnoSemCapturas > 10 && (getCapturas(0) > 1 || getCapturas(1) > 1) || (numBrancas == 1 && numPretas == 1)){
+            this.resultado = -1;
             return true;
         }
         else {

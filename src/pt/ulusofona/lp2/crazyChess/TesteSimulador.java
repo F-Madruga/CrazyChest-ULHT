@@ -45,9 +45,32 @@ public class TesteSimulador {
 
         gestorDeJogo.turno = 2;
         tabuleiro.pecas.add(rei);
+        tabuleiro.pecas.add(reiAliado);
         simulador.tabuleiro = tabuleiro;
         simulador.gestor = gestorDeJogo;
 
         assertFalse(simulador.processaJogada(0,0,1,0));
     }
+    /*@Test
+    public void test04ProcessaJogada(){
+        Simulador simulador = new Simulador();
+        GestorDeJogo gestorDeJogo = new GestorDeJogo(0,0);
+        Tabuleiro tabuleiro = new Tabuleiro(4);
+        CrazyPiece rei = new CrazyPiece(1,0, 1, "rei");
+        CrazyPiece reiHostil = new CrazyPiece(2, 0, 0, "reiOutraEquipa");
+
+        rei.setCoordenadas(0,0);
+        reiHostil.setCoordenadas(1,0);
+        tabuleiro.pecas.add(rei);
+        tabuleiro.pecas.add(reiHostil);
+
+        gestorDeJogo.turno = 2;
+        gestorDeJogo.numBrancas = 1;
+        gestorDeJogo.numPretas = 1;
+
+        simulador.tabuleiro = tabuleiro;
+        simulador.gestor = gestorDeJogo;
+
+        assertTrue(simulador.processaJogada(0,0,1,0));
+    }*/
 }
