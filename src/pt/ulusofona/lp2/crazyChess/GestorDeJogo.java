@@ -58,7 +58,7 @@ public class GestorDeJogo {
     }
 
     void naoHouveCaptura() {
-        if (this.capturas.get(0) != null || this.capturas.get(1) != null) {
+        if (this.capturas != null) {
             this.numTurnoSemCapturas++;
         }
     }

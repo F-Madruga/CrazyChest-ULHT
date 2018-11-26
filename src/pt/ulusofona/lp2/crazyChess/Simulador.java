@@ -103,7 +103,6 @@ public class Simulador {
                             this.gestor.adicionaCaptura(getIDEquipaAJogar());
                         }
                         else {
-                            System.out.println("não houve cptura");
                             this.gestor.naoHouveCaptura();
                         }
                         this.gestor.validaJogada(getIDEquipaAJogar());
