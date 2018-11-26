@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1be8c10-7646-4fc7-9e53-9891c1a8ac13" name="Default Changelist" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Empatado4x4.txt" afterPath="$PROJECT_DIR$/Empatado4x4.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,66 +107,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Simulador.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Simulador.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="98" column="54" lean-forward="false" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#iniciaJogo#0;class#Simulador#0" expanded="false" />
-                <element signature="method#getIDPeca#0;class#Simulador#0" expanded="false" />
-                <element signature="method#getAutores#0;class#Simulador#0" expanded="false" />
-                <element signature="method#getResultados#0;class#Simulador#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TesteSimulador.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="737">
-              <caret line="74" column="7" lean-forward="false" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#test01ProcessaJogada#0;class#TesteSimulador#0" expanded="false" />
-                <element signature="method#test02ProcessaJogada#0;class#TesteSimulador#0" expanded="false" />
-                <element signature="method#test03ProcessaJogada#0;class#TesteSimulador#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GestorDeJogo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="101" column="17" lean-forward="false" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
+            <state relative-caret-position="88">
+              <caret line="101" column="8" lean-forward="false" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
               <folding>
+                <element signature="method#getCapturas#0;class#GestorDeJogo#0" expanded="false" />
                 <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
                 <element signature="method#getJogadasInvalidas#0;class#GestorDeJogo#0" expanded="false" />
                 <element signature="method#quemEstaAJogar#0;class#GestorDeJogo#0" expanded="false" />
                 <element signature="method#adicionaCaptura#0;class#GestorDeJogo#0" expanded="false" />
                 <element signature="method#validaJogada#0;class#GestorDeJogo#0" expanded="false" />
                 <element signature="method#invalidaJogada#0;class#GestorDeJogo#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tabuleiro.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="45" column="37" lean-forward="false" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
-              <folding>
-                <element signature="method#Tabuleiro#0;class#Tabuleiro#0" expanded="false" />
-                <element signature="method#inserirPeca#0;class#Tabuleiro#0" expanded="false" />
-                <element signature="method#getPeca#0;class#Tabuleiro#0" expanded="false" />
-                <element signature="method#existemCoordenadas#0;class#Tabuleiro#0" expanded="false" />
-                <element signature="e#1007#1008#0" expanded="true" />
-                <element signature="e#1050#1051#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -495,7 +447,7 @@
       <workItem from="1543177539485" duration="2091000" />
       <workItem from="1543179882191" duration="1620000" />
       <workItem from="1543190204974" duration="371000" />
-      <workItem from="1543190610838" duration="546000" />
+      <workItem from="1543190610838" duration="1121000" />
     </task>
     <servers />
   </component>
@@ -532,11 +484,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108751000" />
+    <option name="totallyTimeSpent" value="109326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -546,7 +497,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31061807" sideWeight="0.1068814" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0570523" sideWeight="0.8931186" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27416798" sideWeight="0.8931186" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -621,6 +572,7 @@
             <element signature="method#iniciaJogo#0;class#Simulador#0" expanded="false" />
             <element signature="method#getIDPeca#0;class#Simulador#0" expanded="false" />
             <element signature="method#getAutores#0;class#Simulador#0" expanded="false" />
+            <element signature="method#processaJogada#0;class#Simulador#0" expanded="false" />
             <element signature="method#getResultados#0;class#Simulador#0" expanded="false" />
           </folding>
         </state>
@@ -648,8 +600,6 @@
             <element signature="method#inserirPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#getPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#existemCoordenadas#0;class#Tabuleiro#0" expanded="false" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -659,6 +609,7 @@
         <state relative-caret-position="1144">
           <caret line="101" column="45" lean-forward="false" selection-start-line="101" selection-start-column="45" selection-end-line="101" selection-end-column="45" />
           <folding>
+            <element signature="method#getCapturas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getJogadasInvalidas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#quemEstaAJogar#0;class#GestorDeJogo#0" expanded="false" />
@@ -678,6 +629,7 @@
             <element signature="method#iniciaJogo#0;class#Simulador#0" expanded="false" />
             <element signature="method#getIDPeca#0;class#Simulador#0" expanded="false" />
             <element signature="method#getAutores#0;class#Simulador#0" expanded="false" />
+            <element signature="method#processaJogada#0;class#Simulador#0" expanded="false" />
             <element signature="method#getResultados#0;class#Simulador#0" expanded="false" />
           </folding>
         </state>
@@ -688,6 +640,7 @@
         <state relative-caret-position="660">
           <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
+            <element signature="method#getCapturas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getJogadasInvalidas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#quemEstaAJogar#0;class#GestorDeJogo#0" expanded="false" />
@@ -720,8 +673,6 @@
             <element signature="method#inserirPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#getPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#existemCoordenadas#0;class#Tabuleiro#0" expanded="false" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -735,6 +686,7 @@
             <element signature="method#iniciaJogo#0;class#Simulador#0" expanded="false" />
             <element signature="method#getIDPeca#0;class#Simulador#0" expanded="false" />
             <element signature="method#getAutores#0;class#Simulador#0" expanded="false" />
+            <element signature="method#processaJogada#0;class#Simulador#0" expanded="false" />
             <element signature="method#getResultados#0;class#Simulador#0" expanded="false" />
           </folding>
         </state>
@@ -745,6 +697,7 @@
         <state relative-caret-position="396">
           <caret line="50" column="32" lean-forward="false" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
           <folding>
+            <element signature="method#getCapturas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getJogadasInvalidas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#quemEstaAJogar#0;class#GestorDeJogo#0" expanded="false" />
@@ -764,8 +717,6 @@
             <element signature="method#inserirPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#getPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#existemCoordenadas#0;class#Tabuleiro#0" expanded="false" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -792,6 +743,7 @@
             <element signature="method#iniciaJogo#0;class#Simulador#0" expanded="false" />
             <element signature="method#getIDPeca#0;class#Simulador#0" expanded="false" />
             <element signature="method#getAutores#0;class#Simulador#0" expanded="false" />
+            <element signature="method#processaJogada#0;class#Simulador#0" expanded="false" />
             <element signature="method#getResultados#0;class#Simulador#0" expanded="false" />
           </folding>
         </state>
@@ -802,6 +754,7 @@
         <state relative-caret-position="2398">
           <caret line="109" column="1" lean-forward="false" selection-start-line="109" selection-start-column="1" selection-end-line="109" selection-end-column="1" />
           <folding>
+            <element signature="method#getCapturas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getJogadasInvalidas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#quemEstaAJogar#0;class#GestorDeJogo#0" expanded="false" />
@@ -821,8 +774,6 @@
             <element signature="method#inserirPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#getPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#existemCoordenadas#0;class#Tabuleiro#0" expanded="false" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -849,6 +800,7 @@
             <element signature="method#iniciaJogo#0;class#Simulador#0" expanded="false" />
             <element signature="method#getIDPeca#0;class#Simulador#0" expanded="false" />
             <element signature="method#getAutores#0;class#Simulador#0" expanded="false" />
+            <element signature="method#processaJogada#0;class#Simulador#0" expanded="false" />
             <element signature="method#getResultados#0;class#Simulador#0" expanded="false" />
           </folding>
         </state>
@@ -859,6 +811,7 @@
         <state relative-caret-position="660">
           <caret line="109" column="1" lean-forward="false" selection-start-line="109" selection-start-column="1" selection-end-line="109" selection-end-column="1" />
           <folding>
+            <element signature="method#getCapturas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getJogadasInvalidas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#quemEstaAJogar#0;class#GestorDeJogo#0" expanded="false" />
@@ -878,8 +831,6 @@
             <element signature="method#inserirPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#getPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#existemCoordenadas#0;class#Tabuleiro#0" expanded="false" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -926,6 +877,7 @@
             <element signature="method#iniciaJogo#0;class#Simulador#0" expanded="false" />
             <element signature="method#getIDPeca#0;class#Simulador#0" expanded="false" />
             <element signature="method#getAutores#0;class#Simulador#0" expanded="false" />
+            <element signature="method#processaJogada#0;class#Simulador#0" expanded="false" />
             <element signature="method#getResultados#0;class#Simulador#0" expanded="false" />
           </folding>
         </state>
@@ -940,8 +892,6 @@
             <element signature="method#inserirPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#getPeca#0;class#Tabuleiro#0" expanded="false" />
             <element signature="method#existemCoordenadas#0;class#Tabuleiro#0" expanded="false" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1067,38 +1017,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="45" column="37" lean-forward="false" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
-          <folding>
-            <element signature="method#Tabuleiro#0;class#Tabuleiro#0" expanded="false" />
-            <element signature="method#inserirPeca#0;class#Tabuleiro#0" expanded="false" />
-            <element signature="method#getPeca#0;class#Tabuleiro#0" expanded="false" />
-            <element signature="method#existemCoordenadas#0;class#Tabuleiro#0" expanded="false" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Simulador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="98" column="54" lean-forward="false" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#iniciaJogo#0;class#Simulador#0" expanded="false" />
-            <element signature="method#getIDPeca#0;class#Simulador#0" expanded="false" />
-            <element signature="method#getAutores#0;class#Simulador#0" expanded="false" />
-            <element signature="method#getResultados#0;class#Simulador#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TesteSimulador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="737">
+        <state relative-caret-position="792">
           <caret line="74" column="7" lean-forward="false" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1109,11 +1030,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Simulador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="93" column="66" lean-forward="false" selection-start-line="93" selection-start-column="66" selection-end-line="93" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#iniciaJogo#0;class#Simulador#0" expanded="false" />
+            <element signature="method#getIDPeca#0;class#Simulador#0" expanded="false" />
+            <element signature="method#getAutores#0;class#Simulador#0" expanded="false" />
+            <element signature="method#processaJogada#0;class#Simulador#0" expanded="false" />
+            <element signature="method#getResultados#0;class#Simulador#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="45" column="37" lean-forward="false" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+          <folding>
+            <element signature="method#Tabuleiro#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="method#inserirPeca#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="method#getPeca#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="method#existemCoordenadas#0;class#Tabuleiro#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="101" column="17" lean-forward="false" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
+        <state relative-caret-position="88">
+          <caret line="101" column="8" lean-forward="false" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
           <folding>
+            <element signature="method#getCapturas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getJogadasInvalidas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#quemEstaAJogar#0;class#GestorDeJogo#0" expanded="false" />
