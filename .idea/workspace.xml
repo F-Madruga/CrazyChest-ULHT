@@ -110,8 +110,8 @@
       <file leaf-file-name="GestorDeJogo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="101" column="83" lean-forward="false" selection-start-line="101" selection-start-column="83" selection-end-line="101" selection-end-column="83" />
+            <state relative-caret-position="393">
+              <caret line="99" column="36" lean-forward="false" selection-start-line="99" selection-start-column="36" selection-end-line="99" selection-end-column="36" />
               <folding>
                 <element signature="method#getCapturas#0;class#GestorDeJogo#0" expanded="false" />
                 <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
@@ -251,8 +251,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
@@ -482,6 +482,7 @@
       <workItem from="1543190204974" duration="371000" />
       <workItem from="1543190610838" duration="1121000" />
       <workItem from="1543192212573" duration="199000" />
+      <workItem from="1543192658586" duration="485000" />
     </task>
     <servers />
   </component>
@@ -518,7 +519,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109525000" />
+    <option name="totallyTimeSpent" value="110010000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -597,6 +598,51 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#getCapturas#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#getJogadasInvalidas#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#quemEstaAJogar#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#validaJogada#0;class#GestorDeJogo#0" expanded="false" />
+            <element signature="method#invalidaJogada#0;class#GestorDeJogo#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Simulador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2046">
+          <caret line="93" column="66" lean-forward="false" selection-start-line="93" selection-start-column="66" selection-end-line="93" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#iniciaJogo#0;class#Simulador#0" expanded="false" />
+            <element signature="method#getIDPeca#0;class#Simulador#0" expanded="false" />
+            <element signature="method#getAutores#0;class#Simulador#0" expanded="false" />
+            <element signature="method#processaJogada#0;class#Simulador#0" expanded="false" />
+            <element signature="method#getResultados#0;class#Simulador#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="45" column="37" lean-forward="false" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+          <folding>
+            <element signature="method#Tabuleiro#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="method#inserirPeca#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="method#getPeca#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="method#existemCoordenadas#0;class#Tabuleiro#0" expanded="false" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1050#1051#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1118,8 +1164,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="101" column="83" lean-forward="false" selection-start-line="101" selection-start-column="83" selection-end-line="101" selection-end-column="83" />
+        <state relative-caret-position="393">
+          <caret line="99" column="36" lean-forward="false" selection-start-line="99" selection-start-column="36" selection-end-line="99" selection-end-column="36" />
           <folding>
             <element signature="method#getCapturas#0;class#GestorDeJogo#0" expanded="false" />
             <element signature="method#getJogadasValidas#0;class#GestorDeJogo#0" expanded="false" />
