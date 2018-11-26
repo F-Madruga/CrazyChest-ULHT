@@ -10,6 +10,7 @@ public class GestorDeJogo {
     GestorDeJogo(int numPretas, int numBrancas) {
         this.numPretas = numPretas;
         this.numBrancas = numBrancas;
+        this.capturas = new HashMap<>();
         this.jogadasValidas = new HashMap<>();
         this.jogadasInvalidas = new HashMap<>();
         this.turno = 0;
@@ -57,7 +58,7 @@ public class GestorDeJogo {
     }
 
     void naoHouveCaptura() {
-        if (this.capturas != null) {
+        if (this.capturas.get(0) != null || this.capturas.get(1) != null) {
             this.numTurnoSemCapturas++;
         }
     }
@@ -68,9 +69,6 @@ public class GestorDeJogo {
         }
         if (equipaQueJoga == 1) {
             numPretas--;
-        }
-        if (this.capturas == null) {
-            this.capturas = new HashMap<>();
         }
         if (!this.capturas.containsKey(equipaQueJoga)) {
             this.capturas.put(equipaQueJoga, 0);
