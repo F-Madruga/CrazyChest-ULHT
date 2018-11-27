@@ -1,4 +1,4 @@
-/*package pt.ulusofona.lp2.crazyChess;
+package pt.ulusofona.lp2.crazyChess;
 
 import org.junit.Test;
 
@@ -76,4 +76,4 @@ public class TesteSimulador {
         assertEquals(-1, reiHostil.getX());
         assertEquals(-1, reiHostil.getY());
     }
-}*/
+}
