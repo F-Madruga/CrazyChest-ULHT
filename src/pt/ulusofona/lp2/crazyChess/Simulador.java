@@ -7,12 +7,10 @@ import java.util.*;
 public class Simulador {
     Tabuleiro tabuleiro;
     GestorDeJogo gestor;
-    //List<CrazyPiece> pecas = new ArrayList<>();
 
     public boolean iniciaJogo(File ficheiroInicial) {
         try {
             Scanner scanner = new Scanner(ficheiroInicial);
-            //Map<Integer, CrazyPiece> pecas = new HashMap<>();
             int numPecas = 0;
             int numLinha = 0;
             int numPretas = 0;
@@ -29,17 +27,13 @@ public class Simulador {
                     String dados [] = linha.split(":");
                     //Caracterizaçao das pecas
                     if (numLinha < numPecas + 2) {
-                        CrazyPiece peca = new CrazyPiece(Integer.parseInt(dados[0]), Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), dados[3]);
-                        //this.pecas.add(peca);
-                        this.tabuleiro.inserirPeca(peca);
-                        //pecas.put(Integer.parseInt(dados[0]), peca);
+                        this.tabuleiro.inserirPeca(new CrazyPiece(Integer.parseInt(dados[0]), Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), dados[3]));
                     }
                     //Estado inicial do tabuleiro
                     else {
                         for (int coluna = 0; coluna < dados.length; coluna++) {
                             if (Integer.parseInt(dados[coluna]) != 0) {
                                 CrazyPiece peca = this.tabuleiro.getPecaById(Integer.parseInt(dados[coluna]));
-                                //this.tabuleiro.inserirPeca(peca, coluna,numLinha - numPecas - 2);
                                 peca.setCoordenadas(coluna,numLinha - numPecas - 2);
                                 if (peca.getIdEquipa() == 0) {
                                     numPretas++;
