@@ -4,18 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GestorDeJogo {
-    Map<Integer,Integer> capturas, jogadasValidas, jogadasInvalidas, numPecas;
-    int /*numPretas, numBrancas ,*/ turno, numTurnoSemCapturas, resultado;
+    Map<Integer,Integer> capturas, jogadasValidas, jogadasInvalidas;
+    int numPretas, numBrancas , turno, numTurnoSemCapturas, resultado;
 
-    GestorDeJogo(/*int numPretas, int numBrancas*/Map<Integer,Integer> numPecas) {
-        //this.numPretas = numPretas;
-        //this.numBrancas = numBrancas;
+    GestorDeJogo(int numPretas, int numBrancas) {
+        this.numPretas = numPretas;
+        this.numBrancas = numBrancas;
         this.capturas = new HashMap<>();
         this.jogadasValidas = new HashMap<>();
         this.jogadasInvalidas = new HashMap<>();
         this.turno = 0;
         this.numTurnoSemCapturas = 0;
-        this.numPecas = numPecas;
     }
 
     int getCapturas(int idEquipa) {
@@ -65,13 +64,12 @@ public class GestorDeJogo {
     }
 
     void adicionaCaptura(int equipaQueJoga) {
-        this.numPecas.put(equipaQueJoga,this.numPecas.get(equipaQueJoga) - 1);
-        /*if (equipaQueJoga == 0) {
+        if (equipaQueJoga == 0) {
             numBrancas--;
         }
         if (equipaQueJoga == 1) {
             numPretas--;
-        }*/
+        }
         if (!this.capturas.containsKey(equipaQueJoga)) {
             this.capturas.put(equipaQueJoga, 0);
         }
@@ -95,10 +93,10 @@ public class GestorDeJogo {
     }
 
     boolean possoTerminarJogo() {
-        if (numTurnoSemCapturas >= 10 || (/*numBrancas*/this.numPecas.get(1) == 1 && /*numPretas*/ this.numPecas.get(0) == 1) || /*numBrancas*/ this.numPecas.get(1) <= 0 || /*numPretas*/ this.numPecas.get(0) <= 0) {
-            if (/*numPretas*/this.numPecas.get(0) >= 1 && /*numBrancas*/this.numPecas.get(1) <= 0) {
+        if (numTurnoSemCapturas >= 10 || (numBrancas == 1 && numPretas == 1) || numBrancas <= 0 || numPretas <= 0) {
+            if (numPretas >= 1 && numBrancas <= 0) {
                 resultado = 0;
-            } else if (/*numBrancas*/this.numPecas.get(1) >= 1 && /*numPretas*/this.numPecas.get(0) <= 0) {
+            } else if (numBrancas >= 1 && numPretas <= 0) {
                 resultado = 1;
             } else {
                 this.resultado = -1;
