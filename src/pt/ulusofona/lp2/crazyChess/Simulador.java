@@ -11,6 +11,7 @@ public class Simulador {
     public boolean iniciaJogo(File ficheiroInicial) {
         try {
             Scanner scanner = new Scanner(ficheiroInicial);
+            Map<Integer,Integer> numPecasPorEquipa = new HashMap<>();
             int numPecas = 0;
             int numLinha = 0;
             int numPretas = 0;
@@ -35,12 +36,16 @@ public class Simulador {
                             if (Integer.parseInt(dados[coluna]) != 0) {
                                 CrazyPiece peca = this.tabuleiro.getPecaById(Integer.parseInt(dados[coluna]));
                                 peca.setCoordenadas(coluna,numLinha - numPecas - 2);
-                                if (peca.getIdEquipa() == 0) {
+                                /*if (peca.getIdEquipa() == 0) {
                                     numPretas++;
                                 }
                                 if (peca.getIdEquipa() == 1) {
                                     numBrancas++;
+                                }*/
+                                if (!numPecasPorEquipa.containsKey(peca.getIdEquipa())) {
+                                    numPecasPorEquipa.put(peca.getIdEquipa(),0);
                                 }
+                                numPecasPorEquipa.put(peca.getIdEquipa(),numPecasPorEquipa.get(peca.getIdEquipa() + 1));
                             }
                         }
                     }
@@ -48,7 +53,7 @@ public class Simulador {
                 numLinha++;
             }
             scanner.close();
-            this.gestor = new GestorDeJogo(numPretas,numBrancas);
+            this.gestor = new GestorDeJogo(/*numPretas,numBrancas*/numPecasPorEquipa);
             return true;
         }
         catch (FileNotFoundException exception) {
