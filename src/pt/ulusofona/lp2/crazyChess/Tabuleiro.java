@@ -12,13 +12,22 @@ public class Tabuleiro {
         this.pecas = new ArrayList<>();
     }
 
-    void inserirPeca(CrazyPiece peca, int x, int y) {
-        peca.setCoordenadas(x, y);
+    void inserirPeca(CrazyPiece peca/*, int x, int y*/) {
+        /*peca.setCoordenadas(x, y);*/
         this.pecas.add(peca);
     }
 
     List<CrazyPiece> getPecas() {
         return this.pecas;
+    }
+
+    CrazyPiece getPecaById(int idPeca) {
+        for (CrazyPiece peca: this.pecas) {
+            if(peca.getId() == idPeca) {
+                return peca;
+            }
+        }
+        return null;
     }
 
     CrazyPiece getPeca(int x, int y) {
