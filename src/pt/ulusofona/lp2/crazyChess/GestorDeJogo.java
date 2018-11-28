@@ -105,4 +105,16 @@ public class GestorDeJogo {
         }
         return false;
     }
+
+    public void setTurno(int turno) {
+        this.turno = turno;
+    }
+
+    public int getNumPretas() {
+        return numPretas;
+    }
+
+    public int getNumBrancas() {
+        return numBrancas;
+    }
 }

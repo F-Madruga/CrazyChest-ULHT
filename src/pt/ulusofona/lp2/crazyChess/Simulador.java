@@ -150,4 +150,12 @@ public class Simulador {
         resultados.add(resultado);
         return resultados;
     }
+
+    public void setTabuleiro(Tabuleiro tabuleiro) {
+        this.tabuleiro = tabuleiro;
+    }
+
+    public void setGestor(GestorDeJogo gestor) {
+        this.gestor = gestor;
+    }
 }

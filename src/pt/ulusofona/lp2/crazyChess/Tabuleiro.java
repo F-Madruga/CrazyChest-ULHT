@@ -55,4 +55,5 @@ public class Tabuleiro {
     void removerPeca(CrazyPiece peca) {
         peca.setCoordenadas(-1, -1);
     }
+
 }

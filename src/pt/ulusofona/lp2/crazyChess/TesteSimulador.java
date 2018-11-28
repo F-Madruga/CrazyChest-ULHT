@@ -11,69 +11,72 @@ public class TesteSimulador {
     @Test
     public void test01ProcessaJogada(){
         Simulador simulador = new Simulador();
-        GestorDeJogo gestorDeJogo = new GestorDeJogo(0,0);
         Tabuleiro tabuleiro = new Tabuleiro(4);
+        GestorDeJogo gestorDeJogo = new GestorDeJogo(0,0);
+        simulador.setTabuleiro(tabuleiro);
+        simulador.setGestor(gestorDeJogo);
 
-        simulador.tabuleiro = tabuleiro;
-        simulador.gestor = gestorDeJogo;
         assertFalse(simulador.processaJogada(5,0,1,0));
     }
     @Test
     public void test02ProcessaJogada(){
         Simulador simulador = new Simulador();
-        GestorDeJogo gestorDeJogo = new GestorDeJogo(0,0);
-        Tabuleiro tabuleiro = new Tabuleiro(4);
         CrazyPiece rei = new CrazyPiece(1,0, 1, "rei");
+        Tabuleiro tabuleiro = new Tabuleiro(4);
+        GestorDeJogo gestorDeJogo = new GestorDeJogo(0,0);
 
-        gestorDeJogo.turno = 1;
-        tabuleiro.pecas.add(rei);
-        simulador.tabuleiro = tabuleiro;
-        simulador.gestor = gestorDeJogo;
+        simulador.setGestor(gestorDeJogo);
+        simulador.setTabuleiro(tabuleiro);
+
+        simulador.gestor.setTurno(1);
+        simulador.tabuleiro.inserirPeca(rei);
 
         assertFalse(simulador.processaJogada(0,0,1,0));
     }
     @Test
     public void test03ProcessaJogada(){
         Simulador simulador = new Simulador();
-        GestorDeJogo gestorDeJogo = new GestorDeJogo(0,0);
-        Tabuleiro tabuleiro = new Tabuleiro(4);
         CrazyPiece rei = new CrazyPiece(1,0, 1, "rei");
         CrazyPiece reiAliado = new CrazyPiece(2,0, 1, "reiMesmaEquipa");
+        Tabuleiro tabuleiro = new Tabuleiro(4);
+        GestorDeJogo gestorDeJogo = new GestorDeJogo(0,2);
+
+        simulador.setGestor(gestorDeJogo);
+        simulador.setTabuleiro(tabuleiro);
+
+        simulador.gestor.setTurno(1);
+        simulador.tabuleiro.inserirPeca(rei);
+        simulador.tabuleiro.inserirPeca(reiAliado);
 
         rei.setCoordenadas(0,0);
         reiAliado.setCoordenadas(1,0);
         rei.move(1,0);
 
-        gestorDeJogo.turno = 1;
-        tabuleiro.pecas.add(rei);
-        tabuleiro.pecas.add(reiAliado);
-        simulador.tabuleiro = tabuleiro;
-        simulador.gestor = gestorDeJogo;
-
         assertFalse(simulador.processaJogada(0,0,1,0));
+        assertEquals(2, simulador.gestor.getNumBrancas());
     }
     @Test
     public void test04ProcessaJogada(){
         Simulador simulador = new Simulador();
-        GestorDeJogo gestorDeJogo = new GestorDeJogo(0,0);
-        Tabuleiro tabuleiro = new Tabuleiro(4);
         CrazyPiece rei = new CrazyPiece(1,0, 1, "rei");
         CrazyPiece reiHostil = new CrazyPiece(2, 0, 0, "reiOutraEquipa");
+        Tabuleiro tabuleiro = new Tabuleiro(4);
+        GestorDeJogo gestorDeJogo = new GestorDeJogo(1,1);
+
+        simulador.setGestor(gestorDeJogo);
+        simulador.setTabuleiro(tabuleiro);
+
+        simulador.gestor.setTurno(1);
+        simulador.tabuleiro.inserirPeca(rei);
+        simulador.tabuleiro.inserirPeca(reiHostil);
 
         rei.setCoordenadas(0,0);
         reiHostil.setCoordenadas(1,0);
-        tabuleiro.pecas.add(rei);
-        tabuleiro.pecas.add(reiHostil);
-
-        gestorDeJogo.turno = 1;
-        gestorDeJogo.numBrancas = 1;
-        gestorDeJogo.numPretas = 1;
-
-        simulador.tabuleiro = tabuleiro;
-        simulador.gestor = gestorDeJogo;
 
         assertTrue(simulador.processaJogada(0,0,1,0));
         assertEquals(-1, reiHostil.getX());
         assertEquals(-1, reiHostil.getY());
+        assertEquals(1, simulador.gestor.getNumBrancas());
+        assertEquals(0, simulador.gestor.getNumPretas());
     }
 }
