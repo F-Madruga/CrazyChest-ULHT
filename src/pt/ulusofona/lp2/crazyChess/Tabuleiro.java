@@ -12,8 +12,7 @@ public class Tabuleiro {
         this.pecas = new ArrayList<>();
     }
 
-    void inserirPeca(CrazyPiece peca/*, int x, int y*/) {
-        /*peca.setCoordenadas(x, y);*/
+    void inserirPeca(CrazyPiece peca) {
         this.pecas.add(peca);
     }
 
