@@ -22,9 +22,9 @@ public class TesteSimulador {
         CrazyPiece rei = new CrazyPiece(1,0, 0, "rei");
         rei.setCoordenadas(1,1);
         Tabuleiro tabuleiro = new Tabuleiro(4);
+        simulador.setTabuleiro(tabuleiro);
         tabuleiro.inserirPeca(rei);
         GestorDeJogo gestorDeJogo = new GestorDeJogo(0,1);
-        simulador.setTabuleiro(tabuleiro);
         simulador.setGestor(gestorDeJogo);
         assertFalse(simulador.processaJogada(1,1, 3,1));
     }
