@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GestorDeJogo {
-    Map<Integer,Integer> capturas, jogadasValidas, jogadasInvalidas;
-    int numPretas, numBrancas , turno, numTurnoSemCapturas, resultado;
+    private Map<Integer,Integer> capturas, jogadasValidas, jogadasInvalidas;
+    private int numPretas, numBrancas , turno, numTurnoSemCapturas, resultado;
 
-    GestorDeJogo(int numPretas, int numBrancas) {
+    public GestorDeJogo(int numPretas, int numBrancas) {
         this.numPretas = numPretas;
         this.numBrancas = numBrancas;
         this.capturas = new HashMap<>();
@@ -17,7 +17,7 @@ public class GestorDeJogo {
         this.numTurnoSemCapturas = 0;
     }
 
-    int getCapturas(int idEquipa) {
+    public int getCapturas(int idEquipa) {
         if (this.capturas.containsKey(idEquipa)) {
             return this.capturas.get(idEquipa);
         }
@@ -26,7 +26,7 @@ public class GestorDeJogo {
         }
     }
 
-    int getJogadasValidas(int idEquipa) {
+    public int getJogadasValidas(int idEquipa) {
         if (this.jogadasValidas.containsKey(idEquipa)) {
             return this.jogadasValidas.get(idEquipa);
         }
@@ -35,7 +35,7 @@ public class GestorDeJogo {
         }
     }
 
-    int getJogadasInvalidas(int idEquipa) {
+    public int getJogadasInvalidas(int idEquipa) {
         if (this.jogadasInvalidas.containsKey(idEquipa)) {
             return this.jogadasInvalidas.get(idEquipa);
         }
@@ -44,7 +44,7 @@ public class GestorDeJogo {
         }
     }
 
-    int getResultado () {
+    public int getResultado () {
         return this.resultado;
     }
 
@@ -57,13 +57,13 @@ public class GestorDeJogo {
         }
     }
 
-    void naoHouveCaptura() {
+    public void naoHouveCaptura() {
         if (this.capturas.get(0) != null || this.capturas.get(1) != null) {
             this.numTurnoSemCapturas++;
         }
     }
 
-    void adicionaCaptura(int equipaQueJoga) {
+    public void adicionaCaptura(int equipaQueJoga) {
         if (equipaQueJoga == 0) {
             numBrancas--;
         }
@@ -77,7 +77,7 @@ public class GestorDeJogo {
         this.numTurnoSemCapturas = 0;
     }
 
-    void validaJogada(int equipaQueJoga) {
+    public void validaJogada(int equipaQueJoga) {
         if (!this.jogadasValidas.containsKey(equipaQueJoga)) {
             this.jogadasValidas.put(equipaQueJoga,0);
         }
@@ -85,14 +85,14 @@ public class GestorDeJogo {
         this.turno++;
     }
 
-    void invalidaJogada(int equipaQueJoga) {
+    public void invalidaJogada(int equipaQueJoga) {
         if (!this.jogadasInvalidas.containsKey(equipaQueJoga)) {
             this.jogadasInvalidas.put(equipaQueJoga,0);
         }
         this.jogadasInvalidas.put(equipaQueJoga,this.jogadasInvalidas.get(equipaQueJoga) + 1);
     }
 
-    boolean possoTerminarJogo() {
+    public boolean possoTerminarJogo() {
         if (numTurnoSemCapturas >= 10 || (numBrancas == 1 && numPretas == 1) || numBrancas <= 0 || numPretas <= 0) {
             if (numPretas >= 1 && numBrancas <= 0) {
                 resultado = 0;

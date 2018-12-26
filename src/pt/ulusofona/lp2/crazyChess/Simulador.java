@@ -5,8 +5,37 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Simulador {
-    Tabuleiro tabuleiro;
-    GestorDeJogo gestor;
+    private Tabuleiro tabuleiro;
+    private GestorDeJogo gestor;
+
+    private CrazyPiece definirPeca(int idPeca, int idTipo, int idEquipa, String alcunha) {
+        CrazyPiece peca = null;
+        if (idTipo == 0) {
+            peca = new Rei(idPeca, idTipo, idEquipa, alcunha);
+        }
+        if (idTipo == 1) {
+            peca = new Rainha(idPeca, idTipo, idEquipa, alcunha);
+        }
+        if (idTipo == 2) {
+            peca = new PoneiMagico(idPeca, idTipo, idEquipa, alcunha);
+        }
+        if (idTipo == 3) {
+            peca = new PadreDaVila(idPeca, idTipo, idEquipa, alcunha);
+        }
+        if (idTipo == 4) {
+            peca = new TorreH(idPeca, idTipo, idEquipa, alcunha);
+        }
+        if (idTipo == 5) {
+            peca = new TorreV(idPeca, idTipo, idEquipa, alcunha);
+        }
+        if (idTipo == 6) {
+            peca = new Lebre(idPeca, idTipo, idEquipa, alcunha);
+        }
+        if (idTipo == 7) {
+            peca = new Joker(idPeca, idTipo, idEquipa, alcunha);
+        }
+        return peca;
+    }
 
     public boolean iniciaJogo(File ficheiroInicial) {
         try {
@@ -27,7 +56,7 @@ public class Simulador {
                     String dados [] = linha.split(":");
                     //Caracterizaçao das pecas
                     if (numLinha < numPecas + 2) {
-                        this.tabuleiro.inserirPeca(new CrazyPiece(Integer.parseInt(dados[0]), Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), dados[3]));
+                        this.tabuleiro.inserirPeca(definirPeca(Integer.parseInt(dados[0]), Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), dados[3]));
                     }
                     //Estado inicial do tabuleiro
                     else {
@@ -157,5 +186,17 @@ public class Simulador {
 
     public void setGestor(GestorDeJogo gestor) {
         this.gestor = gestor;
+    }
+
+    public List<String> obterSugestoesJogada(int xO, int yO) {
+        //TODO fazer primeiro os moves todos
+    }
+
+    public void anularJogadaAnterior() {
+        this.tabuleiro.anularJogadaAnterior();
+    }
+
+    public boolean gravarJogo(File ficheiroDestino) {
+        // TODO
     }
 }

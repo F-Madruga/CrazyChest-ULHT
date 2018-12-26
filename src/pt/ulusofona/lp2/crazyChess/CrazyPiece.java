@@ -1,32 +1,38 @@
 package pt.ulusofona.lp2.crazyChess;
 
-public class CrazyPiece {
-    int idPeca;
-    int idTipo;
-    int idEquipa;
-    String alcunha;
-    int x;
-    int y;
+import java.util.List;
 
-    CrazyPiece(int idPeca, int idTipo, int idEquipa, String alcunha) {
+public abstract class CrazyPiece {
+    protected int idPeca;
+    protected int idTipo;
+    protected int idEquipa;
+    protected String alcunha;
+    protected int x;
+    protected int y;
+    protected int xAnterior;
+    protected int yAnterior;
+
+    public CrazyPiece(int idPeca, int idTipo, int idEquipa, String alcunha) {
         this.idPeca = idPeca;
         this.idTipo = idTipo;
         this.idEquipa = idEquipa;
         this.alcunha = alcunha;
         this.x = -1;
         this.y = -1;
+        this.xAnterior = -1;
+        this.yAnterior = -1;
     }
 
-    void setCoordenadas(int x, int y) {
+    public void setCoordenadas(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    int getX() {
+    public int getX() {
         return x;
     }
 
-    int getY() {
+    public int getY() {
         return y;
     }
 
@@ -34,39 +40,39 @@ public class CrazyPiece {
         return idPeca;
     }
 
-    int getIdEquipa() {
+    public int getIdEquipa() {
         return idEquipa;
     }
 
-    public String getImagePNG() {
-        if (this.idEquipa == 0) {
-            return "trihard.png";
-        }
-        else if (this.idEquipa == 1) {
-            return "kappa.png";
-        }
-        else {
-            return null;
-        }
+    protected void atualizarAnterior() {
+        this.xAnterior = x;
+        this.yAnterior = y;
     }
 
-    boolean move(int xD, int yD) {
-        if ((this.x - xD == 1 || this.x - xD == -1 || this.y - yD == 1 || this.y - yD == -1) && (this.x != xD || this.y != yD)) {
-            this.setCoordenadas(xD,yD);
-            return true;
-        }
-        else {
-            return false;
+    public void undo() {
+        if (this.xAnterior > 0 && this.yAnterior > 0) {
+            this.x = xAnterior;
+            this.y = yAnterior;
+            this.xAnterior = -1;
+            this.yAnterior = -1;
         }
     }
 
     @Override
     public String toString() {
         if (x == -1 && y == -1) {
-            return this.idPeca + " | " + this.idTipo + " | " + this.idEquipa + " | " + this.alcunha + " @ (n/a)";
+            return this.idPeca + " | " + this.getNome() + " | " + this.idEquipa + " | " + this.alcunha + " @ (n/a)";
         }
         else {
-            return this.idPeca + " | " + this.idTipo + " | " + this.idEquipa + " | " + this.alcunha + " @ (" + this.x + ", " + this.y + ")";
+            return this.idPeca + " | " + this.getNome() + " | " + this.idEquipa + " | " + this.alcunha + " @ (" + this.x + ", " + this.y + ")";
         }
     }
+
+    public abstract String getImagePNG();
+
+    abstract boolean move(int xD, int yD);
+
+    abstract List<String> darSugestao();
+
+    abstract String getNome();
 }
