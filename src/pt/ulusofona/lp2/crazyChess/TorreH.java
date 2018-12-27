@@ -10,7 +10,13 @@ public class TorreH extends CrazyPiece {
 
     @Override
     public boolean move(int xD, int yD) {
-        //TODO
+        if (this.x != xD && this.y == yD) {
+            atualizarAnterior();
+            this.setCoordenadas(xD, yD);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override

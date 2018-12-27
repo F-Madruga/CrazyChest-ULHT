@@ -10,7 +10,13 @@ public class PoneiMagico extends CrazyPiece {
 
     @Override
     public boolean move(int xD, int yD) {
-        //TODO
+        if ((this.x - xD == -2 && this.y - yD == -2) || (this.x - xD == -2 && this.y - yD == 2) || (this.x - xD == 2 && this.y - yD == -2) || (this.x - xD == 2 && this.y - yD == 2)) {
+            atualizarAnterior();
+            this.setCoordenadas(xD, yD);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
