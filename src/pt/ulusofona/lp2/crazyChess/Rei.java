@@ -1,5 +1,6 @@
 package pt.ulusofona.lp2.crazyChess;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Rei extends CrazyPiece {
@@ -21,8 +22,15 @@ public class Rei extends CrazyPiece {
 
     @Override
     public List<String> darSugestao() {
-        //TODO
-        return null;
+        List<String> sugestoes = new ArrayList<>();
+        for (int i= -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
+                if (j != 0 || i != 0) {
+                    sugestoes.add(this.x + i + ", " + this.y + j);
+                }
+            }
+        }
+        return sugestoes;
     }
 
     @Override
