@@ -1,5 +1,6 @@
 package pt.ulusofona.lp2.crazyChess;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TorreH extends CrazyPiece {
@@ -22,8 +23,13 @@ public class TorreH extends CrazyPiece {
 
     @Override
     public List<String> darSugestao() {
-        //TODO
-        return null;
+        List<String> sugestoes = new ArrayList<>();
+        for (int i = -12; i <= 12; i++) {
+            if (i != 0) {
+                sugestoes.add(this.x + i + ", " + this.y);
+            }
+        }
+        return sugestoes;
     }
 
     @Override

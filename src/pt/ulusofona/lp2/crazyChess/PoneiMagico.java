@@ -1,5 +1,6 @@
 package pt.ulusofona.lp2.crazyChess;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PoneiMagico extends CrazyPiece {
@@ -22,8 +23,15 @@ public class PoneiMagico extends CrazyPiece {
 
     @Override
     public List<String> darSugestao() {
-        //TODO
-        return null;
+        List<String> sugestoes = new ArrayList<>();
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
+                if (i != 0 && j != 0) {
+                    sugestoes.add(this.x + 2 * i + ", " + this.y + 2 * j);
+                }
+            }
+        }
+        return sugestoes;
     }
 
     @Override

@@ -190,7 +190,12 @@ public class Simulador {
     }
 
     public List<String> obterSugestoesJogada(int xO, int yO) {
-        //TODO fazer primeiro os moves todos
+        List<String> sugestoes = new ArrayList<>();
+        CrazyPiece peca = tabuleiro.getPeca(xO, yO);
+        if (peca != null && peca.getIdEquipa() == getIDEquipaAJogar()) {
+            sugestoes = tabuleiro.obterSugestoesJogada(peca);
+        }
+        return sugestoes;
     }
 
     public void anularJogadaAnterior() {
