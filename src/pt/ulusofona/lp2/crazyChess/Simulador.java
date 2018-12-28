@@ -131,6 +131,7 @@ public class Simulador {
                             this.gestor.naoHouveCaptura();
                         }
                         this.gestor.validaJogada(getIDEquipaAJogar());
+                        origem.setUltimaInteracao(GestorDeJogo.turno);
                         return true;
                     }
                 }
@@ -193,7 +194,11 @@ public class Simulador {
     }
 
     public void anularJogadaAnterior() {
-        this.tabuleiro.anularJogadaAnterior();
+        if (GestorDeJogo.turno > 0) {
+            int numPecasAnteUndo = getPecasMalucas().size();
+            this.tabuleiro.anularJogadaAnterior();
+            gestor.undo(numPecasAnteUndo, getPecasMalucas().size());
+        }
     }
 
     public boolean gravarJogo(File ficheiroDestino) {

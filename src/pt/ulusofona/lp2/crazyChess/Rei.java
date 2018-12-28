@@ -7,6 +7,7 @@ public class Rei extends CrazyPiece {
 
     public Rei(int idPeca, int idTipo, int idEquipa, String alcunha) {
         super(idPeca, idTipo, idEquipa, alcunha);
+        this.valorRelativo = "(infinito)";
     }
 
     @Override
@@ -40,10 +41,10 @@ public class Rei extends CrazyPiece {
 
     @Override
     public String getImagePNG() {
-        if (this.idEquipa == 0) {
-            return "trihard.png";
-        } else if (this.idEquipa == 1) {
-            return "kappa.png";
+        if (this.idEquipa == GestorDeJogo.preta) {
+            return "trihard.png"; // mudar nome
+        } else if (this.idEquipa == GestorDeJogo.branca) {
+            return "kappa.png"; // mudar nome
         } else {
             return null;
         }

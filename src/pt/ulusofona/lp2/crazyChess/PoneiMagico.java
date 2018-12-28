@@ -6,6 +6,7 @@ public class PoneiMagico extends CrazyPiece {
 
     public PoneiMagico(int idPeca, int idTipo, int idEquipa, String alcunha) {
         super(idPeca, idTipo, idEquipa, alcunha);
+        this.valorRelativo = "5";
     }
 
     @Override
@@ -32,9 +33,9 @@ public class PoneiMagico extends CrazyPiece {
 
     @Override
     public String getImagePNG() {
-        if (this.idEquipa == 0) {
+        if (this.idEquipa == GestorDeJogo.preta) {
             return "trihard.png"; // mudar nome
-        } else if (this.idEquipa == 1) {
+        } else if (this.idEquipa == GestorDeJogo.branca) {
             return "kappa.png"; // mudar nome
         } else {
             return null;

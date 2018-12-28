@@ -6,6 +6,7 @@ import java.util.List;
 public class Lebre extends CrazyPiece {
     public Lebre(int idPeca, int idTipo, int idEquipa, String alcunha) {
         super(idPeca, idTipo, idEquipa, alcunha);
+        this.valorRelativo = "2";
     }
 
     @Override
@@ -39,9 +40,9 @@ public class Lebre extends CrazyPiece {
     }
     @Override
     public String getImagePNG() {
-        if (this.idEquipa == 0) {
+        if (this.idEquipa == GestorDeJogo.preta) {
             return "trihard.png"; // mudar nome
-        } else if (this.idEquipa == 1) {
+        } else if (this.idEquipa == GestorDeJogo.branca) {
             return "kappa.png"; // mudar nome
         } else {
             return null;

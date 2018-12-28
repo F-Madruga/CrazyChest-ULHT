@@ -52,12 +52,15 @@ public class Tabuleiro {
     }
 
     public void removerPeca(CrazyPiece peca) {
+        peca.setUltimaInteracao(GestorDeJogo.turno);
         peca.setCoordenadas(-1, -1);
     }
 
     public void anularJogadaAnterior() {
         for (CrazyPiece peca: this.pecas) {
-            peca.undo();
+            if (peca.getUltimaInteracao() == GestorDeJogo.turno) {
+                peca.undo();
+            }
         }
     }
 }

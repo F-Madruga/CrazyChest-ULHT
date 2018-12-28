@@ -7,10 +7,12 @@ public abstract class CrazyPiece {
     protected int idTipo;
     protected int idEquipa;
     protected String alcunha;
+    protected String valorRelativo;
     protected int x;
     protected int y;
     protected int xAnterior;
     protected int yAnterior;
+    protected int ultimaInteracao;
 
     public CrazyPiece(int idPeca, int idTipo, int idEquipa, String alcunha) {
         this.idPeca = idPeca;
@@ -21,11 +23,20 @@ public abstract class CrazyPiece {
         this.y = -1;
         this.xAnterior = -1;
         this.yAnterior = -1;
+        this.ultimaInteracao = -1;
     }
 
     public void setCoordenadas(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    public void setUltimaInteracao(int turnoDaMorte) {
+        this.ultimaInteracao = turnoDaMorte;
+    }
+
+    public int getUltimaInteracao() {
+        return ultimaInteracao;
     }
 
     public int getX() {
@@ -58,13 +69,17 @@ public abstract class CrazyPiece {
         }
     }
 
+    public String getValorRelativo() {
+        return valorRelativo;
+    }
+
     @Override
     public String toString() {
         if (x == -1 && y == -1) {
-            return this.idPeca + " | " + this.getNome() + " | " + this.idEquipa + " | " + this.alcunha + " @ (n/a)";
+            return this.idPeca + " | " + this.getNome() + " | " + this.getValorRelativo() + " | " + this.idEquipa + " | " + this.alcunha + " @ (n/a)";
         }
         else {
-            return this.idPeca + " | " + this.getNome() + " | " + this.idEquipa + " | " + this.alcunha + " @ (" + this.x + ", " + this.y + ")";
+            return this.idPeca + " | " + this.getNome() + " | " + this.getValorRelativo() + " | " + this.idEquipa + " | " + this.alcunha + " @ (" + this.x + ", " + this.y + ")";
         }
     }
 
