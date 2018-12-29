@@ -4,16 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Lebre extends CrazyPiece {
+
     public Lebre(int idPeca, int idTipo, int idEquipa, String alcunha) {
         super(idPeca, idTipo, idEquipa, alcunha);
-        this.valorRelativo = "2";
     }
 
-    @Override
-    public boolean move(int xD, int yD) {
-        if ((this.x - xD == 1 || this.x - xD == -1) && (this.y - yD == 1 || this.y - yD == -1)) {
-            this.atualizarAnterior();
-            this.setCoordenadas(xD,yD);
+    protected String getValorRelativo(){
+        return "2";
+    }
+
+    protected String getNome(){
+        return "Lebre";
+    }
+
+    public boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno){
+        if (turno % 2 == 0 && (this.x != xD || this.y != yD) && (this.x + xD == this.y + yD || this.x + xD == -(this.y + yD)) && (this.x - xD == 1 || this.x - xD == -1)) {
             return true;
         }
         else {
@@ -21,31 +26,22 @@ public class Lebre extends CrazyPiece {
         }
     }
 
-    @Override
-    public List<String> darSugestao() {
+    public String getImagePNG(){
+        //TODO
+    }
+
+    public List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho){
         List<String> sugestoes = new ArrayList<>();
-        for (int i= -1; i <= 1; i++) {
-            for (int j = -1; j <= 1; j++) {
-                if (j != 0 && i != 0) {
-                    sugestoes.add(this.x + i + ", " + this.y + j);
+        if (turno % 2 == 0) {
+            for (int x = -1; x <= 1; x++) {
+                for (int y = -1; y <= 1; y++) {
+                    if (x != 0 && x == y || x == -y) {
+                        sugestoes.add(this.x + x + ", " + this.y + y);
+                    }
                 }
             }
         }
         return sugestoes;
     }
-
-    @Override
-    public String getNome() {
-        return "Lebre";
-    }
-    @Override
-    public String getImagePNG() {
-        if (this.idEquipa == GestorDeJogo.preta) {
-            return "trihard.png"; // mudar nome
-        } else if (this.idEquipa == GestorDeJogo.branca) {
-            return "kappa.png"; // mudar nome
-        } else {
-            return null;
-        }
-    }
 }
+

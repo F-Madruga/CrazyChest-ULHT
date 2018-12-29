@@ -1,37 +1,33 @@
 package pt.ulusofona.lp2.crazyChess;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Joker extends CrazyPiece {
+public class Joker extends CrazyPiece{
 
     public Joker(int idPeca, int idTipo, int idEquipa, String alcunha) {
         super(idPeca, idTipo, idEquipa, alcunha);
-        this.valorRelativo = "4";
     }
 
-    @Override
-    public boolean move(int xD, int yD) {
-        //TODO
+    protected String getValorRelativo(){
+        return "4";
     }
 
-    @Override
-    public List<String> darSugestao() {
-        //TODO
-        return null;
+    protected String getNome(){
+        return "Joker";
     }
 
-    @Override
-    public String getNome() {
-        return "Joker/" + //Mudar aqui;
+    public boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno){
+
     }
-    @Override
-    public String getImagePNG() {
-        if (this.idEquipa == GestorDeJogo.preta) {
-            return "trihard.png"; // mudar nome
-        } else if (this.idEquipa == GestorDeJogo.branca) {
-            return "kappa.png"; // mudar nome
-        } else {
-            return null;
-        }
+
+    public String getImagePNG(){
+
+    }
+
+    public List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho){
+        List<String> sugestoes = new ArrayList<>();
+        return sugestoes;
     }
 }
+

@@ -1,37 +1,35 @@
 package pt.ulusofona.lp2.crazyChess;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Rainha extends CrazyPiece {
+public class Rainha extends CrazyPiece{
 
     public Rainha(int idPeca, int idTipo, int idEquipa, String alcunha) {
         super(idPeca, idTipo, idEquipa, alcunha);
-        this.valorRelativo = "8";
     }
 
-    @Override
-    public boolean move(int xD, int yD) {
-        //TODO
+    protected String getValorRelativo(){
+        return "8";
     }
 
-    @Override
-    public List<String> darSugestao() {
-        //TODO
-        return null;
-    }
-
-    @Override
-    public String getNome() {
+    protected String getNome(){
         return "Rainha";
     }
-    @Override
-    public String getImagePNG() {
-        if (this.idEquipa == GestorDeJogo.preta) {
-            return "trihard.png"; // mudar nome
-        } else if (this.idEquipa == GestorDeJogo.branca) {
-            return "kappa.png"; // mudar nome
-        } else {
-            return null;
+
+    public boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno){
+       if (((this.x != xD  && this.y + yD == this.y) || (this.x + xD == this.x && this.y != yD) || (this.x + xD == this.y + yD) || (this.x + xD == -(this.y + yD))) && ((this.x - xD <= 5 || this.x - xD >= -5) && (this.y - yD <= 5 || this.y - yD >= -5))) {
+
         }
     }
+
+    public String getImagePNG(){
+
+    }
+
+    public List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho){
+        List<String> sugestoes = new ArrayList<>();
+        return sugestoes;
+    }
 }
+

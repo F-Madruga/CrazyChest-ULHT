@@ -1,13 +1,14 @@
 package pt.ulusofona.lp2.crazyChess;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class CrazyPiece {
+
     protected int idPeca;
     protected int idTipo;
     protected int idEquipa;
     protected String alcunha;
-    protected String valorRelativo;
     protected int x;
     protected int y;
     protected int xAnterior;
@@ -26,68 +27,64 @@ public abstract class CrazyPiece {
         this.ultimaInteracao = -1;
     }
 
-    public void setCoordenadas(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    public void setUltimaInteracao(int turnoDaMorte) {
-        this.ultimaInteracao = turnoDaMorte;
-    }
-
-    public int getUltimaInteracao() {
-        return ultimaInteracao;
+    public int getIdTipo() {
+        return this.idTipo;
     }
 
     public int getX() {
-        return x;
+        return this.x;
     }
 
     public int getY() {
-        return y;
-    }
-
-    public int getId() {
-        return idPeca;
+        return this.y;
     }
 
     public int getIdEquipa() {
-        return idEquipa;
+        return this.idEquipa;
     }
 
-    protected void atualizarAnterior() {
-        this.xAnterior = x;
-        this.yAnterior = y;
-    }
-
-    public void undo() {
-        if (this.xAnterior > 0 && this.yAnterior > 0) {
+    public void undo(int turno) {
+        if (turno == ultimaInteracao) {
             this.x = xAnterior;
             this.y = yAnterior;
-            this.xAnterior = -1;
-            this.yAnterior = -1;
         }
     }
 
-    public String getValorRelativo() {
-        return valorRelativo;
+    public void colocarNoTabuleiro(int x, int y) {
+        this.x = x;
+        this.y = y;
+        this.xAnterior = this.x;
+        this.yAnterior = this.y;
     }
 
-    @Override
-    public String toString() {
-        if (x == -1 && y == -1) {
-            return this.idPeca + " | " + this.getNome() + " | " + this.getValorRelativo() + " | " + this.idEquipa + " | " + this.alcunha + " @ (n/a)";
-        }
-        else {
-            return this.idPeca + " | " + this.getNome() + " | " + this.getValorRelativo() + " | " + this.idEquipa + " | " + this.alcunha + " @ (" + this.x + ", " + this.y + ")";
-        }
+    public void alterarCoordenada(int x, int y, int turno) {
+        this.xAnterior = this.x;
+        this.yAnterior = this.y;
+        this.x = x;
+        this.y = y;
+        this.ultimaInteracao = turno;
     }
+
+    public int getId() {
+        return this.idPeca;
+    }
+
+    protected abstract String getValorRelativo();
+
+    protected abstract String getNome();
+
+    public abstract boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno);
 
     public abstract String getImagePNG();
 
-    abstract boolean move(int xD, int yD);
+    public abstract List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho);
 
-    abstract List<String> darSugestao();
-
-    abstract String getNome();
+    @Override
+    public String toString() {
+        String coordenadas = " @ (n/a)";
+        if (x != -1 && y != -1) {
+            coordenadas = " @ (" + this.x + ", " + this.y + ")";
+        }
+        return this.idPeca + " | " + this.getNome() + " | " + this.getValorRelativo() + " | " + this.idEquipa + " | " + this.alcunha + coordenadas;
+    }
 }

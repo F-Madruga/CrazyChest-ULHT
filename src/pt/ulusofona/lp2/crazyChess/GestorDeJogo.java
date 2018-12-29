@@ -1,57 +1,36 @@
 package pt.ulusofona.lp2.crazyChess;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GestorDeJogo {
-    public static int preta = 10;
-    public static int branca = 20;
-    public static int turno = 0;
+    public final static int preta = 10;
+    public final static int branca = 20;
+    public final static int rei = 0;
 
-    private Map<Integer,Integer> capturas, jogadasValidas, jogadasInvalidas;
-    private int numPretas, numBrancas , numTurnoSemCapturas, resultado, numTurnoSemCapturasAnterior;
+    private int numPretas;
+    private int numBrancas;
+    private int turno;
+    private int turnoSemCapturasAnterior;
+    private int turnoSemCapturas;
+    private List<CrazyPiece> capturas;
+    private List<Integer> jogadasValidas;
+    private List<Integer> jogadasInvalidas;
+    private int resultado;
 
-    public GestorDeJogo(int numPretas, int numBrancas) {
-        this.numPretas = numPretas;
-        this.numBrancas = numBrancas;
-        this.capturas = new HashMap<>();
-        this.jogadasValidas = new HashMap<>();
-        this.jogadasInvalidas = new HashMap<>();
-        this.numTurnoSemCapturas = 0;
+    public GestorDeJogo() {
+        this.numPretas = 0;
+        this.numBrancas = 0;
+        this.turno = 0;
+        this.turnoSemCapturas = 0;
+        this.turnoSemCapturasAnterior = 0;
+        this.resultado = -1;
+        this.capturas = new ArrayList<>();
+        this.jogadasValidas = new ArrayList<>();
+        this.jogadasInvalidas = new ArrayList<>();
     }
 
-    public int getCapturas(int idEquipa) {
-        if (this.capturas.containsKey(idEquipa)) {
-            return this.capturas.get(idEquipa);
-        }
-        else {
-            return 0;
-        }
-    }
-
-    public int getJogadasValidas(int idEquipa) {
-        if (this.jogadasValidas.containsKey(idEquipa)) {
-            return this.jogadasValidas.get(idEquipa);
-        }
-        else {
-            return 0;
-        }
-    }
-
-    public int getJogadasInvalidas(int idEquipa) {
-        if (this.jogadasInvalidas.containsKey(idEquipa)) {
-            return this.jogadasInvalidas.get(idEquipa);
-        }
-        else {
-            return 0;
-        }
-    }
-
-    public int getResultado () {
-        return this.resultado;
-    }
-
-    public int quemEstaAJogar() {
+    public int quemEstaAjogar() {
         if (turno % 2 == 0) {
             return preta;
         }
@@ -60,49 +39,49 @@ public class GestorDeJogo {
         }
     }
 
-    public void naoHouveCaptura() {
-        if (this.capturas.get(preta) != null || this.capturas.get(branca) != null) {
-            this.numTurnoSemCapturasAnterior = numTurnoSemCapturas;
-            this.numTurnoSemCapturas++;
+    public void adicionarPeca(int idEquipa) {
+        if (idEquipa == preta) {
+            numPretas++;
+        }
+        if (idEquipa == branca) {
+            numBrancas++;
         }
     }
 
-    public void adicionaCaptura(int equipaQueJoga) {
-        if (equipaQueJoga == preta) {
-            numBrancas--;
+    public void adicionarCaptura(CrazyPiece peca) {
+        this.capturas.add(peca);
+        if (peca.getIdTipo() == rei) {
+            if (quemEstaAjogar() == preta) {
+                this.numBrancas--;
+            }
+            else {
+                this.numPretas--;
+            }
         }
-        if (equipaQueJoga == branca) {
-            numPretas--;
-        }
-        if (!this.capturas.containsKey(equipaQueJoga)) {
-            this.capturas.put(equipaQueJoga, 0);
-        }
-        this.capturas.put(equipaQueJoga, this.capturas.get(equipaQueJoga) + 1);
-        this.numTurnoSemCapturasAnterior = numTurnoSemCapturas;
-        this.numTurnoSemCapturas = 0;
+        turnoSemCapturasAnterior = turnoSemCapturas;
+        turnoSemCapturas = 0;
     }
 
-    public void validaJogada(int equipaQueJoga) {
-        if (!this.jogadasValidas.containsKey(equipaQueJoga)) {
-            this.jogadasValidas.put(equipaQueJoga,0);
-        }
-        this.jogadasValidas.put(equipaQueJoga,this.jogadasValidas.get(equipaQueJoga) + 1);
+    public void validaJogada() {
+        this.jogadasValidas.add(quemEstaAjogar());
         turno++;
     }
 
-    public void invalidaJogada(int equipaQueJoga) {
-        if (!this.jogadasInvalidas.containsKey(equipaQueJoga)) {
-            this.jogadasInvalidas.put(equipaQueJoga,0);
-        }
-        this.jogadasInvalidas.put(equipaQueJoga,this.jogadasInvalidas.get(equipaQueJoga) + 1);
+    public void invalidaJogada() {
+        this.jogadasInvalidas.add(quemEstaAjogar());
     }
 
-    public boolean possoTerminarJogo() {
-        if (numTurnoSemCapturas >= 10 || (numBrancas == 1 && numPretas == 1) || numBrancas <= 0 || numPretas <= 0) {
+    public void naoHouveCaptura() {
+        turnoSemCapturasAnterior = turnoSemCapturas;
+        turnoSemCapturas++;
+    }
+
+    public boolean possoTerminar() {
+        if (turnoSemCapturas >= 10 || (numBrancas == 1 && numPretas == 1) || numBrancas <= 0 || numPretas <= 0) {
             if (numPretas >= 1 && numBrancas <= 0) {
-                resultado = 0;
+                resultado = preta;
             } else if (numBrancas >= 1 && numPretas <= 0) {
-                resultado = 1;
+                resultado = branca;
             } else {
                 this.resultado = -1;
             }
@@ -111,22 +90,88 @@ public class GestorDeJogo {
         return false;
     }
 
-    public void undo(int numPecasAntesUndo, int numPecasDepoisUndo) {
-        turno--;
-        this.numTurnoSemCapturas = numTurnoSemCapturasAnterior;
-        if (capturas.containsKey(quemEstaAJogar())) {
-            if (numPecasDepoisUndo - numPecasAntesUndo > 0) {
-                capturas.put(quemEstaAJogar(), capturas.get(quemEstaAJogar() - (numPecasDepoisUndo - numPecasAntesUndo)));
+    public int getTurno() {
+        return this.turno;
+    }
+
+    public List<String> getResultado () {
+        List<String> resultados = new ArrayList<>();
+        String resultado = "JOGO DE CRAZY CHESS";
+        resultados.add(resultado);
+        resultado = "Resultado: ";
+        if (this.resultado == preta) {
+            resultado += "VENCERAM AS PRETAS";
+        }
+        if (this.resultado == branca) {
+            resultado += "VENCERAM AS BRANCAS";
+        }
+        if (this.resultado == -1) {
+            resultado += "EMPATE";
+        }
+        int capturasBrancas = 0;
+        int capturaPretas = 0;
+        for (CrazyPiece peca: capturas) {
+            if (peca.getIdEquipa() == branca) {
+                capturasBrancas++;
+            }
+            else {
+                capturaPretas++;
             }
         }
-        if (jogadasValidas.containsKey(quemEstaAJogar())) {
-            jogadasValidas.put(quemEstaAJogar(),jogadasValidas.get(quemEstaAJogar() - 1));
+        int validasBrancas = 0;
+        int validasPretas = 0;
+        for (Integer integer: jogadasValidas) {
+            if (integer == branca) {
+                validasBrancas++;
+            }
+            else {
+                validasPretas++;
+            }
         }
-        if (quemEstaAJogar() == preta) {
-            numPretas += numPecasDepoisUndo - numPecasAntesUndo;
+        int inValidasBrancas = 0;
+        int inValidasPretas = 0;
+        for (Integer integer: jogadasInvalidas) {
+            if (integer == branca) {
+                inValidasBrancas++;
+            }
+            else {
+                inValidasPretas++;
+            }
         }
-        else if (quemEstaAJogar() == branca) {
-            numBrancas += numPecasDepoisUndo - numPecasAntesUndo;
+        resultados.add(resultado);
+        resultado = "---";
+        resultados.add(resultado);
+        resultado = "Equipa das Pretas";
+        resultados.add(resultado);
+        resultado = Integer.toString(capturaPretas);
+        resultados.add(resultado);
+        resultado = Integer.toString(validasPretas);
+        resultados.add(resultado);
+        resultado = Integer.toString(inValidasPretas);
+        resultados.add(resultado);
+        resultado = "Equipa das Brancas";
+        resultados.add(resultado);
+        resultado = Integer.toString(capturasBrancas);
+        resultados.add(resultado);
+        resultado = Integer.toString(validasBrancas);
+        resultados.add(resultado);
+        resultado = Integer.toString(inValidasBrancas);
+        resultados.add(resultado);
+        return resultados;
+    }
+
+    public void undo() {
+        turno--;
+        turnoSemCapturas = turnoSemCapturasAnterior;
+        jogadasValidas.remove(turno);
+        if (capturas.get(turno).getIdTipo() == rei) {
+            if (capturas.get(turno).getIdEquipa() == preta) {
+                numBrancas++;
+            }
+            else {
+                numPretas++;
+            }
         }
+        capturas.remove(turno);
     }
 }

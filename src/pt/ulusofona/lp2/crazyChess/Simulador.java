@@ -2,11 +2,13 @@ package pt.ulusofona.lp2.crazyChess;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Simulador {
+
     private Tabuleiro tabuleiro;
-    private GestorDeJogo gestor;
 
     private CrazyPiece definirPeca(int idPeca, int idTipo, int idEquipa, String alcunha) {
         CrazyPiece peca = null;
@@ -42,8 +44,6 @@ public class Simulador {
             Scanner scanner = new Scanner(ficheiroInicial);
             int numPecas = 0;
             int numLinha = 0;
-            int numPretas = 0;
-            int numBrancas = 0;
             while (scanner.hasNextLine()) {
                 String linha = scanner.nextLine();
                 if (numLinha == 0) {
@@ -56,20 +56,16 @@ public class Simulador {
                     String dados [] = linha.split(":");
                     //Caracterizaçao das pecas
                     if (numLinha < numPecas + 2) {
-                        this.tabuleiro.inserirPeca(definirPeca(Integer.parseInt(dados[0]), Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), dados[3]));
+                        CrazyPiece peca = definirPeca(Integer.parseInt(dados[0]), Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), dados[3]);
+                        if (peca != null) {
+                            this.tabuleiro.acrescentaPeca(peca);
+                        }
                     }
                     //Estado inicial do tabuleiro
                     else {
                         for (int coluna = 0; coluna < dados.length; coluna++) {
                             if (Integer.parseInt(dados[coluna]) != 0) {
-                                CrazyPiece peca = this.tabuleiro.getPecaById(Integer.parseInt(dados[coluna]));
-                                peca.setCoordenadas(coluna,numLinha - numPecas - 2);
-                                if (peca.getIdEquipa() == 0) {
-                                    numPretas++;
-                                }
-                                if (peca.getIdEquipa() == 1) {
-                                    numBrancas++;
-                                }
+                                this.tabuleiro.colocarNoTabuleiro(Integer.parseInt(dados[coluna]), coluna,numLinha - numPecas - 2);
                             }
                         }
                     }
@@ -77,7 +73,6 @@ public class Simulador {
                 numLinha++;
             }
             scanner.close();
-            this.gestor = new GestorDeJogo(numPretas,numBrancas);
             return true;
         }
         catch (FileNotFoundException exception) {
@@ -89,9 +84,30 @@ public class Simulador {
         return this.tabuleiro.getTamanho();
     }
 
+    public boolean processaJogada(int xO, int yO, int xD, int yD) {
+        return this.tabuleiro.processaJogada(xO, yO, xD, yD);
+    }
+
     public List<CrazyPiece> getPecasMalucas() {
         return this.tabuleiro.getPecas();
     }
+
+    public boolean jogoTerminado() {
+        return this.tabuleiro.possoTerminarJogo();
+    }
+
+    public List<String> getAutores() {
+        List<String> autores = new ArrayList<>();
+        String autor = "Francisco Silva";
+        autores.add(autor);
+        autor = "Rodrigo Cassanheira";
+        autores.add(autor);
+        return autores;
+    }
+
+    public List<String> getResultados() {
+        return this.tabuleiro.getResultado();
+    } // TODO
 
     public int getIDPeca(int x, int y) {
         CrazyPiece peca = this.tabuleiro.getPeca(x, y);
@@ -104,109 +120,18 @@ public class Simulador {
     }
 
     public int getIDEquipaAJogar() {
-        return this.gestor.quemEstaAJogar();
-    }
-
-    public List<String> getAutores() {
-        List<String> autores = new ArrayList<>();
-        String autor = "Francisco Silva";
-        autores.add(autor);
-        autor = "Rodrigo Cassanheira";
-        autores.add(autor);
-        return autores;
-    }
-
-    public boolean processaJogada(int xO, int yO, int xD, int yD) {
-        if (this.tabuleiro.existemCoordenadas(xO,yO) && this.tabuleiro.existemCoordenadas(xD,yD)) {
-            CrazyPiece origem = this.tabuleiro.getPeca(xO,yO);
-            if(origem != null && origem.getIdEquipa() == this.getIDEquipaAJogar()) {
-                CrazyPiece destino = this.tabuleiro.getPeca(xD,yD);
-                if (destino == null || destino.getIdEquipa() != this.getIDEquipaAJogar()) {
-                    if (origem.move(xD,yD)) {
-                        if (destino != null) {
-                            this.tabuleiro.removerPeca(destino);
-                            this.gestor.adicionaCaptura(getIDEquipaAJogar());
-                        }
-                        else {
-                            this.gestor.naoHouveCaptura();
-                        }
-                        this.gestor.validaJogada(getIDEquipaAJogar());
-                        origem.setUltimaInteracao(GestorDeJogo.turno);
-                        return true;
-                    }
-                }
-            }
-        }
-        this.gestor.invalidaJogada(this.getIDEquipaAJogar());
-        return false;
-    }
-
-    public boolean jogoTerminado() {
-        return this.gestor.possoTerminarJogo();
-    }
-
-    public List<String> getResultados() {
-        List<String> resultados = new ArrayList<>();
-        String resultado = "JOGO DE CRAZY CHESS";
-        resultados.add(resultado);
-        resultado = "Resultado: ";
-        if (this.gestor.getResultado() == 0) {
-            resultado += "VENCERAM AS PRETAS";
-        }
-        if (this.gestor.getResultado() == 1) {
-            resultado += "VENCERAM AS BRANCAS";
-        }
-        if (this.gestor.getResultado() == -1) {
-            resultado += "EMPATE";
-        }
-        resultados.add(resultado);
-        resultado = "---";
-        resultados.add(resultado);
-        resultado = "Equipa das Pretas";
-        resultados.add(resultado);
-        resultado = Integer.toString(gestor.getCapturas(0));
-        resultados.add(resultado);
-        resultado = Integer.toString(gestor.getJogadasValidas(0));
-        resultados.add(resultado);
-        resultado = Integer.toString(gestor.getJogadasInvalidas(0));
-        resultados.add(resultado);
-        resultado = "Equipa das Brancas";
-        resultados.add(resultado);
-        resultado = Integer.toString(gestor.getCapturas(1));
-        resultados.add(resultado);
-        resultado = Integer.toString(gestor.getJogadasValidas(1));
-        resultados.add(resultado);
-        resultado = Integer.toString(gestor.getJogadasInvalidas(1));
-        resultados.add(resultado);
-        return resultados;
-    }
-
-    public void setTabuleiro(Tabuleiro tabuleiro) {
-        this.tabuleiro = tabuleiro;
-    }
-
-    public void setGestor(GestorDeJogo gestor) {
-        this.gestor = gestor;
+        return this.tabuleiro.quemEstaAJogar();
     }
 
     public List<String> obterSugestoesJogada(int xO, int yO) {
-        List<String> sugestoes = new ArrayList<>();
-        CrazyPiece peca = tabuleiro.getPeca(xO, yO);
-        if (peca != null && peca.getIdEquipa() == getIDEquipaAJogar()) {
-            sugestoes = tabuleiro.obterSugestoesJogada(peca);
-        }
-        return sugestoes;
+        return this.tabuleiro.obterSugestoesJogada(xO, yO);
     }
 
     public void anularJogadaAnterior() {
-        if (GestorDeJogo.turno > 0) {
-            int numPecasAnteUndo = getPecasMalucas().size();
-            this.tabuleiro.anularJogadaAnterior();
-            gestor.undo(numPecasAnteUndo, getPecasMalucas().size());
-        }
+        this.tabuleiro.undo();
     }
 
     public boolean gravarJogo(File ficheiroDestino) {
-        // TODO
-    }
+        return true;
+    } //TODO
 }
