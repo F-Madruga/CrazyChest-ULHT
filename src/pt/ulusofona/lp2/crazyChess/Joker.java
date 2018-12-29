@@ -29,7 +29,8 @@ public class Joker extends CrazyPiece{
         return null;
     }
 
-    public List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho){
+    public List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho) {
+
         return getMascara().darSugestoes(pecas, turno, tamanho);
     }
 

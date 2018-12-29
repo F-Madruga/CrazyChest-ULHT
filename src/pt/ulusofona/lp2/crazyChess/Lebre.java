@@ -17,11 +17,10 @@ public class Lebre extends CrazyPiece {
         return "Lebre";
     }
 
-    public boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno){
+    public boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno) {
         if (turno % 2 == 0 && (this.x != xD || this.y != yD) && (this.x + xD == this.y + yD || this.x + xD == -(this.y + yD)) && (this.x - xD == 1 || this.x - xD == -1)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -30,7 +29,7 @@ public class Lebre extends CrazyPiece {
         return null;
     }
 
-    public List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho){
+    public List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho) {
         List<String> sugestoes = new ArrayList<>();
         if (turno % 2 == 0) {
             for (int x = -1; x <= 1; x++) {
