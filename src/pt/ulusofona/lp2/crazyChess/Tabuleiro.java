@@ -49,7 +49,7 @@ public class Tabuleiro {
                 if (peca.getId() == id) {
                     peca.colocarNoTabuleiro(x, y);
                     if (peca.getIdTipo() == 0) {
-                        gestor.adicionarPeca(peca.getIdEquipa());
+                        gestor.adicionarPeca(peca);
                     }
                 }
             }

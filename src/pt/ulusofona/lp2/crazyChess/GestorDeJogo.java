@@ -39,12 +39,14 @@ public class GestorDeJogo {
         }
     }
 
-    public void adicionarPeca(int idEquipa) {
-        if (idEquipa == preta) {
-            numPretas++;
-        }
-        if (idEquipa == branca) {
-            numBrancas++;
+    public void adicionarPeca(CrazyPiece peca) {
+        if (peca.getIdTipo() == rei) {
+            if (peca.getIdEquipa() == preta) {
+                numPretas++;
+            }
+            if (peca.getIdEquipa() == branca) {
+                numBrancas++;
+            }
         }
     }
 
@@ -65,6 +67,7 @@ public class GestorDeJogo {
     public void validaJogada() {
         this.jogadasValidas.add(quemEstaAjogar());
         turno++;
+        Joker.rotacaoTipoPeca++;
     }
 
     public void invalidaJogada() {
@@ -162,6 +165,7 @@ public class GestorDeJogo {
 
     public void undo() {
         turno--;
+        Joker.rotacaoTipoPeca--;
         turnoSemCapturas = turnoSemCapturasAnterior;
         jogadasValidas.remove(turno);
         if (capturas.get(turno).getIdTipo() == rei) {

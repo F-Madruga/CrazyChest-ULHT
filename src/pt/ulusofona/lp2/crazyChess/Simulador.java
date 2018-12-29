@@ -10,7 +10,7 @@ public class Simulador {
 
     private Tabuleiro tabuleiro;
 
-    private CrazyPiece definirPeca(int idPeca, int idTipo, int idEquipa, String alcunha) {
+    public CrazyPiece definirPeca(int idPeca, int idTipo, int idEquipa, String alcunha) {
         CrazyPiece peca = null;
         if (idTipo == 0) {
             peca = new Rei(idPeca, idTipo, idEquipa, alcunha);

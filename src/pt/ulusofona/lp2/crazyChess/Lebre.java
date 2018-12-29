@@ -27,7 +27,7 @@ public class Lebre extends CrazyPiece {
     }
 
     public String getImagePNG(){
-        //TODO
+        return null;
     }
 
     public List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho){
