@@ -1,18 +1,18 @@
 8
 10
 1:0:10:Chefe
-2:0:10:Selvagem
-3:0:10:Grande Artista
+2:4:10:Selvagem
+3:1:10:Grande Artista
 4:1:10:Amante de Praia
 5:2:10:Artolas
-6:0:20:O Maior
+6:1:20:O Maior
 7:0:20:O Amigo
 8:3:20:O Beberolas
 9:4:20:O Esperto
 10:5:20:O Barulhento
-0:1:0:2:0:0:0:0
-0:0:3:0:4:0:5:0
-0:0:0:0:0:0:0:0
+0:1:0:5:0:4:0:0
+0:0:0:0:0:0:2:0
+0:0:0:3:0:0:0:0
 0:0:0:0:0:0:0:0
 0:0:0:0:0:0:0:0
 0:0:0:0:6:0:0:0

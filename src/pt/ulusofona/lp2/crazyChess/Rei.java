@@ -21,7 +21,7 @@ public class Rei extends CrazyPiece {
 
     @Override
     public boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno) {
-        if ((this.x - xD == 1 || this.x - xD == -1 || this.y - yD == 1 || this.y - yD == -1) && (this.x != xD || this.y != yD)) {
+        if ((this.x - xD == 1 && (this.y - yD <= 1 && this.y - yD >= -1)) || (this.x - xD == 0 && (this.y - yD == 1 || this.y - yD == -1)) || (this.x - xD == -1 && (this.y - yD <= 1 && this.y - yD >= -1))) {
             return true;
         }
         else {
@@ -38,19 +38,6 @@ public class Rei extends CrazyPiece {
         } else {
             return null;
         }
-    }
-
-    @Override
-    public List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho) {
-        List<String> sugestoes = new ArrayList<>();
-        for (int x = -1; x <= 1; x++) {
-            for (int y = -1; y <= 1; y++) {
-                if ((x != 0 || y != 0) && this.x + x >= 0 && this.x + x < tamanho && this.y + y >= 0 && this.y + y < tamanho) {
-                    sugestoes.add(this.x + x + ", " + this.y + y);
-                }
-            }
-        }
-        return sugestoes;
     }
 }
 

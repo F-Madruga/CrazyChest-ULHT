@@ -1,6 +1,5 @@
 package pt.ulusofona.lp2.crazyChess;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Rainha extends CrazyPiece{
@@ -18,7 +17,7 @@ public class Rainha extends CrazyPiece{
     }
 
     public boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno) {
-        if (((this.x != xD && this.y + yD == this.y) || (this.x + xD == this.x && this.y != yD) || (this.x + xD == this.y + yD) || (this.x + xD == -(this.y + yD))) && ((this.x - xD <= 5 || this.x - xD >= -5) && (this.y - yD <= 5 || this.y - yD >= -5))) {
+        if ((this.x == xD && this.y != yD) || (this.x != xD && this.y == yD) || (this.x - xD <= 5 && this.x - xD >= -5) && (this.y - yD <= 5 && this.y - yD >= -5) && (this.x - xD == this.y - yD || this.x - xD == -(this.y - yD))) {
             for (CrazyPiece peca: pecas) {
                 if (peca.getX() == xD && peca.getY() == yD && peca.getIdTipo() == this.idTipo) {
                     return false;

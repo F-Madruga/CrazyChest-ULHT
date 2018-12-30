@@ -18,7 +18,7 @@ public class Lebre extends CrazyPiece {
     }
 
     public boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno) {
-        if (turno % 2 == 0 && (this.x != xD || this.y != yD) && (this.x + xD == this.y + yD || this.x + xD == -(this.y + yD)) && (this.x - xD == 1 || this.x - xD == -1)) {
+        if (turno % 2 == 0 && (this.x - xD == 1 || this.x - xD == -1) && (this.y - yD == -1 || this.y - yD == 1)){
             return true;
         } else {
             return false;
