@@ -59,32 +59,4 @@ public class PadreDaVila extends CrazyPiece {
         return null;
     }
 
-    public List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho) {
-        List<String> sugestoes = new ArrayList<>();
-        for (int x = 0; x < tamanho; x++) {
-            for (int y = 0; y < tamanho; y++) {
-                if (verificarSeMove(x, y, pecas, turno)) {
-                    boolean existePecaMesmaEquipa = false;
-                    boolean existeRainhaAdversario = false;
-                    for (CrazyPiece peca : pecas) {
-                        if (peca.getX() == this.x && peca.getY() == this.y && peca.getIdEquipa() == this.idEquipa) {
-                            existePecaMesmaEquipa = true;
-                            break;
-                        }
-                        if (peca.getIdTipo() == 1 && peca.getIdEquipa() != this.idEquipa) {
-                            if (peca.getX() <= this.x + 2 || peca.getX() >= this.x - 2 || peca.getY() <= this.y + 2 || peca.getY() >= this.y - 2) {
-                                existeRainhaAdversario = true;
-                                break;
-                            }
-                        }
-                    }
-                    if (!existePecaMesmaEquipa && !existeRainhaAdversario) {
-                        sugestoes.add(x + ", " + y);
-                    }
-
-                }
-            }
-        }
-        return sugestoes;
-    }
 }

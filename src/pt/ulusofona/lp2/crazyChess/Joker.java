@@ -29,11 +29,6 @@ public class Joker extends CrazyPiece{
         return null;
     }
 
-    public List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho) {
-
-        return getMascara().darSugestoes(pecas, turno, tamanho);
-    }
-
     private CrazyPiece getMascara() {
         int index = rotacaoTipoPeca;
         while (index > mascaras.length) {

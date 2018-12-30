@@ -19,6 +19,11 @@ public class Rainha extends CrazyPiece{
 
     public boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno) {
         if (((this.x != xD && this.y + yD == this.y) || (this.x + xD == this.x && this.y != yD) || (this.x + xD == this.y + yD) || (this.x + xD == -(this.y + yD))) && ((this.x - xD <= 5 || this.x - xD >= -5) && (this.y - yD <= 5 || this.y - yD >= -5))) {
+            for (CrazyPiece peca: pecas) {
+                if (peca.getX() == xD && peca.getY() == yD && peca.getIdTipo() == this.idTipo) {
+                    return false;
+                }
+            }
             int x = this.x;
             int y = this.y;
             int direcaoHorizontal; // 1 = direita  -1 = esquerda
@@ -58,25 +63,5 @@ public class Rainha extends CrazyPiece{
         return null;
     }
 
-    public List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho) {
-        List<String> sugestoes = new ArrayList<>();
-        for (int x = 0; x < tamanho; x++) {
-            for (int y = 0; y < tamanho; y++) {
-                if (verificarSeMove(x, y, pecas, turno)) {
-                    boolean existePecaMesmaEquipa = false;
-                    for (CrazyPiece peca : pecas) {
-                        if (peca.getX() == this.x && peca.getY() == this.y && peca.getIdEquipa() == this.idEquipa) {
-                            existePecaMesmaEquipa = true;
-                            break;
-                        }
-                    }
-                    if (!existePecaMesmaEquipa) {
-                        sugestoes.add(x + ", " + y);
-                    }
-                }
-            }
-        }
-        return sugestoes;
-    }
 }
 

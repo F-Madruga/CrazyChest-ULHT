@@ -47,15 +47,4 @@ public class TorreH extends CrazyPiece {
         return null;
     }
 
-    public List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho){
-        List<String> sugestoes = new ArrayList<>();
-        for (int x = 0; x < tamanho; x++) {
-            for (int y = 0; y < tamanho; y++) {
-                if (verificarSeMove(x, y, pecas, turno)) {
-                        sugestoes.add(x + ", " + y);
-                }
-            }
-        }
-        return sugestoes;
-    }
 }

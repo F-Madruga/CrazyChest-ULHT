@@ -77,7 +77,25 @@ public abstract class CrazyPiece {
 
     public abstract String getImagePNG();
 
-    public abstract List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho);
+    public List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho) {
+        List<String> sugestoes = new ArrayList<>();
+        for (int x = 0; x < tamanho; x++) {
+            for (int y = 0; y < tamanho; y++) {
+                if (verificarSeMove(x, y, pecas, turno)) {
+                    boolean podeMover = true;
+                    for (CrazyPiece peca: pecas) {
+                        if (peca.getX() == x && peca.getY() == y && peca.getIdEquipa() == this.idEquipa) {
+                            podeMover = false;
+                        }
+                    }
+                    if (podeMover) {
+                        sugestoes.add(x + ", " + y);
+                    }
+                }
+            }
+        }
+        return sugestoes;
+    }
 
     @Override
     public String toString() {

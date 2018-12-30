@@ -28,19 +28,5 @@ public class Lebre extends CrazyPiece {
     public String getImagePNG(){
         return null;
     }
-
-    public List<String> darSugestoes(List<CrazyPiece> pecas, int turno, int tamanho) {
-        List<String> sugestoes = new ArrayList<>();
-        if (turno % 2 == 0) {
-            for (int x = -1; x <= 1; x++) {
-                for (int y = -1; y <= 1; y++) {
-                    if (x != 0 && x == y || x == -y) {
-                        sugestoes.add(this.x + x + ", " + this.y + y);
-                    }
-                }
-            }
-        }
-        return sugestoes;
-    }
 }
 
