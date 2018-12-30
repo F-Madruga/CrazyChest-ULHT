@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GestorDeJogo {
-    public final static int preta = 10;
-    public final static int branca = 20;
-    public final static int rei = 0;
+    public final static int PRETA = 10;
+    public final static int BRANCA = 20;
+    public final static int REI = 0;
 
     private int numPretas;
     private int numBrancas;
@@ -32,19 +32,19 @@ public class GestorDeJogo {
 
     public int quemEstaAjogar() {
         if (turno % 2 == 0) {
-            return preta;
+            return PRETA;
         }
         else {
-            return branca;
+            return BRANCA;
         }
     }
 
     public void adicionarPeca(CrazyPiece peca) {
-        if (peca.getIdTipo() == rei) {
-            if (peca.getIdEquipa() == preta) {
+        if (peca.getIdTipo() == REI) {
+            if (peca.getIdEquipa() == PRETA) {
                 numPretas++;
             }
-            if (peca.getIdEquipa() == branca) {
+            if (peca.getIdEquipa() == BRANCA) {
                 numBrancas++;
             }
         }
@@ -52,8 +52,8 @@ public class GestorDeJogo {
 
     public void adicionarCaptura(CrazyPiece peca) {
         this.capturas.add(peca);
-        if (peca.getIdTipo() == rei) {
-            if (quemEstaAjogar() == preta) {
+        if (peca.getIdTipo() == REI) {
+            if (quemEstaAjogar() == PRETA) {
                 this.numBrancas--;
             }
             else {
@@ -82,9 +82,9 @@ public class GestorDeJogo {
     public boolean possoTerminar() {
         if (turnoSemCapturas >= 10 || (numBrancas == 1 && numPretas == 1) || numBrancas <= 0 || numPretas <= 0) {
             if (numPretas >= 1 && numBrancas <= 0) {
-                resultado = preta;
+                resultado = PRETA;
             } else if (numBrancas >= 1 && numPretas <= 0) {
-                resultado = branca;
+                resultado = BRANCA;
             } else {
                 this.resultado = -1;
             }
@@ -102,10 +102,10 @@ public class GestorDeJogo {
         String resultado = "JOGO DE CRAZY CHESS";
         resultados.add(resultado);
         resultado = "Resultado: ";
-        if (this.resultado == preta) {
+        if (this.resultado == PRETA) {
             resultado += "VENCERAM AS PRETAS";
         }
-        if (this.resultado == branca) {
+        if (this.resultado == BRANCA) {
             resultado += "VENCERAM AS BRANCAS";
         }
         if (this.resultado == -1) {
@@ -114,7 +114,7 @@ public class GestorDeJogo {
         int capturasBrancas = 0;
         int capturaPretas = 0;
         for (CrazyPiece peca: capturas) {
-            if (peca.getIdEquipa() == branca) {
+            if (peca.getIdEquipa() == BRANCA) {
                 capturasBrancas++;
             }
             else {
@@ -124,7 +124,7 @@ public class GestorDeJogo {
         int validasBrancas = 0;
         int validasPretas = 0;
         for (Integer integer: jogadasValidas) {
-            if (integer == branca) {
+            if (integer == BRANCA) {
                 validasBrancas++;
             }
             else {
@@ -134,7 +134,7 @@ public class GestorDeJogo {
         int inValidasBrancas = 0;
         int inValidasPretas = 0;
         for (Integer integer: jogadasInvalidas) {
-            if (integer == branca) {
+            if (integer == BRANCA) {
                 inValidasBrancas++;
             }
             else {
@@ -168,8 +168,8 @@ public class GestorDeJogo {
         Joker.rotacaoTipoPeca--;
         turnoSemCapturas = turnoSemCapturasAnterior;
         jogadasValidas.remove(turno);
-        if (capturas.get(turno).getIdTipo() == rei) {
-            if (capturas.get(turno).getIdEquipa() == preta) {
+        if (capturas.get(turno).getIdTipo() == REI) {
+            if (capturas.get(turno).getIdEquipa() == PRETA) {
                 numBrancas++;
             }
             else {
