@@ -119,62 +119,53 @@ public class Tabuleiro {
     public boolean gravarJogo(File ficheiroDestino) {
         try {
             FileWriter writer = new FileWriter (ficheiroDestino);
-            writer.write(this.tamanho);
-            CrazyPiece [][] tabuleiro = new CrazyPiece [this.tamanho][this.tamanho];
-            writer.write(this.pecas.size());
+            String newLine = System.getProperty("line.separator");
+            String tamanho = this.tamanho +"";
+            writer.write(tamanho);
+            writer.write(newLine);
+            String numPecas = this.pecas.size() + "";
+            writer.write(numPecas);
+            writer.write(newLine);
             for (CrazyPiece peca: pecas) {
-                String dados = peca.getId() + ":" + peca.getIdTipo() + ":" + peca.getIdEquipa() + ":" + peca.getAlcunha();
-                if (existemCoordenadas(peca.getX(), peca.getY())) {
-                    tabuleiro[peca.getX()][peca.getY()] = peca;
-                }
+                String id = peca.getId() + "";
+                String tipo = peca.getIdTipo() + "";
+                String equipa = peca.getIdEquipa() + "";
+                String alcunha = peca.getAlcunha() + "";
+                String dados = id  + ":" + tipo + ":" + equipa + ":" + alcunha;
                 writer.write(dados);
+                writer.write(newLine);
             }
-            for (int x = 0; x < tamanho; x++) {
-                for (int y = 0; y < tamanho; y++) {
-                    if (tabuleiro[x][y] == null) {
-                        writer.write(0);
+            for (int x = 0; x < this.tamanho; x++) {
+                boolean primeiro = true;
+                for (int y = 0; y < this.tamanho; y++) {
+                    if (!primeiro) {
+                        writer.write(":");
                     }
-                    else {
-                        writer.write(tabuleiro[x][y].getId());
+                    boolean existePeca = false;
+                    for (CrazyPiece peca:this.pecas) {
+                        if (peca.getX() == y && peca.getY() == x) {
+                            String piece = peca.getId() + "";
+                            writer.write(piece);
+                            existePeca = true;
+                            break;
+                        }
                     }
-                }
-            }
-            writer.write(this.gestor.getTurno() + ":" + this.gestor.getTurnoSemCapturas());
-            String captura = "";
-            boolean primeiro = true;
-            for (int i = 0; i <= this.gestor.getTurno(); i++) {
-                if (!primeiro) {
-                    captura = captura + ":";
+                    if (!existePeca) {
+                        writer.write("0");
+                    }
                     primeiro = false;
                 }
-                if (this.gestor.getCapturas().get(i) != null) {
-                    captura = captura + this.gestor.getCapturas().get(i).getId() + "|" + this.gestor.getCapturas().get(i).getX() + this.gestor.getCapturas().get(i).getY();
-                }
-                else {
-                    captura = captura + "(zero)";
-                }
+                writer.write(newLine);
             }
-            String jogadasValidas = "";
-            primeiro = true;
-            for (Integer num: this.gestor.getJogadasValidas()) {
-                if (!primeiro) {
-                    jogadasValidas = jogadasValidas + ":";
-                    primeiro = false;
-                }
-                jogadasValidas = jogadasValidas +  num;
-            }
-            String jogadasInvalidas = "";
-            primeiro = true;
-            for (Integer num: this.gestor.getJogadasInvalidas()) {
-                if (!primeiro) {
-                    jogadasInvalidas = jogadasInvalidas + ":";
-                    primeiro = false;
-                }
-                jogadasInvalidas = jogadasInvalidas + ":" + num;
-            }
-            writer.write(captura);
-            writer.write(jogadasValidas);
-            writer.write(jogadasInvalidas);
+            String quemEstaAJogar = quemEstaAJogar() + "";
+            String capturaPreto = gestor.getCapturas().get(-GestorDeJogo.PRETA) + "";
+            String validasPreto = gestor.getJogadasValidas().get(-GestorDeJogo.PRETA) + "";
+            String invalidasPreto = gestor.getJogadasInvalidas().get(-GestorDeJogo.PRETA) + "";
+            String capturaBranco = gestor.getCapturas().get(-GestorDeJogo.BRANCA) + "";
+            String validasBranco = gestor.getJogadasValidas().get(-GestorDeJogo.BRANCA) + "";
+            String invalidasBranco = gestor.getJogadasInvalidas().get(-GestorDeJogo.BRANCA) + "";
+            writer.write(quemEstaAJogar + ":" + capturaPreto + ":" + validasPreto + ":" + invalidasPreto  + ":" + capturaBranco + ":" + validasBranco + ":" + invalidasBranco);
+            writer.write(newLine);
             writer.close();
             return true;
         }
@@ -183,4 +174,13 @@ public class Tabuleiro {
         }
     }
 
+    public void load(String [] dados) {
+        gestor.setEquipaAJogar(Integer.parseInt(dados[0]));
+        gestor.setCapturas(GestorDeJogo.PRETA, Integer.parseInt(dados[1]));
+        gestor.setJogadasValidas(GestorDeJogo.PRETA, Integer.parseInt(dados[2]));
+        gestor.setJogadasInvalidas(GestorDeJogo.PRETA, Integer.parseInt(dados[3]));
+        gestor.setCapturas(GestorDeJogo.BRANCA, Integer.parseInt(dados[4]));
+        gestor.setJogadasValidas(GestorDeJogo.BRANCA, Integer.parseInt(dados[5]));
+        gestor.setJogadasInvalidas(GestorDeJogo.BRANCA, Integer.parseInt(dados[6]));
+    }
 }

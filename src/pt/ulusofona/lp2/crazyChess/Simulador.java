@@ -62,12 +62,15 @@ public class Simulador {
                         }
                     }
                     //Estado inicial do tabuleiro
-                    else {
+                    else if (numLinha < numPecas + 2 + tabuleiro.getTamanho()){
                         for (int coluna = 0; coluna < dados.length; coluna++) {
                             if (Integer.parseInt(dados[coluna]) != 0) {
                                 this.tabuleiro.colocarNoTabuleiro(Integer.parseInt(dados[coluna]), coluna,numLinha - numPecas - 2);
                             }
                         }
+                    }
+                    else {
+                        tabuleiro.load(dados);
                     }
                 }
                 numLinha++;
@@ -133,5 +136,5 @@ public class Simulador {
 
     public boolean gravarJogo(File ficheiroDestino) {
         return this.tabuleiro.gravarJogo(ficheiroDestino);
-    } //TODO
+    }
 }

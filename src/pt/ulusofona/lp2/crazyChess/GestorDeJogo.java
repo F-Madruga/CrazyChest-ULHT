@@ -1,7 +1,9 @@
 package pt.ulusofona.lp2.crazyChess;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class GestorDeJogo {
 
@@ -22,9 +24,9 @@ public class GestorDeJogo {
     private int turno;
     private int turnoSemCapturasAnterior;
     private int turnoSemCapturas;
-    private List<CrazyPiece> capturas;
-    private List<Integer> jogadasValidas;
-    private List<Integer> jogadasInvalidas;
+    private Map<Integer, Integer> capturas;
+    private Map<Integer, Integer> jogadasValidas;
+    private Map<Integer, Integer> jogadasInvalidas;
     private int resultado;
 
     public GestorDeJogo() {
@@ -34,9 +36,15 @@ public class GestorDeJogo {
         this.turnoSemCapturas = 0;
         this.turnoSemCapturasAnterior = 0;
         this.resultado = -1;
-        this.capturas = new ArrayList<>();
-        this.jogadasValidas = new ArrayList<>();
-        this.jogadasInvalidas = new ArrayList<>();
+        this.capturas = new HashMap<>();
+        this.capturas.put(-PRETA, 0);
+        this.capturas.put(-BRANCA, 0);
+        this.jogadasValidas = new HashMap<>();
+        this.jogadasValidas.put(-PRETA, 0);
+        this.jogadasValidas.put(-BRANCA, 0);
+        this.jogadasInvalidas = new HashMap<>();
+        this.jogadasInvalidas.put(-PRETA, 0);
+        this.jogadasInvalidas.put(-BRANCA, 0);
     }
 
     public int quemEstaAjogar() {
@@ -60,7 +68,16 @@ public class GestorDeJogo {
     }
 
     public void adicionarCaptura(CrazyPiece peca) {
-        this.capturas.add(peca);
+        if (peca.getIdEquipa() == PRETA) {
+            int captura = this.capturas.get(-BRANCA) + 1;
+            capturas.put(-BRANCA, captura);
+            capturas.put(turno, BRANCA);
+        }
+        if (peca.getIdEquipa() == BRANCA) {
+            int captura = this.capturas.get(-PRETA) + 1;
+            capturas.put(-PRETA, captura);
+            capturas.put(turno, PRETA);
+        }
         if (peca.getIdTipo() == REI) {
             if (quemEstaAjogar() == PRETA) {
                 this.numBrancas--;
@@ -74,18 +91,35 @@ public class GestorDeJogo {
     }
 
     public void validaJogada() {
-        this.jogadasValidas.add(quemEstaAjogar());
+        if (quemEstaAjogar() == PRETA) {
+            int valida = jogadasValidas.get(-PRETA) + 1;
+            jogadasValidas.put(-PRETA, valida);
+            jogadasValidas.put(turno, PRETA);
+        }
+        else {
+            int valida = jogadasValidas.get(-BRANCA) + 1;
+            jogadasValidas.put(-BRANCA, valida);
+            jogadasValidas.put(turno, BRANCA);
+        }
         turno++;
         Joker.rotacaoTipoPeca = turno;
     }
 
     public void invalidaJogada() {
-        this.jogadasInvalidas.add(quemEstaAjogar());
+        if (quemEstaAjogar() == PRETA) {
+            int valida = jogadasInvalidas.get(-PRETA) + 1;
+            jogadasInvalidas.put(-PRETA, valida);
+            jogadasInvalidas.put(turno, PRETA);
+        }
+        else {
+            int valida = jogadasInvalidas.get(-BRANCA) + 1;
+            jogadasInvalidas.put(-BRANCA, valida);
+            jogadasInvalidas.put(turno, BRANCA);
+        }
     }
 
     public void naoHouveCaptura() {
         turnoSemCapturasAnterior = turnoSemCapturas;
-        capturas.add(null);
         turnoSemCapturas++;
     }
 
@@ -121,36 +155,12 @@ public class GestorDeJogo {
         if (this.resultado == -1) {
             resultado += "EMPATE";
         }
-        int capturasBrancas = 0;
-        int capturaPretas = 0;
-        for (CrazyPiece peca: capturas) {
-            if (peca.getIdEquipa() == BRANCA) {
-                capturasBrancas++;
-            }
-            else {
-                capturaPretas++;
-            }
-        }
-        int validasBrancas = 0;
-        int validasPretas = 0;
-        for (Integer integer: jogadasValidas) {
-            if (integer == BRANCA) {
-                validasBrancas++;
-            }
-            else {
-                validasPretas++;
-            }
-        }
-        int inValidasBrancas = 0;
-        int inValidasPretas = 0;
-        for (Integer integer: jogadasInvalidas) {
-            if (integer == BRANCA) {
-                inValidasBrancas++;
-            }
-            else {
-                inValidasPretas++;
-            }
-        }
+        int capturasBrancas = capturas.get(-BRANCA);
+        int capturaPretas = capturas.get(-PRETA);
+        int validasBrancas = jogadasValidas.get(-BRANCA);
+        int validasPretas = jogadasValidas.get(-PRETA);
+        int inValidasBrancas = jogadasInvalidas.get(-BRANCA);
+        int inValidasPretas = jogadasInvalidas.get(-PRETA);
         resultados.add(resultado);
         resultado = "---";
         resultados.add(resultado);
@@ -177,16 +187,17 @@ public class GestorDeJogo {
         turno--;
         Joker.rotacaoTipoPeca = turno;
         turnoSemCapturas = turnoSemCapturasAnterior;
-        jogadasValidas.remove(turno);
-        if (capturas.get(turno) != null) {
-            if (capturas.get(turno).getIdTipo() == REI) {
-                if (capturas.get(turno).getIdEquipa() == PRETA) {
-                    numBrancas++;
-                } else {
-                    numPretas++;
-                }
-            }
+        if (capturas.containsKey(turno)) {
+            int equipa = capturas.get(turno);
+            int captura = capturas.get(-equipa) - 1;
+            capturas.put(-equipa, captura);
             capturas.remove(turno);
+        }
+        if (jogadasValidas.containsKey(turno)) {
+            int equipa = jogadasValidas.get(turno);
+            int captura = jogadasValidas.get(-equipa) - 1;
+            jogadasValidas.put(-equipa, captura);
+            jogadasValidas.remove(turno);
         }
     }
 
@@ -194,15 +205,36 @@ public class GestorDeJogo {
         return turnoSemCapturas;
     }
 
-    public List<CrazyPiece> getCapturas() {
+    public Map<Integer, Integer> getCapturas() {
         return capturas;
     }
 
-    public List<Integer> getJogadasValidas() {
+    public Map<Integer, Integer> getJogadasValidas() {
         return jogadasValidas;
     }
 
-    public List<Integer> getJogadasInvalidas() {
+    public Map<Integer, Integer> getJogadasInvalidas() {
         return jogadasInvalidas;
+    }
+
+    public void setEquipaAJogar(int equipaAJogar) {
+        if (equipaAJogar == PRETA) {
+            this.turno = 0;
+        }
+        else {
+            this.turno = 1;
+        }
+    }
+
+    public void setCapturas(int equipa, int numCapturas) {
+        capturas.put(-equipa, numCapturas);
+    }
+
+    public void setJogadasValidas(int equipa, int numCapturas) {
+        jogadasValidas.put(-equipa, numCapturas);
+    }
+
+    public void setJogadasInvalidas(int equipa, int numCapturas) {
+        jogadasInvalidas.put(-equipa, numCapturas);
     }
 }
