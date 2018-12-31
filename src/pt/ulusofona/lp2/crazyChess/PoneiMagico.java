@@ -1,6 +1,5 @@
 package pt.ulusofona.lp2.crazyChess;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PoneiMagico extends CrazyPiece{
@@ -26,31 +25,31 @@ public class PoneiMagico extends CrazyPiece{
 
                 for (CrazyPiece peca : pecas){
                     if (xD > x && yD < y) {
-                        if (peca.getIdTipo() == 0 && (peca.getX() == x && (peca.getY() == y - 1 || peca.getY() == y - 2)) || (peca.getX() == x + 1 && peca.getY() == y - 2)) {
+                        if (peca.getIdTipo() == GestorDeJogo.REI && (peca.getX() == x && (peca.getY() == y - 1 || peca.getY() == y - 2)) || (peca.getX() == x + 1 && peca.getY() == y - 2)) {
                             nrReisVerticalHorizontal++;
                         }
-                        if (peca.getIdTipo() == 0 && ((peca.getX() == x + 1 || peca.getX() == x + 2) && peca.getY() == y) || (peca.getX() == x + 2 && peca.getY() == y - 1)) {
+                        if (peca.getIdTipo() == GestorDeJogo.REI && ((peca.getX() == x + 1 || peca.getX() == x + 2) && peca.getY() == y) || (peca.getX() == x + 2 && peca.getY() == y - 1)) {
                             nrReisHorizontalVertical++;
                         }
                     } else if (xD < x && yD < y) {
-                        if (peca.getIdTipo() == 0 && (peca.getX() == x && (peca.getY() == y - 1 || peca.getY() == y - 2)) || (peca.getX() == x - 1 && peca.getY() == y - 2)) {
+                        if (peca.getIdTipo() == GestorDeJogo.REI && (peca.getX() == x && (peca.getY() == y - 1 || peca.getY() == y - 2)) || (peca.getX() == x - 1 && peca.getY() == y - 2)) {
                             nrReisVerticalHorizontal++;
                         }
-                        if (peca.getIdTipo() == 0 && ((peca.getX() == x - 1 || peca.getX() == x - 2) && peca.getY() == y) || (peca.getX() == x - 2 && peca.getY() == y - 1)) {
+                        if (peca.getIdTipo() == GestorDeJogo.REI && ((peca.getX() == x - 1 || peca.getX() == x - 2) && peca.getY() == y) || (peca.getX() == x - 2 && peca.getY() == y - 1)) {
                             nrReisHorizontalVertical++;
                         }
                     } else if (xD < x && yD > y) {
-                        if (peca.getIdTipo() == 0 && ((peca.getX() == x - 1 || peca.getX() == x - 2) && peca.getY() == y) || (peca.getX() == x - 2 && peca.getY() == y + 1)){
+                        if (peca.getIdTipo() == GestorDeJogo.REI && ((peca.getX() == x - 1 || peca.getX() == x - 2) && peca.getY() == y) || (peca.getX() == x - 2 && peca.getY() == y + 1)){
                             nrReisVerticalHorizontal++;
                         }
-                        if (peca.getIdTipo() == 0 && (peca.getX() == x && (peca.getY() == y + 1 || peca.getY() == y + 2)) || (peca.getX() == x - 1 && peca.getY() == y + 2)) {
+                        if (peca.getIdTipo() == GestorDeJogo.REI && (peca.getX() == x && (peca.getY() == y + 1 || peca.getY() == y + 2)) || (peca.getX() == x - 1 && peca.getY() == y + 2)) {
                             nrReisHorizontalVertical++;
                         }
                     } else if (xD > x && yD > y){
-                        if(peca.getIdTipo() == 0 && (peca.getX() == x && (peca.getY() == y + 1 || peca.getY() == y + 2))|| (peca.getX() == x + 1 && peca.getY() == y + 2)){
+                        if(peca.getIdTipo() == GestorDeJogo.REI && (peca.getX() == x && (peca.getY() == y + 1 || peca.getY() == y + 2))|| (peca.getX() == x + 1 && peca.getY() == y + 2)){
                             nrReisVerticalHorizontal++;
                         }
-                        if(peca.getIdTipo() == 0 && ((peca.getX() == x + 1 || peca.getX() == x + 2) && peca.getY() == y) || (peca.getX() == x + 2 && peca.getY() == y + 1)){
+                        if(peca.getIdTipo() == GestorDeJogo.REI && ((peca.getX() == x + 1 || peca.getX() == x + 2) && peca.getY() == y) || (peca.getX() == x + 2 && peca.getY() == y + 1)){
                             nrReisHorizontalVertical++;
                         }
                     }
@@ -64,8 +63,15 @@ public class PoneiMagico extends CrazyPiece{
         }
     }
 
-    public String getImagePNG(){
-        return null;
+    @Override
+    public String getImagePNG() {
+        if (this.idEquipa == GestorDeJogo.PRETA) {
+            return "preto_ponei.png";
+        } else if (this.idEquipa == GestorDeJogo.BRANCA) {
+            return "branco_ponei.png";
+        } else {
+            return null;
+        }
     }
 
 }

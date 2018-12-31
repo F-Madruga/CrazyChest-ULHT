@@ -1,6 +1,5 @@
 package pt.ulusofona.lp2.crazyChess;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PadreDaVila extends CrazyPiece {
@@ -19,6 +18,17 @@ public class PadreDaVila extends CrazyPiece {
 
     public boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno) {
         if ((this.x - xD <= 3 && this.x - xD >= -3) && (this.y - yD <= 3 && this.y - yD >= -3) && (this.x - xD == this.y - yD || this.x - xD == -(this.y - yD))) {
+            for (int x = -2; x <= 2; x++) {
+                for (int y = -2; y <= 2; y++) {
+                    if (x + xD >= 0 && yD >= 0 && xD + x != 0 && yD + y != y) {
+                        for (CrazyPiece peca: pecas) {
+                            if (peca.getX() == xD + x && peca.getY() == yD + y  && peca.getIdEquipa() != this.idEquipa && peca.getIdTipo() == GestorDeJogo.RAINHA) {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
             int x = this.x;
             int y = this.y;
             boolean existeRainha = false;
@@ -38,13 +48,7 @@ public class PadreDaVila extends CrazyPiece {
                 x += direcaoHorizontal;
                 y += direcaoVertical;
                 for (CrazyPiece peca : pecas) {
-                    if (peca.getIdTipo() == 1 && peca.getIdEquipa() != this.idEquipa) {
-                        if (peca.getX() <= this.x + 2 || peca.getX() >= this.x - 2 || peca.getY() <= this.y + 2 || peca.getY() >= this.y - 2) {
-                            existeRainha = true;
-                            break;
-                        }
-                    }
-                    if (peca.getX() == x && peca.getY() == y && !existeRainha) {
+                    if (peca.getX() == x && peca.getY() == y) {
                         return false;
                     }
                 }
@@ -55,8 +59,16 @@ public class PadreDaVila extends CrazyPiece {
         }
     }
 
+    @Override
     public String getImagePNG() {
-        return null;
+        if (this.idEquipa == GestorDeJogo.PRETA) {
+            return "preto_padre.png";
+        }
+        else if (this.idEquipa == GestorDeJogo.BRANCA) {
+            return "branco_padre.png";
+        }
+        else {
+            return null;
+        }
     }
-
 }

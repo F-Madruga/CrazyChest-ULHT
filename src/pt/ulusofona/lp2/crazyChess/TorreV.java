@@ -1,6 +1,5 @@
 package pt.ulusofona.lp2.crazyChess;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TorreV extends CrazyPiece {
@@ -42,9 +41,17 @@ public class TorreV extends CrazyPiece {
             return false;
         }
     }
-
+    @Override
     public String getImagePNG() {
-        return null;
+        if (this.idEquipa == GestorDeJogo.PRETA) {
+            return "preto_torreV.png";
+        }
+        else if (this.idEquipa == GestorDeJogo.BRANCA) {
+            return "branco_torreV.png";
+        }
+        else {
+            return null;
+        }
     }
 
 }

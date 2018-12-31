@@ -4,9 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GestorDeJogo {
+
     public final static int PRETA = 10;
     public final static int BRANCA = 20;
+
     public final static int REI = 0;
+    public final static int RAINHA = 1;
+    public final static int PONEIMAGICO = 2;
+    public final static int PADREDAVILA = 3;
+    public final static int TORREH = 4;
+    public final static int TORREV = 5;
+    public final static int LEBRE = 6;
+    public final static int JOKER = 7;
 
     private int numPretas;
     private int numBrancas;
@@ -67,7 +76,7 @@ public class GestorDeJogo {
     public void validaJogada() {
         this.jogadasValidas.add(quemEstaAjogar());
         turno++;
-        Joker.rotacaoTipoPeca++;
+        Joker.rotacaoTipoPeca = turno;
     }
 
     public void invalidaJogada() {
@@ -76,6 +85,7 @@ public class GestorDeJogo {
 
     public void naoHouveCaptura() {
         turnoSemCapturasAnterior = turnoSemCapturas;
+        capturas.add(null);
         turnoSemCapturas++;
     }
 
@@ -165,17 +175,34 @@ public class GestorDeJogo {
 
     public void undo() {
         turno--;
-        Joker.rotacaoTipoPeca--;
+        Joker.rotacaoTipoPeca = turno;
         turnoSemCapturas = turnoSemCapturasAnterior;
         jogadasValidas.remove(turno);
-        if (capturas.get(turno).getIdTipo() == REI) {
-            if (capturas.get(turno).getIdEquipa() == PRETA) {
-                numBrancas++;
+        if (capturas.get(turno) != null) {
+            if (capturas.get(turno).getIdTipo() == REI) {
+                if (capturas.get(turno).getIdEquipa() == PRETA) {
+                    numBrancas++;
+                } else {
+                    numPretas++;
+                }
             }
-            else {
-                numPretas++;
-            }
+            capturas.remove(turno);
         }
-        capturas.remove(turno);
+    }
+
+    public int getTurnoSemCapturas() {
+        return turnoSemCapturas;
+    }
+
+    public List<CrazyPiece> getCapturas() {
+        return capturas;
+    }
+
+    public List<Integer> getJogadasValidas() {
+        return jogadasValidas;
+    }
+
+    public List<Integer> getJogadasInvalidas() {
+        return jogadasInvalidas;
     }
 }

@@ -12,28 +12,28 @@ public class Simulador {
 
     public CrazyPiece definirPeca(int idPeca, int idTipo, int idEquipa, String alcunha) {
         CrazyPiece peca = null;
-        if (idTipo == 0) {
+        if (idTipo == GestorDeJogo.REI) {
             peca = new Rei(idPeca, idTipo, idEquipa, alcunha);
         }
-        if (idTipo == 1) {
+        if (idTipo == GestorDeJogo.RAINHA) {
             peca = new Rainha(idPeca, idTipo, idEquipa, alcunha);
         }
-        if (idTipo == 2) {
+        if (idTipo == GestorDeJogo.PONEIMAGICO) {
             peca = new PoneiMagico(idPeca, idTipo, idEquipa, alcunha);
         }
-        if (idTipo == 3) {
+        if (idTipo == GestorDeJogo.PADREDAVILA) {
             peca = new PadreDaVila(idPeca, idTipo, idEquipa, alcunha);
         }
-        if (idTipo == 4) {
+        if (idTipo == GestorDeJogo.TORREH) {
             peca = new TorreH(idPeca, idTipo, idEquipa, alcunha);
         }
-        if (idTipo == 5) {
+        if (idTipo == GestorDeJogo.TORREV) {
             peca = new TorreV(idPeca, idTipo, idEquipa, alcunha);
         }
-        if (idTipo == 6) {
+        if (idTipo == GestorDeJogo.LEBRE) {
             peca = new Lebre(idPeca, idTipo, idEquipa, alcunha);
         }
-        if (idTipo == 7) {
+        if (idTipo == GestorDeJogo.JOKER) {
             peca = new Joker(idPeca, idTipo, idEquipa, alcunha);
         }
         return peca;
@@ -107,7 +107,7 @@ public class Simulador {
 
     public List<String> getResultados() {
         return this.tabuleiro.getResultado();
-    } // TODO
+    }
 
     public int getIDPeca(int x, int y) {
         CrazyPiece peca = this.tabuleiro.getPeca(x, y);
@@ -132,6 +132,6 @@ public class Simulador {
     }
 
     public boolean gravarJogo(File ficheiroDestino) {
-        return true;
+        return this.tabuleiro.gravarJogo(ficheiroDestino);
     } //TODO
 }

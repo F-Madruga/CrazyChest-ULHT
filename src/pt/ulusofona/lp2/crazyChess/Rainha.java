@@ -58,9 +58,17 @@ public class Rainha extends CrazyPiece{
         }
     }
 
+    @Override
     public String getImagePNG() {
-        return null;
+        if (this.idEquipa == GestorDeJogo.PRETA) {
+            return "preto_rainha.png";
+        }
+        else if (this.idEquipa == GestorDeJogo.BRANCA) {
+            return "branco_rainha.png";
+        }
+        else {
+            return null;
+        }
     }
-
 }
 

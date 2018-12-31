@@ -1,5 +1,8 @@
 package pt.ulusofona.lp2.crazyChess;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,14 +17,13 @@ public class Tabuleiro {
         this.tamanho = tamanho;
         this.pecas = new ArrayList<>();
         this.gestor = new GestorDeJogo();
-        this.fazerUndo = true;
+        this.fazerUndo = false;
     }
 
     public boolean existemCoordenadas(int x, int y) {
-        if(x >= 0 && x < this.tamanho && y >= 0 && y < this.tamanho) {
+        if (x >= 0 && x < this.tamanho && y >= 0 && y < this.tamanho) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -35,7 +37,7 @@ public class Tabuleiro {
     }
 
     public CrazyPiece getPeca(int x, int y) {
-        for (CrazyPiece peca: this.pecas) {
+        for (CrazyPiece peca : this.pecas) {
             if (peca.getX() == x && peca.getY() == y) {
                 return peca;
             }
@@ -69,8 +71,7 @@ public class Tabuleiro {
                     if (destino != null) {
                         destino.alterarCoordenada(-1, -1, this.gestor.getTurno());
                         this.gestor.adicionarCaptura(destino);
-                    }
-                    else {
+                    } else {
                         this.gestor.naoHouveCaptura();
                     }
                     origem.alterarCoordenada(xD, yD, this.gestor.getTurno());
@@ -97,7 +98,7 @@ public class Tabuleiro {
     }
 
     public void undo() {
-        if (fazerUndo) {
+        if (fazerUndo && gestor.getTurno() > 0) {
             this.gestor.undo();
             for (CrazyPiece peca : this.pecas) {
                 peca.undo(this.gestor.getTurno());
@@ -110,9 +111,76 @@ public class Tabuleiro {
         CrazyPiece peca = getPeca(xO, yO);
         if (peca != null && peca.getIdEquipa() == quemEstaAJogar()) {
             return peca.darSugestoes(this.pecas, this.gestor.getTurno(), this.tamanho);
-        }
-        else {
+        } else {
             return new ArrayList<>();
         }
     }
+
+    public boolean gravarJogo(File ficheiroDestino) {
+        try {
+            FileWriter writer = new FileWriter (ficheiroDestino);
+            writer.write(this.tamanho);
+            CrazyPiece [][] tabuleiro = new CrazyPiece [this.tamanho][this.tamanho];
+            writer.write(this.pecas.size());
+            for (CrazyPiece peca: pecas) {
+                String dados = peca.getId() + ":" + peca.getIdTipo() + ":" + peca.getIdEquipa() + ":" + peca.getAlcunha();
+                if (existemCoordenadas(peca.getX(), peca.getY())) {
+                    tabuleiro[peca.getX()][peca.getY()] = peca;
+                }
+                writer.write(dados);
+            }
+            for (int x = 0; x < tamanho; x++) {
+                for (int y = 0; y < tamanho; y++) {
+                    if (tabuleiro[x][y] == null) {
+                        writer.write(0);
+                    }
+                    else {
+                        writer.write(tabuleiro[x][y].getId());
+                    }
+                }
+            }
+            writer.write(this.gestor.getTurno() + ":" + this.gestor.getTurnoSemCapturas());
+            String captura = "";
+            boolean primeiro = true;
+            for (int i = 0; i <= this.gestor.getTurno(); i++) {
+                if (!primeiro) {
+                    captura = captura + ":";
+                    primeiro = false;
+                }
+                if (this.gestor.getCapturas().get(i) != null) {
+                    captura = captura + this.gestor.getCapturas().get(i).getId() + "|" + this.gestor.getCapturas().get(i).getX() + this.gestor.getCapturas().get(i).getY();
+                }
+                else {
+                    captura = captura + "(zero)";
+                }
+            }
+            String jogadasValidas = "";
+            primeiro = true;
+            for (Integer num: this.gestor.getJogadasValidas()) {
+                if (!primeiro) {
+                    jogadasValidas = jogadasValidas + ":";
+                    primeiro = false;
+                }
+                jogadasValidas = jogadasValidas +  num;
+            }
+            String jogadasInvalidas = "";
+            primeiro = true;
+            for (Integer num: this.gestor.getJogadasInvalidas()) {
+                if (!primeiro) {
+                    jogadasInvalidas = jogadasInvalidas + ":";
+                    primeiro = false;
+                }
+                jogadasInvalidas = jogadasInvalidas + ":" + num;
+            }
+            writer.write(captura);
+            writer.write(jogadasValidas);
+            writer.write(jogadasInvalidas);
+            writer.close();
+            return true;
+        }
+        catch (IOException exception) {
+            return false;
+        }
+    }
+
 }

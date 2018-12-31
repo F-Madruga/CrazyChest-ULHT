@@ -1,6 +1,5 @@
 package pt.ulusofona.lp2.crazyChess;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Joker extends CrazyPiece{
@@ -10,7 +9,7 @@ public class Joker extends CrazyPiece{
 
     public Joker(int idPeca, int idTipo, int idEquipa, String alcunha) {
         super(idPeca, idTipo, idEquipa, alcunha);
-        this.mascaras = new CrazyPiece[] {new Rainha(idPeca, 1, idEquipa, alcunha) ,new PoneiMagico(idPeca, 2, idEquipa, alcunha) , new PadreDaVila(idPeca, 3, idEquipa, alcunha), new TorreH(idPeca, 4, idEquipa, alcunha), new TorreV(idPeca, 5, idEquipa, alcunha), new Lebre(idPeca, 6, idEquipa, alcunha)};
+        this.mascaras = new CrazyPiece[] {new Rainha(idPeca, GestorDeJogo.RAINHA, idEquipa, alcunha) ,new PoneiMagico(idPeca, GestorDeJogo.PONEIMAGICO, idEquipa, alcunha) , new PadreDaVila(idPeca, GestorDeJogo.PADREDAVILA, idEquipa, alcunha), new TorreH(idPeca, GestorDeJogo.TORREH, idEquipa, alcunha), new TorreV(idPeca, GestorDeJogo.TORREV, idEquipa, alcunha), new Lebre(idPeca, GestorDeJogo.LEBRE, idEquipa, alcunha)};
     }
 
     protected String getValorRelativo(){
@@ -25,8 +24,17 @@ public class Joker extends CrazyPiece{
         return getMascara().verificarSeMove(xD, yD, pecas, turno);
     }
 
-    public String getImagePNG(){
-        return null;
+    @Override
+    public String getImagePNG() {
+        if (this.idEquipa == GestorDeJogo.PRETA) {
+            return "preto_joker.png";
+        }
+        else if (this.idEquipa == GestorDeJogo.BRANCA) {
+            return "branco_joker.png";
+        }
+        else {
+            return null;
+        }
     }
 
     private CrazyPiece getMascara() {

@@ -105,4 +105,14 @@ public abstract class CrazyPiece {
         }
         return this.idPeca + " | " + this.getNome() + " | " + this.getValorRelativo() + " | " + this.idEquipa + " | " + this.alcunha + coordenadas;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        CrazyPiece peca = (CrazyPiece) obj;
+        return this.idPeca == peca.getId();
+    }
+
+    public String getAlcunha() {
+        return alcunha;
+    }
 }

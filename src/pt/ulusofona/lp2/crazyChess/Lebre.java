@@ -1,6 +1,5 @@
 package pt.ulusofona.lp2.crazyChess;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Lebre extends CrazyPiece {
@@ -25,8 +24,16 @@ public class Lebre extends CrazyPiece {
         }
     }
 
-    public String getImagePNG(){
-        return null;
-    }
-}
+    @Override
+    public String getImagePNG() {
+        if (this.idEquipa == GestorDeJogo.PRETA) {
+            return "preto_lebre.png";
+        }
+        else if (this.idEquipa == GestorDeJogo.BRANCA) {
+            return "branco_lebre.png";
+        }
+        else {
+            return null;
+        }
+    }}
 

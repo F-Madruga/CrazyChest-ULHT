@@ -1,6 +1,5 @@
 package pt.ulusofona.lp2.crazyChess;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Rei extends CrazyPiece {
@@ -31,11 +30,13 @@ public class Rei extends CrazyPiece {
 
     @Override
     public String getImagePNG() {
-        if (this.idEquipa == GestorDeJogo.preta) {
-            return "trihard.png";
-        } else if (this.idEquipa == GestorDeJogo.branca) {
-            return "kappa.png";
-        } else {
+        if (this.idEquipa == GestorDeJogo.PRETA) {
+            return "preto_rei.png";
+        }
+        else if (this.idEquipa == GestorDeJogo.BRANCA) {
+            return "branco_rei.png";
+        }
+        else {
             return null;
         }
     }
