@@ -1,38 +1,52 @@
 package pt.ulusofona.lp2.crazyChess;
 
-import java.util.List;
+import java.util.Map;
 
-public class Rainha extends CrazyPiece{
+public class Rainha extends CrazyPiece {
 
     public Rainha(int idPeca, int idTipo, int idEquipa, String alcunha) {
         super(idPeca, idTipo, idEquipa, alcunha);
     }
 
+    @Override
     protected String getValorRelativo() {
         return "8";
     }
 
+    @Override
     protected String getNome() {
         return "Rainha";
     }
 
-    public boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno) {
-        if ((this.x == xD && this.y != yD) || (this.x != xD && this.y == yD) || (this.x - xD <= 5 && this.x - xD >= -5) && (this.y - yD <= 5 && this.y - yD >= -5) && (this.x - xD == this.y - yD || this.x - xD == -(this.y - yD))) {
-            for (CrazyPiece peca: pecas) {
-                if (peca.getX() == xD && peca.getY() == yD && peca.getIdTipo() == this.idTipo) {
+    @Override
+    public String getImagePNG() {
+        if (this.idEquipa == GestorDeJogo.PRETA) {
+            return "preto_rainha.png";
+        } else if (this.idEquipa == GestorDeJogo.BRANCA) {
+            return "branco_rainha.png";
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public boolean verificarSeMove(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int[][] tabuleiro, int turno) {
+        if ((xO == xD && yO != yD) || (xO != xD && yO == yD) || (xO - xD <= 5 && xO - xD >= -5) && (yO - yD <= 5 && yO - yD >= -5) && (xO - xD == yO - yD || xO - xD == -(yO - yD))) {
+            if (tabuleiro[xD][yD] != 0) {
+                if (pecas.get(tabuleiro[xD][yD]).getIdTipo() == this.idTipo) {
                     return false;
                 }
             }
-            int x = this.x;
-            int y = this.y;
+            int x = xO;
+            int y = yO;
             int direcaoHorizontal; // 1 = direita  -1 = esquerda
-            if (this.x > xD) {
+            if (xO > xD) {
                 direcaoHorizontal = -1;
             } else {
                 direcaoHorizontal = 1;
             }
             int direcaoVertical; // 1 = baixo  -1 = cima
-            if (this.y > yD) {
+            if (yO > yD) {
                 direcaoVertical = -1;
             } else {
                 direcaoVertical = 1;
@@ -45,8 +59,8 @@ public class Rainha extends CrazyPiece{
                     y += direcaoVertical;
                 }
                 if (x != xD || y != yD) {
-                    for (CrazyPiece peca : pecas) {
-                        if (peca.getX() == x && peca.getY() == y) {
+                    if (Tabuleiro.existemCoordenadas(x, y, tabuleiro.length)) {
+                        if (tabuleiro[x][y] != 0) {
                             return false;
                         }
                     }
@@ -57,18 +71,4 @@ public class Rainha extends CrazyPiece{
             return false;
         }
     }
-
-    @Override
-    public String getImagePNG() {
-        if (this.idEquipa == GestorDeJogo.PRETA) {
-            return "preto_rainha.png";
-        }
-        else if (this.idEquipa == GestorDeJogo.BRANCA) {
-            return "branco_rainha.png";
-        }
-        else {
-            return null;
-        }
-    }
 }
-

@@ -1,10 +1,11 @@
 package pt.ulusofona.lp2.crazyChess;
 
-import java.util.List;
+import java.util.Map;
 
-public class Joker extends CrazyPiece{
+public class Joker extends CrazyPiece {
 
-    public static int rotacaoTipoPeca = 0;
+    public static int ROTACAOTIPOPECA = 0;
+
     private CrazyPiece [] mascaras;
 
     public Joker(int idPeca, int idTipo, int idEquipa, String alcunha) {
@@ -20,8 +21,8 @@ public class Joker extends CrazyPiece{
         return "Joker/" + getMascara().getNome();
     }
 
-    public boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno){
-        return getMascara().verificarSeMove(xD, yD, pecas, turno);
+    public boolean verificarSeMove(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int [][] tabuleiro, int turno){
+        return getMascara().verificarSeMove(xO, yO, xD, yD, pecas, tabuleiro, turno);
     }
 
     @Override
@@ -38,13 +39,11 @@ public class Joker extends CrazyPiece{
     }
 
     private CrazyPiece getMascara() {
-        int index = rotacaoTipoPeca;
+        int index = ROTACAOTIPOPECA;
         while (index > mascaras.length) {
             index -= mascaras.length;
         }
         CrazyPiece peca = mascaras[index];
-        peca.colocarNoTabuleiro(this.x, this.y);
         return peca;
     }
 }
-

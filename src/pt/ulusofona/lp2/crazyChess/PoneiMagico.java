@@ -1,66 +1,21 @@
 package pt.ulusofona.lp2.crazyChess;
 
-import java.util.List;
+import java.util.Map;
 
-public class PoneiMagico extends CrazyPiece{
+public class PoneiMagico extends CrazyPiece {
 
     public PoneiMagico(int idPeca, int idTipo, int idEquipa, String alcunha) {
         super(idPeca, idTipo, idEquipa, alcunha);
     }
 
+    @Override
     protected String getValorRelativo(){
         return "5";
     }
 
+    @Override
     protected String getNome(){
         return "Ponei Mágico";
-    }
-
-    public boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno){
-        if ((this.x - xD == -2 && this.y - yD == -2) || (this.x - xD == -2 && this.y - yD == 2) || (this.x - xD == 2 && this.y - yD == -2) || (this.x - xD == 2 && this.y - yD == 2)) {
-            int x = this.x;
-            int y = this.y;
-            int nrReisHorizontalVertical = 0;
-            int nrReisVerticalHorizontal = 0;
-
-                for (CrazyPiece peca : pecas){
-                    if (xD > x && yD < y) {
-                        if (peca.getIdTipo() == GestorDeJogo.REI && (peca.getX() == x && (peca.getY() == y - 1 || peca.getY() == y - 2)) || (peca.getX() == x + 1 && peca.getY() == y - 2)) {
-                            nrReisVerticalHorizontal++;
-                        }
-                        if (peca.getIdTipo() == GestorDeJogo.REI && ((peca.getX() == x + 1 || peca.getX() == x + 2) && peca.getY() == y) || (peca.getX() == x + 2 && peca.getY() == y - 1)) {
-                            nrReisHorizontalVertical++;
-                        }
-                    } else if (xD < x && yD < y) {
-                        if (peca.getIdTipo() == GestorDeJogo.REI && (peca.getX() == x && (peca.getY() == y - 1 || peca.getY() == y - 2)) || (peca.getX() == x - 1 && peca.getY() == y - 2)) {
-                            nrReisVerticalHorizontal++;
-                        }
-                        if (peca.getIdTipo() == GestorDeJogo.REI && ((peca.getX() == x - 1 || peca.getX() == x - 2) && peca.getY() == y) || (peca.getX() == x - 2 && peca.getY() == y - 1)) {
-                            nrReisHorizontalVertical++;
-                        }
-                    } else if (xD < x && yD > y) {
-                        if (peca.getIdTipo() == GestorDeJogo.REI && ((peca.getX() == x - 1 || peca.getX() == x - 2) && peca.getY() == y) || (peca.getX() == x - 2 && peca.getY() == y + 1)){
-                            nrReisVerticalHorizontal++;
-                        }
-                        if (peca.getIdTipo() == GestorDeJogo.REI && (peca.getX() == x && (peca.getY() == y + 1 || peca.getY() == y + 2)) || (peca.getX() == x - 1 && peca.getY() == y + 2)) {
-                            nrReisHorizontalVertical++;
-                        }
-                    } else if (xD > x && yD > y){
-                        if(peca.getIdTipo() == GestorDeJogo.REI && (peca.getX() == x && (peca.getY() == y + 1 || peca.getY() == y + 2))|| (peca.getX() == x + 1 && peca.getY() == y + 2)){
-                            nrReisVerticalHorizontal++;
-                        }
-                        if(peca.getIdTipo() == GestorDeJogo.REI && ((peca.getX() == x + 1 || peca.getX() == x + 2) && peca.getY() == y) || (peca.getX() == x + 2 && peca.getY() == y + 1)){
-                            nrReisHorizontalVertical++;
-                        }
-                    }
-                    if (nrReisVerticalHorizontal >= 1 && nrReisHorizontalVertical >= 1) {
-                        return false;
-                    }
-                }
-            return true;
-        } else {
-            return false;
-        }
     }
 
     @Override
@@ -74,4 +29,78 @@ public class PoneiMagico extends CrazyPiece{
         }
     }
 
+    @Override
+    public boolean verificarSeMove(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int[][] tabuleiro, int turno) {
+        if ((xO - xD == -2 && yO - yD == -2) || (xO - xD == -2 && yO - yD == 2) || (xO - xD == 2 && yO - yD == -2) || (xO - xD == 2 && yO - yD == 2)) {
+            int x = xO;
+            int y = yO;
+            int nrReisHorizontalVertical = 0;
+            int nrReisVerticalHorizontal = 0;
+            boolean primeiroCaminho = true;
+            int direcaoHorizontal;
+            if (xO > xD) {
+                direcaoHorizontal = -1;
+            } else {
+                direcaoHorizontal = 1;
+            }
+            int direcaoVertical; // 1 = baixo  -1 = cima
+            if (yO > yD) {
+                direcaoVertical = -1;
+            } else {
+                direcaoVertical = 1;
+            }
+            //horizontal -> vertical
+            for (int i = 0; i < 2; i++) {
+                x += direcaoHorizontal;
+                if (Tabuleiro.existemCoordenadas(x,y,tabuleiro.length)) {
+                    if (tabuleiro[x][y] != 0) {
+                        if (pecas.get(tabuleiro[x][y]).getIdTipo() == GestorDeJogo.REI) {
+                            primeiroCaminho = false;
+                        }
+                    }
+                }
+            }
+            if (primeiroCaminho) {
+                for (int i = 0; i < 1; i++) {
+                    y += direcaoVertical;
+                    if (Tabuleiro.existemCoordenadas(x, y, tabuleiro.length)) {
+                        if (tabuleiro[x][y] != 0) {
+                            if (pecas.get(tabuleiro[x][y]).getIdTipo() == GestorDeJogo.REI) {
+                                primeiroCaminho = false;
+                            }
+                        }
+                    }
+                }
+            }
+            if (primeiroCaminho) {
+                return true;
+            }
+            x = xO;
+            y = yO;
+            //vertica -> horizontal
+            for (int i = 0; i < 2; i++) {
+                y += direcaoVertical;
+                if (Tabuleiro.existemCoordenadas(x,y,tabuleiro.length)) {
+                    if (tabuleiro[x][y] != 0) {
+                        if (pecas.get(tabuleiro[x][y]).getIdTipo() == GestorDeJogo.REI) {
+                            return false;
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < 1; i++) {
+                x += direcaoHorizontal;
+                if (Tabuleiro.existemCoordenadas(x,y,tabuleiro.length)) {
+                    if (tabuleiro[x][y] != 0) {
+                        if (pecas.get(tabuleiro[x][y]).getIdTipo() == GestorDeJogo.REI) {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

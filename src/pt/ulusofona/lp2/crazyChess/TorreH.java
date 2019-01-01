@@ -1,6 +1,6 @@
 package pt.ulusofona.lp2.crazyChess;
 
-import java.util.List;
+import java.util.Map;
 
 public class TorreH extends CrazyPiece {
 
@@ -8,38 +8,14 @@ public class TorreH extends CrazyPiece {
         super(idPeca, idTipo, idEquipa, alcunha);
     }
 
-    protected String getValorRelativo(){
-        return "3";
-    }
-
-    protected String getNome(){
+    @Override
+    protected String getNome() {
         return "TorreH";
     }
 
-    public boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno){
-        if (this.x != xD && this.y == yD) {
-            int x = this.x;
-            int y = this.y;
-            int direcaoHorizontal; // 1 = direita  -1 = esquerda
-            if (this.x > xD) {
-                direcaoHorizontal = -1;
-            } else {
-                direcaoHorizontal = 1;
-            }
-            while (x != xD) {
-                x += direcaoHorizontal;
-                if (x != xD) {
-                    for (CrazyPiece peca : pecas) {
-                        if (peca.getX() == x && peca.getY() == y) {
-                            return false;
-                        }
-                    }
-                }
-            }
-            return true;
-        } else {
-            return false;
-        }
+    @Override
+    protected String getValorRelativo() {
+        return "3";
     }
 
     @Override
@@ -53,5 +29,25 @@ public class TorreH extends CrazyPiece {
         else {
             return null;
         }
+    }
+
+    @Override
+    public boolean verificarSeMove(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int[][] tabuleiro, int turno) {
+        if (yO == yD && xO != xD) {
+            int direcao = 1;
+            if (xO > xD) {
+                direcao = -1;
+            }
+            while (xO != xD) {
+                if (Tabuleiro.existemCoordenadas(xO, yO, tabuleiro.length)) {
+                    if (tabuleiro[xO][yO] != 0 && tabuleiro[xO][yO] != this.idPeca) {
+                        return false;
+                    }
+                }
+                xO += direcao;
+            }
+            return true;
+        }
+        return false;
     }
 }

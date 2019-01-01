@@ -1,6 +1,6 @@
 package pt.ulusofona.lp2.crazyChess;
 
-import java.util.List;
+import java.util.Map;
 
 public class Lebre extends CrazyPiece {
 
@@ -8,20 +8,14 @@ public class Lebre extends CrazyPiece {
         super(idPeca, idTipo, idEquipa, alcunha);
     }
 
+    @Override
     protected String getValorRelativo(){
         return "2";
     }
 
+    @Override
     protected String getNome(){
         return "Lebre";
-    }
-
-    public boolean verificarSeMove(int xD, int yD, List<CrazyPiece> pecas, int turno) {
-        if (turno % 2 == 0 && (this.x - xD == 1 || this.x - xD == -1) && (this.y - yD == -1 || this.y - yD == 1)){
-            return true;
-        } else {
-            return false;
-        }
     }
 
     @Override
@@ -35,5 +29,13 @@ public class Lebre extends CrazyPiece {
         else {
             return null;
         }
-    }}
+    }
 
+    @Override
+    public boolean verificarSeMove(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int[][] tabuleiro, int turno) {
+        if (turno % 2 == 0 && (xO - xD == 1 || xO - xD == -1) && (yO - yD == -1 || yO - yD == 1)){
+            return true;
+        }
+        return false;
+    }
+}

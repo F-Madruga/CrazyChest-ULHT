@@ -19,19 +19,16 @@ public class GestorDeJogo {
     public final static int LEBRE = 6;
     public final static int JOKER = 7;
 
-    private int numPretas;
-    private int numBrancas;
     private int turno;
-    private int turnoSemCapturasAnterior;
     private int turnoSemCapturas;
-    private Map<Integer, Integer> capturas;
-    private Map<Integer, Integer> jogadasValidas;
-    private Map<Integer, Integer> jogadasInvalidas;
+    private int turnoSemCapturasAnterior;
     private int resultado;
+    private Map<Integer, Integer> numReis; //key = idEquipa -> value = numero de reis no turno atual e key = -idEquipa -> value = numero de reis no turno anterior
+    private Map<Integer, Integer> capturas; // key = -idEquipa -> value = numero de capturas da equipa, key = turno -> value = equipa que capturou naquele turno
+    private Map<Integer, Integer> jogadasValidas; // key = -idEquipa -> value = numero de jogadas valida da equipa, key = turno -> value = equipa que fez jogadas valida naquele turno
+    private Map<Integer, Integer> jogadasInvalidas;// key = idEquipa -> value = numero de jogadas invalidas
 
     public GestorDeJogo() {
-        this.numPretas = 0;
-        this.numBrancas = 0;
         this.turno = 0;
         this.turnoSemCapturas = 0;
         this.turnoSemCapturasAnterior = 0;
@@ -43,11 +40,20 @@ public class GestorDeJogo {
         this.jogadasValidas.put(-PRETA, 0);
         this.jogadasValidas.put(-BRANCA, 0);
         this.jogadasInvalidas = new HashMap<>();
-        this.jogadasInvalidas.put(-PRETA, 0);
-        this.jogadasInvalidas.put(-BRANCA, 0);
+        this.jogadasInvalidas.put(PRETA, 0);
+        this.jogadasInvalidas.put(BRANCA, 0);
+        this.numReis = new HashMap<>();
+        this.numReis.put(PRETA, 0);
+        this.numReis.put(BRANCA, 0);
+        this.numReis.put(-PRETA, 0);
+        this.numReis.put(-BRANCA, 0);
     }
 
-    public int quemEstaAjogar() {
+    public int getTurno() {
+        return turno;
+    }
+
+    public int quemEstaAJogar() {
         if (turno % 2 == 0) {
             return PRETA;
         }
@@ -56,79 +62,62 @@ public class GestorDeJogo {
         }
     }
 
-    public void adicionarPeca(CrazyPiece peca) {
-        if (peca.getIdTipo() == REI) {
-            if (peca.getIdEquipa() == PRETA) {
-                numPretas++;
-            }
-            if (peca.getIdEquipa() == BRANCA) {
-                numBrancas++;
-            }
+    public void contaRei(int idEquipa) {
+        if (idEquipa == PRETA || idEquipa == BRANCA) {
+            int numRei = this.numReis.get(idEquipa) + 1;
+            this.numReis.put(idEquipa, numRei);
+            this.numReis.put(-idEquipa, numRei);
         }
     }
 
-    public void adicionarCaptura(CrazyPiece peca) {
-        if (peca.getIdEquipa() == PRETA) {
-            int captura = this.capturas.get(-BRANCA) + 1;
-            capturas.put(-BRANCA, captura);
-            capturas.put(turno, BRANCA);
-        }
-        if (peca.getIdEquipa() == BRANCA) {
-            int captura = this.capturas.get(-PRETA) + 1;
-            capturas.put(-PRETA, captura);
-            capturas.put(turno, PRETA);
-        }
-        if (peca.getIdTipo() == REI) {
-            if (quemEstaAjogar() == PRETA) {
-                this.numBrancas--;
-            }
-            else {
-                this.numPretas--;
-            }
-        }
-        turnoSemCapturasAnterior = turnoSemCapturas;
-        turnoSemCapturas = 0;
-    }
-
-    public void validaJogada() {
-        if (quemEstaAjogar() == PRETA) {
-            int valida = jogadasValidas.get(-PRETA) + 1;
-            jogadasValidas.put(-PRETA, valida);
-            jogadasValidas.put(turno, PRETA);
-        }
-        else {
-            int valida = jogadasValidas.get(-BRANCA) + 1;
-            jogadasValidas.put(-BRANCA, valida);
-            jogadasValidas.put(turno, BRANCA);
-        }
+    private void validarJogada() {
+        int jogadasValidas = this.jogadasValidas.get(-quemEstaAJogar()) + 1;
+        this.jogadasValidas.put(-quemEstaAJogar(), jogadasValidas);
+        this.jogadasValidas.put(this.turno, quemEstaAJogar());
         turno++;
-        Joker.rotacaoTipoPeca = turno;
-    }
-
-    public void invalidaJogada() {
-        if (quemEstaAjogar() == PRETA) {
-            int valida = jogadasInvalidas.get(-PRETA) + 1;
-            jogadasInvalidas.put(-PRETA, valida);
-            jogadasInvalidas.put(turno, PRETA);
-        }
-        else {
-            int valida = jogadasInvalidas.get(-BRANCA) + 1;
-            jogadasInvalidas.put(-BRANCA, valida);
-            jogadasInvalidas.put(turno, BRANCA);
-        }
+        Joker.ROTACAOTIPOPECA = turno;
     }
 
     public void naoHouveCaptura() {
-        turnoSemCapturasAnterior = turnoSemCapturas;
-        turnoSemCapturas++;
+        this.turnoSemCapturasAnterior = this.turnoSemCapturas;
+        this.turnoSemCapturas++;
+        int numReisAnterior = this.numReis.get(quemEstaAJogar());
+        this.numReis.put(-quemEstaAJogar(), numReisAnterior);
+        validarJogada();
+    }
+
+    public void adicionarCaptura(int idTipo) {
+        int capturas = this.capturas.get(-quemEstaAJogar()) + 1;
+        this.capturas.put(-quemEstaAJogar(), capturas);
+        this.capturas.put(this.turno, quemEstaAJogar());
+        if (idTipo == REI) {
+            int idEquipa;
+            if (quemEstaAJogar() == PRETA) {
+                idEquipa = BRANCA;
+            } else {
+                idEquipa = PRETA;
+            }
+            int numReis = this.numReis.get(idEquipa);
+            this.numReis.put(-idEquipa, numReis);
+            numReis -= 1;
+            this.numReis.put(idEquipa, numReis);
+        }
+        this.turnoSemCapturasAnterior = this.turnoSemCapturas;
+        this.turnoSemCapturas = 0;
+        validarJogada();
+    }
+
+    public void invalidarJogada() {
+        int jogadasInvalidas = this.jogadasInvalidas.get(quemEstaAJogar()) + 1;
+        this.jogadasInvalidas.put(quemEstaAJogar(), jogadasInvalidas);
     }
 
     public boolean possoTerminar() {
-        if (turnoSemCapturas >= 10 || (numBrancas == 1 && numPretas == 1) || numBrancas <= 0 || numPretas <= 0) {
-            if (numPretas >= 1 && numBrancas <= 0) {
-                resultado = PRETA;
-            } else if (numBrancas >= 1 && numPretas <= 0) {
-                resultado = BRANCA;
+        if (this.turnoSemCapturas >= 10 || (this.numReis.get(BRANCA) == 1 && this.numReis.get(PRETA) == 1) || this.numReis.get(BRANCA) <= 0 || this.numReis.get(PRETA) <= 0) {
+            if (this.numReis.get(PRETA) >= 1 && this.numReis.get(BRANCA) <= 0) {
+                this.resultado = PRETA;
+            } else if (this.numReis.get(PRETA) >= 1 && this.numReis.get(BRANCA) <= 0) {
+                this.resultado = BRANCA;
             } else {
                 this.resultado = -1;
             }
@@ -137,72 +126,67 @@ public class GestorDeJogo {
         return false;
     }
 
-    public int getTurno() {
-        return this.turno;
-    }
-
     public List<String> getResultado () {
         List<String> resultados = new ArrayList<>();
-        String resultado = "JOGO DE CRAZY CHESS";
-        resultados.add(resultado);
-        resultado = "Resultado: ";
+        resultados.add("JOGO DE CRAZY CHESS");
         if (this.resultado == PRETA) {
-            resultado += "VENCERAM AS PRETAS";
+            resultados.add("Resultado: VENCERAM AS PRETAS");
         }
         if (this.resultado == BRANCA) {
-            resultado += "VENCERAM AS BRANCAS";
+            resultados.add("Resultado: VENCERAM AS BRANCAS");
         }
         if (this.resultado == -1) {
-            resultado += "EMPATE";
+            resultados.add("Resultado: EMPATE");
         }
-        int capturasBrancas = capturas.get(-BRANCA);
-        int capturaPretas = capturas.get(-PRETA);
-        int validasBrancas = jogadasValidas.get(-BRANCA);
-        int validasPretas = jogadasValidas.get(-PRETA);
-        int inValidasBrancas = jogadasInvalidas.get(-BRANCA);
-        int inValidasPretas = jogadasInvalidas.get(-PRETA);
-        resultados.add(resultado);
-        resultado = "---";
-        resultados.add(resultado);
-        resultado = "Equipa das Pretas";
-        resultados.add(resultado);
-        resultado = Integer.toString(capturaPretas);
-        resultados.add(resultado);
-        resultado = Integer.toString(validasPretas);
-        resultados.add(resultado);
-        resultado = Integer.toString(inValidasPretas);
-        resultados.add(resultado);
-        resultado = "Equipa das Brancas";
-        resultados.add(resultado);
-        resultado = Integer.toString(capturasBrancas);
-        resultados.add(resultado);
-        resultado = Integer.toString(validasBrancas);
-        resultados.add(resultado);
-        resultado = Integer.toString(inValidasBrancas);
-        resultados.add(resultado);
+        resultados.add("---");
+        resultados.add("Equipa das Pretas");
+        resultados.add(Integer.toString(this.capturas.get(-PRETA)));
+        resultados.add(Integer.toString(this.jogadasValidas.get(-PRETA)));
+        resultados.add(Integer.toString(this.jogadasInvalidas.get(PRETA)));
+        resultados.add("Equipa das Brancas");
+        resultados.add(Integer.toString(this.capturas.get(-BRANCA)));
+        resultados.add(Integer.toString(this.jogadasValidas.get(-BRANCA)));
+        resultados.add(Integer.toString(this.jogadasInvalidas.get(BRANCA)));
         return resultados;
     }
 
     public void undo() {
-        turno--;
-        Joker.rotacaoTipoPeca = turno;
-        turnoSemCapturas = turnoSemCapturasAnterior;
-        if (capturas.containsKey(turno)) {
-            int equipa = capturas.get(turno);
-            int captura = capturas.get(-equipa) - 1;
-            capturas.put(-equipa, captura);
-            capturas.remove(turno);
+        this.turno--;
+        Joker.ROTACAOTIPOPECA = turno;
+        this.turnoSemCapturas = this.turnoSemCapturasAnterior;
+        int numReis = this.numReis.get(-quemEstaAJogar());
+        this.numReis.put(quemEstaAJogar(), numReis);
+        if (this.capturas.containsKey(turno)) {
+            this.capturas.remove(turno);
+            int capturas = this.capturas.get(-quemEstaAJogar()) - 1;
+            this.capturas.put(-quemEstaAJogar(), capturas);
         }
-        if (jogadasValidas.containsKey(turno)) {
-            int equipa = jogadasValidas.get(turno);
-            int captura = jogadasValidas.get(-equipa) - 1;
-            jogadasValidas.put(-equipa, captura);
-            jogadasValidas.remove(turno);
+        if (this.jogadasValidas.containsKey(turno)) {
+            this.jogadasValidas.remove(turno);
+            int jogadasValidas = this.jogadasValidas.get(-quemEstaAJogar()) - 1;
+            this.jogadasValidas.put(-quemEstaAJogar(), jogadasValidas);
         }
     }
 
-    public int getTurnoSemCapturas() {
-        return turnoSemCapturas;
+    public void loadEquipaAJogar(int equipaAJogar) {
+        if (equipaAJogar == PRETA) {
+            this.turno = 0;
+        }
+        else {
+            this.turno = 1;
+        }
+    }
+
+    public void loadCapturas(int idEquipa, int numCapturas) {
+        this.capturas.put(-idEquipa, numCapturas);
+    }
+
+    public void loadJogadasValidas(int idEquipa, int numJogadasValidas) {
+        this.jogadasValidas.put(-idEquipa, numJogadasValidas);
+    }
+
+    public void loadJogadasInvalidas(int idEquipa, int numJogadasInvalidas) {
+        this.jogadasInvalidas.put(idEquipa, numJogadasInvalidas);
     }
 
     public Map<Integer, Integer> getCapturas() {
@@ -215,26 +199,5 @@ public class GestorDeJogo {
 
     public Map<Integer, Integer> getJogadasInvalidas() {
         return jogadasInvalidas;
-    }
-
-    public void setEquipaAJogar(int equipaAJogar) {
-        if (equipaAJogar == PRETA) {
-            this.turno = 0;
-        }
-        else {
-            this.turno = 1;
-        }
-    }
-
-    public void setCapturas(int equipa, int numCapturas) {
-        capturas.put(-equipa, numCapturas);
-    }
-
-    public void setJogadasValidas(int equipa, int numCapturas) {
-        jogadasValidas.put(-equipa, numCapturas);
-    }
-
-    public void setJogadasInvalidas(int equipa, int numCapturas) {
-        jogadasInvalidas.put(-equipa, numCapturas);
     }
 }
