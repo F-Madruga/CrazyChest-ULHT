@@ -141,13 +141,13 @@ public class GestorDeJogo {
         }
         resultados.add("---");
         resultados.add("Equipa das Pretas");
-        resultados.add(Integer.toString(this.capturas.get(-PRETA)));
-        resultados.add(Integer.toString(this.jogadasValidas.get(-PRETA)));
-        resultados.add(Integer.toString(this.jogadasInvalidas.get(PRETA)));
+        resultados.add(" Capturas: " + Integer.toString(this.capturas.get(-PRETA)));
+        resultados.add(" Jogadas válidas: " + Integer.toString(this.jogadasValidas.get(-PRETA)));
+        resultados.add(" Tentativas inválidas: " + Integer.toString(this.jogadasInvalidas.get(PRETA)));
         resultados.add("Equipa das Brancas");
-        resultados.add(Integer.toString(this.capturas.get(-BRANCA)));
-        resultados.add(Integer.toString(this.jogadasValidas.get(-BRANCA)));
-        resultados.add(Integer.toString(this.jogadasInvalidas.get(BRANCA)));
+        resultados.add(" Capturas: " + Integer.toString(this.capturas.get(-BRANCA)));
+        resultados.add(" Jogadas válidas: " + Integer.toString(this.jogadasValidas.get(-BRANCA)));
+        resultados.add(" Tentativas inválidas: " + Integer.toString(this.jogadasInvalidas.get(BRANCA)));
         return resultados;
     }
 
