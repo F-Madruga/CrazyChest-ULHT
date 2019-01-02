@@ -1090,7 +1090,7 @@
 											"top": 957,
 											"width": 408.80859375,
 											"height": 15,
-											"text": "+loadEquipaAJogar(equipaAJogar: int): void",
+											"text": "+loadEquipaAJogar(): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -7026,15 +7026,6 @@
 							},
 							"name": "loadEquipaAJogar",
 							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFoCYucwwwT98o=",
-									"_parent": {
-										"$ref": "AAAAAAFoCYTURAtnJW4="
-									},
-									"name": "equipaAJogar",
-									"type": "int"
-								},
 								{
 									"_type": "UMLParameter",
 									"_id": "AAAAAAFoCYucxAwUfUU=",

@@ -176,13 +176,11 @@ public class GestorDeJogo {
         }
     }
 
-    public void loadEquipaAJogar(int equipaAJogar) {
-        if (equipaAJogar == PRETA) {
-            this.turno = 0;
-        }
-        else {
-            this.turno = 1;
-        }
+    public void loadEquipaAJogar() {
+        int jogadasValidasPreto = jogadasValidas.get(-PRETA);
+        int jogadasValidasBranco = jogadasValidas.get(-BRANCA);
+        turno = jogadasValidasBranco + jogadasValidasPreto;
+        Joker.ROTACAOTIPOPECA = turno;
     }
 
     public void loadCapturas(int idEquipa, int numCapturas) {

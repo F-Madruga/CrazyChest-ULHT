@@ -79,13 +79,13 @@ public class Tabuleiro {
     }
 
     public void load(String [] dados) {
-        this.gestor.loadEquipaAJogar(Integer.parseInt(dados[0]));
         this.gestor.loadCapturas(GestorDeJogo.PRETA, Integer.parseInt(dados[1]));
         this.gestor.loadJogadasValidas(GestorDeJogo.PRETA, Integer.parseInt(dados[2]));
         this.gestor.loadJogadasInvalidas(GestorDeJogo.PRETA, Integer.parseInt(dados[3]));
         this.gestor.loadCapturas(GestorDeJogo.BRANCA, Integer.parseInt(dados[4]));
         this.gestor.loadJogadasValidas(GestorDeJogo.BRANCA, Integer.parseInt(dados[5]));
         this.gestor.loadJogadasInvalidas(GestorDeJogo.BRANCA, Integer.parseInt(dados[6]));
+        this.gestor.loadEquipaAJogar();
     }
 
     public void undo() {
