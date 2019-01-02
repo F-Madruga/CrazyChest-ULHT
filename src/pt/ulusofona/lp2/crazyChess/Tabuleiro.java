@@ -78,16 +78,6 @@ public class Tabuleiro {
         return this.gestor.getResultado();
     }
 
-    public void load(String [] dados) {
-        this.gestor.loadCapturas(GestorDeJogo.PRETA, Integer.parseInt(dados[1]));
-        this.gestor.loadJogadasValidas(GestorDeJogo.PRETA, Integer.parseInt(dados[2]));
-        this.gestor.loadJogadasInvalidas(GestorDeJogo.PRETA, Integer.parseInt(dados[3]));
-        this.gestor.loadCapturas(GestorDeJogo.BRANCA, Integer.parseInt(dados[4]));
-        this.gestor.loadJogadasValidas(GestorDeJogo.BRANCA, Integer.parseInt(dados[5]));
-        this.gestor.loadJogadasInvalidas(GestorDeJogo.BRANCA, Integer.parseInt(dados[6]));
-        this.gestor.loadEquipaAJogar();
-    }
-
     public void undo() {
         if(this.fazerUndo && gestor.getTurno() > 0) {
             this.gestor.undo();
@@ -104,6 +94,7 @@ public class Tabuleiro {
     }
 
     public List<String> obterSugestoesJogada(int xO, int yO) {
+        Joker.ROTACAOTIPOPECA = gestor.getTurno();
         List<String> sugestoes = new ArrayList<>();
         if (existemCoordenadas(xO, yO, this.tamanho)) {
             if (this.tabuleiro[xO][yO] != 0) {
@@ -117,6 +108,7 @@ public class Tabuleiro {
     }
 
     public boolean processaJogada(int xO, int yO, int xD, int yD) {
+        Joker.ROTACAOTIPOPECA = gestor.getTurno();
         if (existemCoordenadas(xO, yO, this.tamanho) && existemCoordenadas(xD, yD, this.tamanho)) {
             if (this.tabuleiro[xO][yO] != 0) {
                 if (this.pecas.get(this.tabuleiro[xO][yO]).getIdEquipa() == quemEstaAJogar()) {
@@ -150,6 +142,16 @@ public class Tabuleiro {
         return false;
     }
 
+    public void load(String [] dados) {
+        this.gestor.loadCapturas(GestorDeJogo.PRETA, Integer.parseInt(dados[2]));
+        this.gestor.loadJogadasValidas(GestorDeJogo.PRETA, Integer.parseInt(dados[1]));
+        this.gestor.loadJogadasInvalidas(GestorDeJogo.PRETA, Integer.parseInt(dados[3]));
+        this.gestor.loadCapturas(GestorDeJogo.BRANCA, Integer.parseInt(dados[5]));
+        this.gestor.loadJogadasValidas(GestorDeJogo.BRANCA, Integer.parseInt(dados[4]));
+        this.gestor.loadJogadasInvalidas(GestorDeJogo.BRANCA, Integer.parseInt(dados[6]));
+        this.gestor.loadEquipaAJogar();
+    }
+
     public boolean gravarJogo(File ficheiroDestino) {
         try {
             FileWriter writer = new FileWriter (ficheiroDestino);
@@ -174,7 +176,7 @@ public class Tabuleiro {
                 }
                 writer.write(newLine);
             }
-            writer.write(Integer.toString(quemEstaAJogar()) + ":" + Integer.toString(this.gestor.getCapturas().get(-GestorDeJogo.PRETA)) + ":" + Integer.toString(this.gestor.getJogadasValidas().get(-GestorDeJogo.PRETA)) + ":" + Integer.toString(this.gestor.getJogadasInvalidas().get(GestorDeJogo.PRETA)) + ":" + Integer.toString(this.gestor.getCapturas().get(-GestorDeJogo.BRANCA)) + ":" + Integer.toString(this.gestor.getJogadasValidas().get(-GestorDeJogo.BRANCA)) + ":" + Integer.toString(this.gestor.getJogadasInvalidas().get(GestorDeJogo.BRANCA)));
+            writer.write(Integer.toString(quemEstaAJogar()) + ":" + Integer.toString(this.gestor.getJogadasValidas().get(-GestorDeJogo.PRETA)) + ":" + Integer.toString(this.gestor.getCapturas().get(-GestorDeJogo.PRETA)) + ":" + Integer.toString(this.gestor.getJogadasInvalidas().get(GestorDeJogo.PRETA)) + ":" + Integer.toString(this.gestor.getJogadasValidas().get(-GestorDeJogo.BRANCA)) + ":" + Integer.toString(this.gestor.getCapturas().get(-GestorDeJogo.BRANCA)) + ":" + Integer.toString(this.gestor.getJogadasInvalidas().get(GestorDeJogo.BRANCA)));
             writer.close();
             return true;
         }

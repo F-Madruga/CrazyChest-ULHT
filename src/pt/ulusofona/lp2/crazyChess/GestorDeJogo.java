@@ -47,6 +47,7 @@ public class GestorDeJogo {
         this.numReis.put(BRANCA, 0);
         this.numReis.put(-PRETA, 0);
         this.numReis.put(-BRANCA, 0);
+        Joker.ROTACAOTIPOPECA = turno;
     }
 
     public int getTurno() {

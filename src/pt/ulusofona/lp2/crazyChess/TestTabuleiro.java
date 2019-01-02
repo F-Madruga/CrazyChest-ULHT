@@ -148,30 +148,6 @@ public class TestTabuleiro {
     }
 
     @Test
-    public void test10Undo() {
-        Tabuleiro tabuleiro = new Tabuleiro(4);
-        tabuleiro.fazerUndo = true;
-        int [][] tabuleiroMatrix = new int[4][4];
-        for (int i = 0; i < tabuleiroMatrix.length; i++) {
-            for (int j = 0; j < tabuleiroMatrix[i].length; j++) {
-                tabuleiroMatrix[i][j] = 0;
-                tabuleiro.colocarNoTabuleiro(0, i, j);
-            }
-        }
-        Rei rei = new Rei(1, GestorDeJogo.REI, GestorDeJogo.BRANCA, "Rei");
-        tabuleiroMatrix[2][2] = rei.getId();
-        tabuleiro.acrescentaPeca(rei);
-        tabuleiro.colocarNoTabuleiro(rei.getId(), 2, 2);
-        tabuleiro.undo();
-        assertFalse(tabuleiro.fazerUndo);
-        for (int i = 0; i < tabuleiroMatrix.length; i++) {
-            for (int j = 0; j < tabuleiroMatrix[i].length; j++) {
-                assertTrue(tabuleiroMatrix[i][j] == tabuleiro.getTabuleiro()[i][j]);
-            }
-        }
-    }
-
-    @Test
     public void test11ObterSugestoesJogada() {
         Tabuleiro tabuleiro = new Tabuleiro(4);
         int [][] tabuleiroMatrix = new int[4][4];
