@@ -33,8 +33,35 @@ public class Rainha extends CrazyPiece {
     public boolean verificarSeMove(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int[][] tabuleiro, int turno) {
         if (((xO - xD <= 5 && xO - xD >= -5) && (yO - yD <= 5 && yO - yD >= -5)) && ((xO != xD && yO == yD) || (xO == xD && yO != yD) || (xO - xD == yO - yD) || (xO - xD == -(yO - yD)))) {
             if (tabuleiro[xD][yD] != 0) {
-                if (pecas.get(tabuleiro[xD][yD]).getIdTipo() == this.idTipo) {
-                    return false;
+                if (pecas.get(tabuleiro[xD][yD]).getIdTipo() == this.idTipo || pecas.get(tabuleiro[xD][yD]).getIdTipo() == GestorDeJogo.JOKER) {
+                    if (pecas.get(tabuleiro[xD][yD]).getIdTipo() == this.idTipo) {
+                        return false;
+                    } else {
+                        Joker joker = new Joker(0, GestorDeJogo.JOKER, 0, "Virtual");
+                        if (joker.getMascara().getIdTipo() == this.idTipo) {
+                            return false;
+                        }
+                    }
+                }
+            }
+            for (int x = -1; x <= 1; x++) {
+                for (int y = -1; y <= 1; y++) {
+                    if (Tabuleiro.existemCoordenadas(xD + x, yD + y, tabuleiro.length)) {
+                        if (tabuleiro[xD + x][yD + y] != 0) {
+                            if (pecas.get(tabuleiro[xD + x][yD + y]).getIdEquipa() != this.idEquipa && ((pecas.get(tabuleiro[xD + x][yD + y]).getIdTipo() == GestorDeJogo.PADREDAVILA || pecas.get(tabuleiro[xD + x][yD + y]).getIdTipo() == GestorDeJogo.JOKER))) {
+                                if (pecas.get(tabuleiro[xD + x][yD + y]).getIdTipo() == GestorDeJogo.PADREDAVILA) {
+                                    System.out.println("padre " + xD + x + ", " + yD + y);
+                                    return false;
+                                } else {
+                                    Joker joker = new Joker(0, GestorDeJogo.JOKER, 0, "Batman");
+                                    if (joker.getMascara().getIdTipo() == GestorDeJogo.PADREDAVILA) {
+                                        System.out.println("Joker padre " + xD + x + ", " + yD + y);
+                                        return false;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
             int x = xO;

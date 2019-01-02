@@ -39,8 +39,15 @@ public class PadreDaVila extends CrazyPiece {
                     if (x + xD >= 0 && yD >= 0 && xD + x != 0 && yD + y != y) {
                         if (Tabuleiro.existemCoordenadas(xD + x, yD + y, tabuleiro.length)) {
                             if (tabuleiro[xD + x][yD + y] != 0) {
-                                if (pecas.get(tabuleiro[xD + x][yD + y]).getIdEquipa() != this.idEquipa && pecas.get(tabuleiro[xD + x][yD + y]).getIdTipo() == GestorDeJogo.RAINHA) {
-                                    return false;
+                                if (pecas.get(tabuleiro[xD + x][yD + y]).getIdEquipa() != this.idEquipa && (pecas.get(tabuleiro[xD + x][yD + y]).getIdTipo() == GestorDeJogo.RAINHA || pecas.get(tabuleiro[xD + x][yD + y]).getIdTipo() == GestorDeJogo.JOKER)) {
+                                    if (pecas.get(tabuleiro[xD + x][yD + y]).getIdTipo() == GestorDeJogo.RAINHA) {
+                                        return false;
+                                    } else {
+                                        Joker joker = new Joker(0, GestorDeJogo.JOKER, 0, "Palhaço");
+                                        if (joker.getMascara().getIdTipo() == GestorDeJogo.RAINHA) {
+                                            return false;
+                                        }
+                                    }
                                 }
                             }
                         }
