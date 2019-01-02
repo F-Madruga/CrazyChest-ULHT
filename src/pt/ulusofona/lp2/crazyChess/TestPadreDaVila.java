@@ -8,6 +8,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class TestPadreDaVila {
+
     @Test
     public void test01VerificaMovimentosPossiveis() {
         int tabuleiroMatrix [][] = new int[8][8];
@@ -34,6 +35,7 @@ public class TestPadreDaVila {
         assertTrue(padre.verificarSeMove(4,4, 6, 2, pecas, tabuleiroMatrix, 0));
         assertTrue(padre.verificarSeMove(4,4, 7, 1, pecas, tabuleiroMatrix, 0));
     }
+
     @Test
     public void test02VerificaMovimentosComPecas(){
         int tabuleiroMatrix [][] = new int[8][8];
@@ -64,6 +66,7 @@ public class TestPadreDaVila {
             tabuleiroMatrix[4 + i][4 - i] = 0;
         }
     }
+
     @Test
     public void test03DistanciaRainha(){
         int tabuleiroMatrix [][] = new int[8][8];
@@ -129,31 +132,37 @@ public class TestPadreDaVila {
         assertTrue(padre.verificarSeMove(4, 4, 5, 5, pecas, tabuleiroMatrix, 0));
         tabuleiroMatrix[6][6] = 0;
     }
+
     @Test
     public void test04PNGPreta() {
         PadreDaVila padre = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, GestorDeJogo.PRETA, "Padre da Vila");
         assertEquals("preto_padre.png", padre.getImagePNG());
     }
+
     @Test
     public void test05PNGNula() {
         PadreDaVila padre = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, -1, "Padre da Vila");
         assertEquals(null, padre.getImagePNG());
     }
+
     @Test
     public void test06PNGBranca() {
         PadreDaVila padre = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, GestorDeJogo.BRANCA, "Padre da Vila");
         assertEquals("branco_padre.png", padre.getImagePNG());
     }
+
     @Test
     public void test07Nome() {
         PadreDaVila padre = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, GestorDeJogo.PRETA, "Padre da Vila");
         assertEquals("Padre da Vila", padre.getNome());
     }
+
     @Test
     public void test08ValorRelativo() {
         PadreDaVila padre = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, GestorDeJogo.PRETA, "Padre da Vila");
         assertEquals("3", padre.getValorRelativo());
     }
+
     @Test
     public void test09Sugestoes(){
         int tabuleiroMatrix [][] = new int[8][8];

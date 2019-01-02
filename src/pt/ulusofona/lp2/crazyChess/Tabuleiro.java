@@ -23,7 +23,7 @@ public class Tabuleiro {
     private int [][] tabuleiro;
     private int [][] tabuleiroAnterior;
     private GestorDeJogo gestor;
-    private boolean fazerUndo;
+    public boolean fazerUndo;
 
     public Tabuleiro(int tamanho) {
         this.tamanho = tamanho;
@@ -189,5 +189,17 @@ public class Tabuleiro {
                 this.tabuleiroAnterior[x][y] = this.tabuleiro[x][y];
             }
         }
+    }
+
+    public Map<Integer, CrazyPiece> getPecasMap() {
+        return pecas;
+    }
+
+    public int[][] getTabuleiro() {
+        return tabuleiro;
+    }
+
+    public int[][] getTabuleiroAnterior() {
+        return tabuleiroAnterior;
     }
 }

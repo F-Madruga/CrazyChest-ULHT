@@ -10,31 +10,37 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 
 public class TestRainha {
+
     @Test
     public void test01PNGPreta() {
         Rainha rainha = new Rainha(1, GestorDeJogo.RAINHA, GestorDeJogo.PRETA, "Rainha");
         assertEquals("preto_rainha.png", rainha.getImagePNG());
     }
+
     @Test
     public void test02PNGNula() {
         Rainha rainha = new Rainha(1, GestorDeJogo.RAINHA, -1, "Rainha");
         assertEquals(null, rainha.getImagePNG());
     }
+
     @Test
     public void test03PNGBranca() {
         Rainha rainha = new Rainha(1, GestorDeJogo.RAINHA, GestorDeJogo.BRANCA, "Rainha");
         assertEquals("branco_rainha.png", rainha.getImagePNG());
     }
+
     @Test
     public void test04Nome() {
         Rainha rainha = new Rainha(1, GestorDeJogo.RAINHA, GestorDeJogo.PRETA, "Rainha");
         assertEquals("Rainha", rainha.getNome());
     }
+
     @Test
     public void test05ValorRelativo() {
         Rainha rainha = new Rainha(1, GestorDeJogo.RAINHA, GestorDeJogo.PRETA, "Rainha");
         assertEquals("8", rainha.getValorRelativo());
     }
+
     @Test
     public void test06Sugestoes(){
         Rainha rainha = new Rainha(1, GestorDeJogo.RAINHA, GestorDeJogo.PRETA, "Rainha");
@@ -93,6 +99,7 @@ public class TestRainha {
         Collections.sort(sugestoesRecebidas);
         assertThat(sugestoesRecebidas, is(sugestoesPossiveis));
     }
+
     @Test
     public void test07PactoEntreRainhas(){
         int tabuleiroMatrix [][] = new int[4][4];
@@ -110,6 +117,7 @@ public class TestRainha {
         tabuleiroMatrix[1][1] = rainhaPreta.getId();
         assertFalse(rainhaPreta.verificarSeMove(1,1, 2, 2, pecas, tabuleiroMatrix, 0));
     }
+
     @Test
     public void test08MovimentosImpossiveis(){
         int tabuleiroMatrix [][] = new int[12][12];

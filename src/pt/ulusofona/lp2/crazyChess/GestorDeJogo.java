@@ -70,7 +70,7 @@ public class GestorDeJogo {
         }
     }
 
-    private void validarJogada() {
+    public void validarJogada() {
         int jogadasValidas = this.jogadasValidas.get(-quemEstaAJogar()) + 1;
         this.jogadasValidas.put(-quemEstaAJogar(), jogadasValidas);
         this.jogadasValidas.put(this.turno, quemEstaAJogar());
@@ -154,8 +154,15 @@ public class GestorDeJogo {
         this.turno--;
         Joker.ROTACAOTIPOPECA = turno;
         this.turnoSemCapturas = this.turnoSemCapturasAnterior;
-        int numReis = this.numReis.get(-quemEstaAJogar());
-        this.numReis.put(quemEstaAJogar(), numReis);
+        int idEquipa;
+        if (quemEstaAJogar() == PRETA) {
+            idEquipa = BRANCA;
+        }
+        else {
+            idEquipa = PRETA;
+        }
+        int numReis = this.numReis.get(-idEquipa);
+        this.numReis.put(idEquipa, numReis);
         if (this.capturas.containsKey(turno)) {
             this.capturas.remove(turno);
             int capturas = this.capturas.get(-quemEstaAJogar()) - 1;
@@ -199,5 +206,17 @@ public class GestorDeJogo {
 
     public Map<Integer, Integer> getJogadasInvalidas() {
         return jogadasInvalidas;
+    }
+
+    public Map<Integer, Integer> getNumReis() {
+        return numReis;
+    }
+
+    public int getTurnoSemCapturas() {
+        return turnoSemCapturas;
+    }
+
+    public int getTurnoSemCapturasAnterior() {
+        return turnoSemCapturasAnterior;
     }
 }

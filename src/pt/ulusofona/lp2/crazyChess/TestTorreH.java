@@ -8,6 +8,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class TestTorreH {
+
     @Test
     public void test01VerificaMovimentosPossiveis() {
         int tabuleiroMatrix [][] = new int[4][4];
@@ -25,6 +26,7 @@ public class TestTorreH {
         assertTrue(torre.verificarSeMove(1,1, 3, 1, pecas, tabuleiroMatrix, 0));
         assertTrue(torre.verificarSeMove(1,1, 0, 1, pecas, tabuleiroMatrix, 0));
     }
+
     @Test
     public void test02VerificaMovimentosComPecasNoMeio() {
         int tabuleiroMatrix [][] = new int[12][12];
@@ -50,31 +52,37 @@ public class TestTorreH {
             tabuleiroMatrix[6 - i][6] = 0;
         }
     }
+
     @Test
     public void test03PNGPreta(){
         TorreH torre = new TorreH(1, GestorDeJogo.TORREH, GestorDeJogo.PRETA, "TorreH");
         assertEquals("preto_torreH.png", torre.getImagePNG());
     }
+
     @Test
     public void test04PNGNula() {
         TorreH torre = new TorreH(1, GestorDeJogo.TORREH, -1, "TorreH");
         assertEquals(null, torre.getImagePNG());
     }
+
     @Test
     public void test05PNGBranca() {
         TorreH torre = new TorreH(1, GestorDeJogo.TORREH, GestorDeJogo.BRANCA, "TorreH");
         assertEquals("branco_torreH.png", torre.getImagePNG());
     }
+
     @Test
     public void test06Nome() {
         TorreH torre = new TorreH(1, GestorDeJogo.TORREH, GestorDeJogo.BRANCA, "TorreH");
         assertEquals("TorreH", torre.getNome());
     }
+
     @Test
     public void test07ValorRelativo() {
         TorreH torre = new TorreH(1, GestorDeJogo.TORREH, GestorDeJogo.BRANCA, "TorreH");
         assertEquals("3", torre.getValorRelativo());
     }
+
     @Test
     public void test08Sugestoes(){
         int tabuleiroMatrix [][] = new int[12][12];
