@@ -34,8 +34,8 @@ public class PadreDaVila extends CrazyPiece {
     @Override
     public boolean verificarSeMove(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int[][] tabuleiro, int turno) {
         if ((xO - xD <= 3 && xO - xD >= -3) && (yO - yD <= 3 && yO - yD >= -3) && (xO - xD == yO - yD || xO - xD == -(yO - yD))) {
-            for (int x = -2; x <= 2; x++) {
-                for (int y = -2; y <= 2; y++) {
+            for (int x = -1; x <= 1; x++) {
+                for (int y = -1; y <= 1; y++) {
                     if (x + xD >= 0 && yD >= 0 && xD + x != 0 && yD + y != y) {
                         if (Tabuleiro.existemCoordenadas(xD + x, yD + y, tabuleiro.length)) {
                             if (tabuleiro[xD + x][yD + y] != 0) {

@@ -2,10 +2,7 @@ package pt.ulusofona.lp2.crazyChess;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
@@ -121,7 +118,7 @@ public class TestLebre {
     }
     @Test
     public void test10Sugestoes() {
-        Lebre lebre = new Lebre(1, GestorDeJogo.LEBRE, GestorDeJogo.BRANCA, "Lebre");
+        Lebre lebre = new Lebre(1, GestorDeJogo.LEBRE, GestorDeJogo.PRETA, "Lebre");
         int tabuleiroMatrix [][] = new int[4][4];
         for (int x = 0; x < tabuleiroMatrix.length; x++) {
             for (int y = 0; y < tabuleiroMatrix[x].length; y++) {
@@ -136,8 +133,63 @@ public class TestLebre {
         List<String> sugestoesPossiveis = new ArrayList<>();
         sugestoesPossiveis.add("0, 0");
         sugestoesPossiveis.add("0, 2");
-        sugestoesPossiveis.add("2, 0");
         sugestoesPossiveis.add("2, 2");
+        sugestoesPossiveis.add("2, 0");
+        Collections.sort(sugestoesPossiveis);
+        Collections.sort(sugestoesRecebidas);
         assertThat(sugestoesRecebidas, is(sugestoesPossiveis));
+    }
+    @Test
+    public void test11SetCoordenadas(){
+        Lebre lebre = new Lebre(1, GestorDeJogo.LEBRE, GestorDeJogo.PRETA, "Lebre");
+        lebre.setCoordenadas(1,2);
+        assertEquals("(1, 2)", lebre.coordenadas);
+        assertEquals("(n/a)", lebre.coordenadasAnterior);
+    }
+    @Test
+    public void test12ResetCoordenadas(){
+        Lebre lebre = new Lebre(1, GestorDeJogo.LEBRE, GestorDeJogo.PRETA, "Lebre");
+        lebre.setCoordenadas(1,2);
+        lebre.resetCoordenadas();
+        assertEquals("(n/a)", lebre.coordenadas);
+        assertEquals("(1, 2)", lebre.coordenadasAnterior);
+    }
+    @Test
+    public void test13Undo(){
+        Lebre lebre = new Lebre(1, GestorDeJogo.LEBRE, GestorDeJogo.PRETA, "Lebre");
+        lebre.setCoordenadas(1,2);
+        lebre.undo();
+        assertEquals("(n/a)", lebre.coordenadas);
+    }
+    @Test
+    public void test14ToString(){
+        Lebre lebre = new Lebre(1, GestorDeJogo.LEBRE, GestorDeJogo.PRETA, "Lebre");
+        assertEquals(lebre.getId() + " | " + lebre.getNome() + " | " + lebre.getValorRelativo() + " | " + lebre.getIdEquipa() + " | " + lebre.getAlcunha() + " @ (n/a)", lebre.toString());
+    }
+    @Test
+    public void test15GetID(){
+        Lebre lebre = new Lebre(1, GestorDeJogo.LEBRE, GestorDeJogo.PRETA, "Lebre");
+        assertEquals(1, lebre.getId());
+    }
+    @Test
+    public void test16GetIDTipo(){
+        Lebre lebre = new Lebre(1, GestorDeJogo.LEBRE, GestorDeJogo.PRETA, "Lebre");
+        assertEquals(GestorDeJogo.LEBRE, lebre.getIdTipo());
+    }
+    @Test
+    public void test17GetAlcunha(){
+        Lebre lebre = new Lebre(1, GestorDeJogo.LEBRE, GestorDeJogo.PRETA, "Coelho");
+        assertEquals("Coelho", lebre.getAlcunha());
+    }
+    @Test
+    public void test18GetIDEquipa(){
+        Lebre lebre = new Lebre(1, GestorDeJogo.LEBRE, GestorDeJogo.PRETA, "Lebre");
+        assertEquals(GestorDeJogo.PRETA, lebre.getIdEquipa());
+    }
+    @Test
+    public void test19Equals(){
+        Lebre lebre = new Lebre(1, GestorDeJogo.LEBRE, GestorDeJogo.PRETA, "Lebre");
+        Lebre coelho = new Lebre(1, GestorDeJogo.LEBRE, GestorDeJogo.PRETA, "Coelho");
+        assertTrue(lebre.equals(coelho));
     }
 }

@@ -31,7 +31,7 @@ public class Rainha extends CrazyPiece {
 
     @Override
     public boolean verificarSeMove(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int[][] tabuleiro, int turno) {
-        if ((xO == xD && yO != yD) || (xO != xD && yO == yD) || (xO - xD <= 5 && xO - xD >= -5) && (yO - yD <= 5 && yO - yD >= -5) && (xO - xD == yO - yD || xO - xD == -(yO - yD))) {
+        if (((xO - xD <= 5 && xO - xD >= -5) && (yO - yD <= 5 && yO - yD >= -5)) && ((xO != xD && yO == yD) || (xO == xD && yO != yD) || (xO - xD == yO - yD) || (xO - xD == -(yO - yD)))) {
             if (tabuleiro[xD][yD] != 0) {
                 if (pecas.get(tabuleiro[xD][yD]).getIdTipo() == this.idTipo) {
                     return false;
