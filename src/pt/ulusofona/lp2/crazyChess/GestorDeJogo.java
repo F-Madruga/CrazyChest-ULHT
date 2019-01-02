@@ -151,27 +151,28 @@ public class GestorDeJogo {
     }
 
     public void undo() {
-        this.turno--;
-        Joker.ROTACAOTIPOPECA = turno;
-        this.turnoSemCapturas = this.turnoSemCapturasAnterior;
-        int idEquipa;
-        if (quemEstaAJogar() == PRETA) {
-            idEquipa = BRANCA;
-        }
-        else {
-            idEquipa = PRETA;
-        }
-        int numReis = this.numReis.get(-idEquipa);
-        this.numReis.put(idEquipa, numReis);
-        if (this.capturas.containsKey(turno)) {
-            this.capturas.remove(turno);
-            int capturas = this.capturas.get(-quemEstaAJogar()) - 1;
-            this.capturas.put(-quemEstaAJogar(), capturas);
-        }
-        if (this.jogadasValidas.containsKey(turno)) {
-            this.jogadasValidas.remove(turno);
-            int jogadasValidas = this.jogadasValidas.get(-quemEstaAJogar()) - 1;
-            this.jogadasValidas.put(-quemEstaAJogar(), jogadasValidas);
+        if (turno > 0) {
+            this.turno--;
+            Joker.ROTACAOTIPOPECA = turno;
+            this.turnoSemCapturas = this.turnoSemCapturasAnterior;
+            int idEquipa;
+            if (quemEstaAJogar() == PRETA) {
+                idEquipa = BRANCA;
+            } else {
+                idEquipa = PRETA;
+            }
+            int numReis = this.numReis.get(-idEquipa);
+            this.numReis.put(idEquipa, numReis);
+            if (this.capturas.containsKey(turno)) {
+                this.capturas.remove(turno);
+                int capturas = this.capturas.get(-quemEstaAJogar()) - 1;
+                this.capturas.put(-quemEstaAJogar(), capturas);
+            }
+            if (this.jogadasValidas.containsKey(turno)) {
+                this.jogadasValidas.remove(turno);
+                int jogadasValidas = this.jogadasValidas.get(-quemEstaAJogar()) - 1;
+                this.jogadasValidas.put(-quemEstaAJogar(), jogadasValidas);
+            }
         }
     }
 

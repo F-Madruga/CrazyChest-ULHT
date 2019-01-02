@@ -89,7 +89,7 @@ public class Tabuleiro {
     }
 
     public void undo() {
-        if(this.fazerUndo) {
+        if(this.fazerUndo && gestor.getTurno() > 0) {
             this.gestor.undo();
             for (CrazyPiece peca: getPecas()) {
                 peca.undo();
