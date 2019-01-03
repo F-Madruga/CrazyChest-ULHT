@@ -125,7 +125,7 @@ public class Tabuleiro {
                     }
                     else if (this.pecas.get(this.tabuleiro[xD][yD]).getIdEquipa() != quemEstaAJogar()) {
                         if (this.pecas.get(this.tabuleiro[xO][yO]).verificarSeMove(xO, yO, xD, yD, this.pecas, this.tabuleiro, this.gestor.getTurno())) {
-                            this.gestor.adicionarCaptura(this.pecas.get(this.tabuleiro[xO][yO]).getIdTipo());
+                            this.gestor.adicionarCaptura(this.pecas.get(this.tabuleiro[xD][yD]).getIdTipo());
                             atualizarAnterior();
                             this.pecas.get(this.tabuleiro[xO][yO]).setCoordenadas(xD, yD);
                             this.pecas.get(this.tabuleiro[xD][yD]).resetCoordenadas();

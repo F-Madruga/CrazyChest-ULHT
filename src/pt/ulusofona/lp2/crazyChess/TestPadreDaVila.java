@@ -39,30 +39,32 @@ public class TestPadreDaVila {
     @Test
     public void test02VerificaMovimentosComPecas(){
         int tabuleiroMatrix [][] = new int[8][8];
+        Rei rei = new Rei(2, GestorDeJogo.REI, GestorDeJogo.PRETA, "Rei");
+        Map<Integer, CrazyPiece> pecas = new HashMap<>();
+        pecas.put(rei.getId(), rei);
         for (int x = 0; x < tabuleiroMatrix.length; x++) {
             for (int y = 0; y < tabuleiroMatrix[x].length; y++) {
-                tabuleiroMatrix[x][y] = 0;
+                tabuleiroMatrix[x][y] = rei.getId();
             }
         }
         PadreDaVila padre = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, GestorDeJogo.PRETA, "Padre da Vila");
-        Map<Integer, CrazyPiece> pecas = new HashMap<>();
         pecas.put(padre.getId(), padre);
         tabuleiroMatrix[4][4] = padre.getId();
         padre.setCoordenadas(4,4);
-        Rei rei = new Rei(2, GestorDeJogo.REI, GestorDeJogo.PRETA, "Rei");
-        pecas.put(rei.getId(), rei);
-        for (int i = 1; i <= 2; i++) {
-            tabuleiroMatrix[4 + i][4 + i] = rei.getId();
-            assertFalse(padre.verificarSeMove(4, 4, 4 + (i + 1), 4 + (i + 1), pecas, tabuleiroMatrix, 0));
-            tabuleiroMatrix[4 + i][4 + i] = 0;
+        tabuleiroMatrix[3][3] = 0;
+        tabuleiroMatrix[2][2] = 0;
+        for (int i = 1; i < 3; i++) {
             tabuleiroMatrix[4 - i][4 + i] = rei.getId();
-            assertFalse(padre.verificarSeMove(4, 4, 4 - (i + 1), 4 + (i + 1), pecas, tabuleiroMatrix, 0));
-            tabuleiroMatrix[4 - i][4 + i] = 0;
+            tabuleiroMatrix[4 + i][4 + i] = rei.getId();
             tabuleiroMatrix[4 - i][4 - i] = rei.getId();
-            assertFalse(padre.verificarSeMove(4, 4, 4 - (i + 1), 4 - (i + 1), pecas, tabuleiroMatrix, 0));
-            tabuleiroMatrix[4 - i][4 - i] = 0;
             tabuleiroMatrix[4 + i][4 - i] = rei.getId();
-            assertFalse(padre.verificarSeMove(4, 4, 4 + (i + 1), 4 - (i + 1), pecas, tabuleiroMatrix, 0));
+            assertFalse(padre.verificarSeMove(4,4,1, 1, pecas, tabuleiroMatrix, 0));
+            assertFalse(padre.verificarSeMove(4,4,7, 7, pecas, tabuleiroMatrix, 0));
+            assertFalse(padre.verificarSeMove(4,4,7, 1, pecas, tabuleiroMatrix, 0));
+            assertFalse(padre.verificarSeMove(4,4,1, 7, pecas, tabuleiroMatrix, 0));
+            tabuleiroMatrix[4 - i][4 + i] = 0;
+            tabuleiroMatrix[4 + i][4 + i] = 0;
+            tabuleiroMatrix[4 - i][4 - i] = 0;
             tabuleiroMatrix[4 + i][4 - i] = 0;
         }
     }

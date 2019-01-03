@@ -70,6 +70,10 @@ public class TestGestorDeJogo {
         GestorDeJogo gestor = new GestorDeJogo();
         gestor.naoHouveCaptura();
         assertEquals(0, gestor.getTurnoSemCapturasAnterior());
+        assertEquals(0, gestor.getTurnoSemCapturas());
+        gestor.adicionarCaptura(GestorDeJogo.RAINHA);
+        gestor.naoHouveCaptura();
+        assertEquals(0, gestor.getTurnoSemCapturasAnterior());
         assertEquals(1, gestor.getTurnoSemCapturas());
         int numReisAnterior = gestor.getNumReis().get(-GestorDeJogo.PRETA);
         assertEquals(0, numReisAnterior);
@@ -109,8 +113,8 @@ public class TestGestorDeJogo {
         gestor.adicionarCaptura(GestorDeJogo.REI);
         gestor.undo();
         assertEquals(1, gestor.getTurno());
-        assertEquals(1, gestor.getTurnoSemCapturas());
-        assertEquals(1, gestor.getTurnoSemCapturasAnterior());
+        assertEquals(0, gestor.getTurnoSemCapturas());
+        assertEquals(0, gestor.getTurnoSemCapturasAnterior());
         int numReis = gestor.getNumReis().get(GestorDeJogo.PRETA);
         int numReisAnterior = gestor.getNumReis().get(-GestorDeJogo.PRETA);
         assertEquals(1, numReis);

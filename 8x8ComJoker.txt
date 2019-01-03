@@ -1,12 +1,12 @@
 12
 10
-1:7:10:Chefe
+1:1:10:Chefe
 2:1:20:Chefe10
 4:0:10:Chefe20
 5:0:20:Chefe30
 6:0:10:Chefe30
 7:0:20:Chefe30
-8:7:20:Chefe40
+8:1:20:Chefe40
 9:1:10:Chefe40
 11:3:10:Chefe40
 12:3:20:Chefe40

@@ -119,14 +119,16 @@ public class GestorDeJogo {
     }
 
     public boolean possoTerminar() {
-        if (this.turnoSemCapturas >= 10 || (this.numReis.get(BRANCA) == 1 && this.numReis.get(PRETA) == 1) || this.numReis.get(BRANCA) <= 0 || this.numReis.get(PRETA) <= 0) {
-            if (this.numReis.get(PRETA) >= 1 && this.numReis.get(BRANCA) <= 0) {
-                this.resultado = PRETA;
-            } else if (this.numReis.get(PRETA) >= 1 && this.numReis.get(BRANCA) <= 0) {
-                this.resultado = BRANCA;
-            } else {
-                this.resultado = -1;
-            }
+        if (this.turnoSemCapturas >= 10 || (this.numReis.get(BRANCA) <= 1 && this.numReis.get(PRETA) <= 1)) {
+            this.resultado = -1;
+            return true;
+        }
+        if (this.numReis.get(PRETA) == 0) {
+            resultado = BRANCA;
+            return true;
+        }
+        if (this.numReis.get(BRANCA) == 0) {
+            resultado = PRETA;
             return true;
         }
         return false;
