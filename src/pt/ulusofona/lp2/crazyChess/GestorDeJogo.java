@@ -81,7 +81,12 @@ public class GestorDeJogo {
 
     public void naoHouveCaptura() {
         this.turnoSemCapturasAnterior = this.turnoSemCapturas;
-        this.turnoSemCapturas++;
+        int capturasPreto = this.capturas.get(-GestorDeJogo.PRETA);
+        int capturasBranco = this.capturas.get(-GestorDeJogo.BRANCA);
+        int capturas = capturasBranco + capturasPreto;
+        if (capturas > 0) {
+            this.turnoSemCapturas++;
+        }
         int numReisAnterior = this.numReis.get(quemEstaAJogar());
         this.numReis.put(-quemEstaAJogar(), numReisAnterior);
         validarJogada();

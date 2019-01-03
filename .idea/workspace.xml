@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1be8c10-7646-4fc7-9e53-9891c1a8ac13" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestPadreDaVila.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestPadreDaVila.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -191,14 +189,14 @@
     <session id="-258842643">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="37" />
+          <entry key="project.closed" value="38" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.10" value="4" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="4" />
           <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.14" value="4" />
+          <entry key="project.open.time.14" value="5" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.19" value="1" />
@@ -212,14 +210,14 @@
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="38" />
+          <entry key="project.opened" value="39" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="8x8ComJokerGravacao" value="1" />
           <entry key="Exemplo12x12" value="1" />
-          <entry key="java" value="303" />
+          <entry key="java" value="304" />
           <entry key="png" value="24" />
           <entry key="txt" value="24" />
         </counts>
@@ -227,26 +225,26 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="24" />
-          <entry key="JAVA" value="303" />
+          <entry key="JAVA" value="304" />
           <entry key="PLAIN_TEXT" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="18593" />
+          <entry key="java" value="18679" />
           <entry key="txt" value="177" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="18593" />
+          <entry key="JAVA" value="18679" />
           <entry key="PLAIN_TEXT" value="177" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -386,7 +384,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestTorreV">
+  <component name="RunManager" selected="Application.AppLauncher">
     <configuration name="AppLauncher" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.guiSimulator.AppLauncher" />
       <module name="CrazyChess" />
@@ -563,13 +561,11 @@
       <workItem from="1546457096939" duration="5224000" />
       <workItem from="1546462880831" duration="1248000" />
       <workItem from="1546464571323" duration="1386000" />
+      <workItem from="1546520565506" duration="474000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestTorreV - 2019.01.02 at 20h 19m 37s.xml">
-      <configuration name="TestTorreV" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestGestorDeJogo - 2019.01.02 at 20h 53m 15s.xml">
       <configuration name="TestGestorDeJogo" configurationId="JUnit" />
     </history-entry>
@@ -597,14 +593,17 @@
     <history-entry file="TestTorreV - 2019.01.02 at 20h 56m 07s.xml">
       <configuration name="TestTorreV" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestTorreV - 2019.01.03 at 13h 06m 19s.xml">
+      <configuration name="TestTorreV" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267781000" />
+    <option name="totallyTimeSpent" value="268255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34391534" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -748,10 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="method#getImagePNG#0;class#Lebre#0" />
-            <element signature="method#verificarSeMove#0;class#Lebre#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -759,9 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="method#main#0;class#Main#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -804,10 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="method#getImagePNG#0;class#Rei#0" />
-            <element signature="method#verificarSeMove#0;class#Rei#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1015,28 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="129" column="40" selection-start-line="129" selection-start-column="40" selection-end-line="129" selection-end-column="40" />
-          <folding>
-            <element signature="method#GestorDeJogo#0;class#GestorDeJogo#0" />
-            <element signature="method#quemEstaAJogar#0;class#GestorDeJogo#0" />
-            <element signature="method#contaRei#0;class#GestorDeJogo#0" />
-            <element signature="method#validarJogada#0;class#GestorDeJogo#0" />
-            <element signature="method#naoHouveCaptura#0;class#GestorDeJogo#0" />
-            <element signature="method#adicionarCaptura#0;class#GestorDeJogo#0" />
-            <element signature="method#invalidarJogada#0;class#GestorDeJogo#0" />
-            <element signature="method#possoTerminar#0;class#GestorDeJogo#0" />
-            <element signature="method#getResultado#0;class#GestorDeJogo#0" />
-            <element signature="method#undo#0;class#GestorDeJogo#0" />
-            <element signature="method#loadEquipaAJogar#0;class#GestorDeJogo#0" />
-            <element signature="method#loadJogadasValidas#0;class#GestorDeJogo#0" />
-            <element signature="method#loadJogadasInvalidas#0;class#GestorDeJogo#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TorreH.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1055,6 +1021,28 @@
           <folding>
             <element signature="method#getImagePNG#0;class#TorreV#0" />
             <element signature="method#verificarSeMove#0;class#TorreV#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="120" column="35" selection-start-line="120" selection-start-column="35" selection-end-line="120" selection-end-column="35" />
+          <folding>
+            <element signature="method#GestorDeJogo#0;class#GestorDeJogo#0" />
+            <element signature="method#quemEstaAJogar#0;class#GestorDeJogo#0" />
+            <element signature="method#contaRei#0;class#GestorDeJogo#0" />
+            <element signature="method#validarJogada#0;class#GestorDeJogo#0" />
+            <element signature="method#naoHouveCaptura#0;class#GestorDeJogo#0" />
+            <element signature="method#adicionarCaptura#0;class#GestorDeJogo#0" />
+            <element signature="method#invalidarJogada#0;class#GestorDeJogo#0" />
+            <element signature="method#possoTerminar#0;class#GestorDeJogo#0" />
+            <element signature="method#getResultado#0;class#GestorDeJogo#0" />
+            <element signature="method#undo#0;class#GestorDeJogo#0" />
+            <element signature="method#loadEquipaAJogar#0;class#GestorDeJogo#0" />
+            <element signature="method#loadJogadasValidas#0;class#GestorDeJogo#0" />
+            <element signature="method#loadJogadasInvalidas#0;class#GestorDeJogo#0" />
           </folding>
         </state>
       </provider>
