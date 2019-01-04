@@ -36,7 +36,7 @@ public class TorreH extends CrazyPiece {
     public boolean verificarSeMove(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int[][] tabuleiro, int turno) {
         if (move(xO, yO, xD, yD) && moveHorizontal(yO, yD)) {
             List<CrazyPiece> pecasNoCaminho = getPecasNoCaminho(xO, yO, xD, yD, pecas, tabuleiro);
-            if (pecas.isEmpty()) {
+            if (pecasNoCaminho.isEmpty()) {
                 return true;
             }
         }
