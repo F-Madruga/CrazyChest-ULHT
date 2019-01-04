@@ -29,5 +29,11 @@ public class Main {
         testTabuleiro.test07ObterSugestoesJogada();
         testTabuleiro.test08ProcessaJogada();
         testTabuleiro.test09AtualizarAnterior();
+
+        TestCrazyPiece testCrazyPiece = new TestCrazyPiece();
+        testCrazyPiece.test01MoveHorizonal();
+        testCrazyPiece.test02MoveVertical();
+        testCrazyPiece.test03MoveDiagonal();
+        testCrazyPiece.test04Move();
     }
 }
