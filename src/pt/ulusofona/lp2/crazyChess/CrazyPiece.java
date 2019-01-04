@@ -94,4 +94,87 @@ public abstract class CrazyPiece {
 
     public abstract boolean verificarSeMove(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int [][] tabuleiro, int turno);
 
+    protected boolean moveHorizontal(int yO, int yD) {
+        return yO == yD;
+    }
+
+    protected boolean moveVertical(int xO, int xD) {
+        return xO == xD;
+    }
+
+    protected boolean moveDiagonal(int xO, int yO, int xD, int yD) {
+        int distanciaH = xD - xO;
+        int distanciaV = yD - yO;
+        if (distanciaH < 0) {
+            distanciaH = -distanciaH;
+        }
+        if (distanciaV < 0) {
+            distanciaV = -distanciaV;
+        }
+        return distanciaH == distanciaV;
+    }
+
+    protected boolean move(int xO, int yO, int xD, int yD) {
+        return xO != xD || yO != yD;
+    }
+
+    protected boolean moveDentroLimite(int xO, int yO, int xD, int yD, int limite) {
+        int distanciaH = xD - xO;
+        int distanciaV = yD - yO;
+        if (distanciaH < 0) {
+            distanciaH = -distanciaH;
+        }
+        if (distanciaV < 0) {
+            distanciaV = -distanciaV;
+        }
+        return distanciaH <= limite && distanciaV <= limite;
+    }
+
+    protected List<CrazyPiece> getPecasNoCaminho(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int [][] tabuleiro) {
+        List<CrazyPiece> pecasNoCaminho = new ArrayList<>();
+        int direcaoHorizontal;
+        int direcaoVertical;
+        if (xO > xD) {
+            direcaoHorizontal = -1;
+        } else if (xO < xD){
+            direcaoHorizontal = 1;
+        }
+        else {
+            direcaoHorizontal = 0;
+        }
+        if (yO > yD) {
+            direcaoVertical = -1;
+        } else if (yO < yD){
+            direcaoVertical = 1;
+        }
+        else {
+            direcaoVertical = 0;
+        }
+        xO += direcaoHorizontal;
+        yO += direcaoVertical;
+        while (xO != xD || yO != yD) {
+            if (Tabuleiro.existemCoordenadas(xO, yO, tabuleiro.length)) {
+                if (tabuleiro[xO][yO] != 0) {
+                    pecasNoCaminho.add(pecas.get(tabuleiro[xO][yO]));
+                }
+            }
+            xO += direcaoHorizontal;
+            yO += direcaoVertical;
+        }
+        return pecasNoCaminho;
+    }
+
+    protected List<CrazyPiece> getPecasNumRaio(int x, int y, int raio, int [][] tabuleiro, Map<Integer, CrazyPiece> pecas) {
+        List<CrazyPiece> pecasAvolta = new ArrayList<>();
+        for (int i = -raio; i <= raio; i++) {
+            for (int j = -raio; j <= raio; j++) {
+                if (Tabuleiro.existemCoordenadas(x + i, y + j, tabuleiro.length)) {
+                    if (tabuleiro[x + i][y + j] != 0) {
+                        pecasAvolta.add(pecas.get(tabuleiro[x + i][y + j]));
+                    }
+                }
+            }
+        }
+        return pecasAvolta;
+    }
 }

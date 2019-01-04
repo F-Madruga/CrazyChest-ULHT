@@ -33,7 +33,7 @@ public class Rei extends CrazyPiece {
 
     @Override
     public boolean verificarSeMove(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int[][] tabuleiro, int turno) {
-        if ((xO - xD == 1 && (yO - yD <= 1 && yO - yD >= -1)) || (xO - xD == 0 && (yO - yD == 1 || yO - yD == -1)) || (xO - xD == -1 && (yO - yD <= 1 && yO - yD >= -1))) {
+        if (move(xO, yO, xD, yD) && (moveHorizontal(yO, yD) || moveVertical(xO, xD) || moveDiagonal(xO, yO, xD, yD)) && moveDentroLimite(xO, yO, xD, yD, 1)) {
             return true;
         }
         return false;

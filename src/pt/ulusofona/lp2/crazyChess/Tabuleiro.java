@@ -18,6 +18,10 @@ public class Tabuleiro {
         }
     }
 
+    public static boolean ALTERARCOORDENADASDESTINO = false;
+    public static int NOVOX = 0;
+    public static int NOVOY = 0;
+
     private int tamanho;
     private Map<Integer, CrazyPiece> pecas;
     private int [][] tabuleiro;
@@ -32,6 +36,8 @@ public class Tabuleiro {
         this.pecas = new HashMap<>();
         this.gestor = new GestorDeJogo();
         this.fazerUndo = false;
+        ALTERARCOORDENADASDESTINO = false;
+        Joker.ROTACAOTIPOPECA = gestor.getTurno();
     }
 
     public int getTamanho() {
@@ -109,30 +115,35 @@ public class Tabuleiro {
 
     public boolean processaJogada(int xO, int yO, int xD, int yD) {
         Joker.ROTACAOTIPOPECA = gestor.getTurno();
+        ALTERARCOORDENADASDESTINO = false;
         if (existemCoordenadas(xO, yO, this.tamanho) && existemCoordenadas(xD, yD, this.tamanho)) {
             if (this.tabuleiro[xO][yO] != 0) {
                 if (this.pecas.get(this.tabuleiro[xO][yO]).getIdEquipa() == quemEstaAJogar()) {
-                    if (this.tabuleiro[xD][yD] == 0) {
-                        if (this.pecas.get(this.tabuleiro[xO][yO]).verificarSeMove(xO, yO, xD, yD, this.pecas, this.tabuleiro, this.gestor.getTurno())) {
+                    if (this.pecas.get(this.tabuleiro[xO][yO]).verificarSeMove(xO, yO, xD, yD, this.pecas, this.tabuleiro, this.gestor.getTurno())) {
+                        if (ALTERARCOORDENADASDESTINO) {
+                            xD = NOVOX;
+                            yD = NOVOY;
+                            ALTERARCOORDENADASDESTINO = false;
+                        }
+                        atualizarAnterior();
+                        if (this.tabuleiro[xD][yD] == 0) {
                             this.gestor.naoHouveCaptura();
-                            atualizarAnterior();
-                            this.pecas.get(this.tabuleiro[xO][yO]).setCoordenadas(xD, yD);
                             this.tabuleiro[xD][yD] = this.tabuleiro[xO][yO];
-                            this.tabuleiro[xO][yO] = 0;
+                            this.pecas.get(this.tabuleiro[xD][yD]).setCoordenadas(xD, yD);
+                            this.tabuleiro[xO][yO]  = 0;
                             this.fazerUndo = true;
                             return true;
                         }
-                    }
-                    else if (this.pecas.get(this.tabuleiro[xD][yD]).getIdEquipa() != quemEstaAJogar()) {
-                        if (this.pecas.get(this.tabuleiro[xO][yO]).verificarSeMove(xO, yO, xD, yD, this.pecas, this.tabuleiro, this.gestor.getTurno())) {
-                            this.gestor.adicionarCaptura(this.pecas.get(this.tabuleiro[xD][yD]).getIdTipo());
-                            atualizarAnterior();
-                            this.pecas.get(this.tabuleiro[xO][yO]).setCoordenadas(xD, yD);
-                            this.pecas.get(this.tabuleiro[xD][yD]).resetCoordenadas();
-                            this.tabuleiro[xD][yD] = this.tabuleiro[xO][yO];
-                            this.tabuleiro[xO][yO] = 0;
-                            this.fazerUndo = true;
-                            return true;
+                        else {
+                            if (this.pecas.get(this.tabuleiro[xD][yD]).getIdEquipa() != quemEstaAJogar()) {
+                                this.gestor.adicionarCaptura( this.pecas.get(this.tabuleiro[xD][yD]).getIdTipo());
+                                this.pecas.get(this.tabuleiro[xD][yD]).resetCoordenadas();
+                                this.tabuleiro[xD][yD] = this.tabuleiro[xO][yO];
+                                this.pecas.get(this.tabuleiro[xD][yD]).setCoordenadas(xD, yD);
+                                this.tabuleiro[xO][yO]  = 0;
+                                this.fazerUndo = true;
+                                return true;
+                            }
                         }
                     }
                 }

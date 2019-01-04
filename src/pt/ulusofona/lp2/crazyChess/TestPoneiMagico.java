@@ -1,6 +1,5 @@
 package pt.ulusofona.lp2.crazyChess;
 
-import com.sun.org.apache.regexp.internal.RE;
 import org.junit.Test;
 
 import java.util.*;

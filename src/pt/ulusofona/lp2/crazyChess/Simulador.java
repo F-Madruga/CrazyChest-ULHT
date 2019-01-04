@@ -36,6 +36,9 @@ public class Simulador {
         if (idTipo == GestorDeJogo.JOKER) {
             peca = new Joker(idPeca, idTipo, idEquipa, alcunha);
         }
+        if (idTipo == GestorDeJogo.BEBADO) {
+            peca = new Bebado(idPeca, idTipo, idEquipa, alcunha);
+        }
         return peca;
     }
 
@@ -99,10 +102,8 @@ public class Simulador {
 
     public List<String> getAutores() {
         List<String> autores = new ArrayList<>();
-        String autor = "Francisco Silva";
-        autores.add(autor);
-        autor = "Rodrigo Cassanheira";
-        autores.add(autor);
+        autores.add("Francisco Silva");
+        autores.add("Rodrigo Cassanheira");
         return autores;
     }
 

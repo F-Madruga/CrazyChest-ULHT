@@ -27,8 +27,8 @@ public class TestTabuleiro {
     public void test03AcrescentaPeca() {
         Tabuleiro tabuleiro = new Tabuleiro(8);
         Rei rei = new Rei(1, GestorDeJogo.REI, GestorDeJogo.BRANCA, "Rei");
-        Rainha rainha = new Rainha(1, GestorDeJogo.RAINHA, GestorDeJogo.PRETA, "Rainha");
-        PadreDaVila padreDaVila = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, GestorDeJogo.BRANCA, "Padre");
+        Rainha rainha = new Rainha(2, GestorDeJogo.RAINHA, GestorDeJogo.PRETA, "Rainha");
+        PadreDaVila padreDaVila = new PadreDaVila(3, GestorDeJogo.PADREDAVILA, GestorDeJogo.BRANCA, "Padre");
         HashMap<Integer, CrazyPiece> pecasEsperadas = new HashMap<>();
         pecasEsperadas.put(rei.getId(), rei);
         pecasEsperadas.put(rainha.getId(), rainha);
@@ -44,8 +44,8 @@ public class TestTabuleiro {
     public void test04ColocarNoTabuleiro() {
         Tabuleiro tabuleiro = new Tabuleiro(8);
         Rei rei = new Rei(1, GestorDeJogo.REI, GestorDeJogo.BRANCA, "Rei");
-        Rainha rainha = new Rainha(1, GestorDeJogo.RAINHA, GestorDeJogo.PRETA, "Rainha");
-        PadreDaVila padreDaVila = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, GestorDeJogo.BRANCA, "Padre");
+        Rainha rainha = new Rainha(2, GestorDeJogo.RAINHA, GestorDeJogo.PRETA, "Rainha");
+        PadreDaVila padreDaVila = new PadreDaVila(3, GestorDeJogo.PADREDAVILA, GestorDeJogo.BRANCA, "Padre");
         HashMap<Integer, CrazyPiece> pecasEsperadas = new HashMap<>();
         pecasEsperadas.put(rei.getId(), rei);
         pecasEsperadas.put(rainha.getId(), rainha);
@@ -97,8 +97,8 @@ public class TestTabuleiro {
     public void test06GetPeca() {
         Tabuleiro tabuleiro = new Tabuleiro(12);
         Rei rei = new Rei(1, GestorDeJogo.REI, GestorDeJogo.BRANCA, "Rei");
-        Rainha rainha = new Rainha(1, GestorDeJogo.RAINHA, GestorDeJogo.PRETA, "Rainha");
-        PadreDaVila padreDaVila = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, GestorDeJogo.BRANCA, "Padre");
+        Rainha rainha = new Rainha(2, GestorDeJogo.RAINHA, GestorDeJogo.PRETA, "Rainha");
+        PadreDaVila padreDaVila = new PadreDaVila(3, GestorDeJogo.PADREDAVILA, GestorDeJogo.BRANCA, "Padre");
         HashMap<Integer, CrazyPiece> pecasEsperadas = new HashMap<>();
         pecasEsperadas.put(rei.getId(), rei);
         pecasEsperadas.put(rainha.getId(), rainha);
@@ -127,28 +127,7 @@ public class TestTabuleiro {
     }
 
     @Test
-    public void test07PossoTerminarJogo() {
-        Tabuleiro tabuleiro = new Tabuleiro(4);
-        GestorDeJogo gestorDeJogo = new GestorDeJogo();
-        assertEquals(gestorDeJogo.possoTerminar(), tabuleiro.possoTerminarJogo());
-    }
-
-    @Test
-    public void test08QuemEstaAJogar() {
-        Tabuleiro tabuleiro = new Tabuleiro(4);
-        GestorDeJogo gestorDeJogo = new GestorDeJogo();
-        assertEquals(gestorDeJogo.quemEstaAJogar(), tabuleiro.quemEstaAJogar());
-    }
-
-    @Test
-    public void test09GetResultado() {
-        Tabuleiro tabuleiro = new Tabuleiro(4);
-        GestorDeJogo gestorDeJogo = new GestorDeJogo();
-        assertThat(gestorDeJogo.getResultado(), is (tabuleiro.getResultado()));
-    }
-
-    @Test
-    public void test11ObterSugestoesJogada() {
+    public void test07ObterSugestoesJogada() {
         Tabuleiro tabuleiro = new Tabuleiro(4);
         int [][] tabuleiroMatrix = new int[4][4];
         for (int i = 0; i < tabuleiroMatrix.length; i++) {
@@ -169,7 +148,7 @@ public class TestTabuleiro {
     }
 
     @Test
-    public void test12ProcessaJogada() {
+    public void test08ProcessaJogada() {
         Tabuleiro tabuleiro = new Tabuleiro(4);
         int [][] tabuleiroMatrix = new int[4][4];
         for (int i = 0; i < tabuleiroMatrix.length; i++) {
@@ -203,7 +182,7 @@ public class TestTabuleiro {
     }
 
     @Test
-    public void test13AtualizarAnterior() {
+    public void test09AtualizarAnterior() {
         Tabuleiro tabuleiro = new Tabuleiro(4);
         int [][] tabuleiroMatrix = new int[4][4];
         for (int i = 0; i < tabuleiroMatrix.length; i++) {

@@ -1,5 +1,7 @@
 package pt.ulusofona.lp2.crazyChess;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class PoneiMagico extends CrazyPiece {
@@ -31,76 +33,51 @@ public class PoneiMagico extends CrazyPiece {
 
     @Override
     public boolean verificarSeMove(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int[][] tabuleiro, int turno) {
-        if ((xO - xD == -2 && yO - yD == -2) || (xO - xD == -2 && yO - yD == 2) || (xO - xD == 2 && yO - yD == -2) || (xO - xD == 2 && yO - yD == 2)) {
-            int x = xO;
-            int y = yO;
-            int nrReisHorizontalVertical = 0;
-            int nrReisVerticalHorizontal = 0;
-            boolean primeiroCaminho = true;
-            int direcaoHorizontal;
+        if (move(xO, yO, xD, yD) && moveDiagonal(xO, yO, xD, yD) && (moveDentroLimite(xO, yO, xD, yD, 2) && !moveDentroLimite(xO, yO, xD, yD, 1))) {
+            int direcaoH;
+            int direcaoV;
             if (xO > xD) {
-                direcaoHorizontal = -1;
+                direcaoH = -1;
             } else {
-                direcaoHorizontal = 1;
+                direcaoH = 1;
             }
-            int direcaoVertical; // 1 = baixo  -1 = cima
             if (yO > yD) {
-                direcaoVertical = -1;
+                direcaoV = -1;
             } else {
-                direcaoVertical = 1;
+                direcaoV = 1;
             }
-            //horizontal -> vertical
-            for (int i = 0; i < 2; i++) {
-                x += direcaoHorizontal;
-                if (Tabuleiro.existemCoordenadas(x,y,tabuleiro.length)) {
-                    if (tabuleiro[x][y] != 0) {
-                        if (pecas.get(tabuleiro[x][y]).getIdTipo() == GestorDeJogo.REI) {
-                            primeiroCaminho = false;
-                        }
-                    }
-                }
-            }
-            if (primeiroCaminho) {
-                for (int i = 0; i < 1; i++) {
-                    y += direcaoVertical;
-                    if (Tabuleiro.existemCoordenadas(x, y, tabuleiro.length)) {
-                        if (tabuleiro[x][y] != 0) {
-                            if (pecas.get(tabuleiro[x][y]).getIdTipo() == GestorDeJogo.REI) {
-                                primeiroCaminho = false;
-                            }
-                        }
-                    }
-                }
-            }
-            if (primeiroCaminho) {
+            boolean primeiroCaminhoEPossivel = true;
+            List<CrazyPiece> pecasNoCaminho = new ArrayList<>();
+            pecasNoCaminho.addAll(getPecasNoCaminho(xO, yO, xD + direcaoH, yO, pecas, tabuleiro));
+            pecasNoCaminho.addAll(getPecasNoCaminho(xD, yO - direcaoV, xD, yD, pecas, tabuleiro));
+            if (pecasNoCaminho.isEmpty()) {
                 return true;
             }
-            x = xO;
-            y = yO;
-            //vertica -> horizontal
-            for (int i = 0; i < 2; i++) {
-                y += direcaoVertical;
-                if (Tabuleiro.existemCoordenadas(x,y,tabuleiro.length)) {
-                    if (tabuleiro[x][y] != 0) {
-                        if (pecas.get(tabuleiro[x][y]).getIdTipo() == GestorDeJogo.REI) {
-                            return false;
-                        }
+            else {
+                for (CrazyPiece peca: pecasNoCaminho) {
+                    if (peca.getIdTipo() == GestorDeJogo.REI) {
+                        primeiroCaminhoEPossivel = false;
                     }
                 }
             }
-            for (int i = 0; i < 1; i++) {
-                x += direcaoHorizontal;
-                if (Tabuleiro.existemCoordenadas(x,y,tabuleiro.length)) {
-                    if (tabuleiro[x][y] != 0) {
-                        if (pecas.get(tabuleiro[x][y]).getIdTipo() == GestorDeJogo.REI) {
-                            return false;
-                        }
+            if (primeiroCaminhoEPossivel) {
+                return true;
+            }
+            List<CrazyPiece> pecasNoCaminho2 = new ArrayList<>();
+            pecasNoCaminho2.addAll(getPecasNoCaminho(xO, yO, xO, yD + direcaoV, pecas, tabuleiro));
+            pecasNoCaminho2.addAll(getPecasNoCaminho(xO - direcaoH, yD, xD, yD, pecas, tabuleiro));
+            if (pecasNoCaminho2.isEmpty()) {
+                return true;
+            }
+            else {
+                for (CrazyPiece peca: pecasNoCaminho2) {
+                    if (peca.getIdTipo() == GestorDeJogo.REI) {
+                        return false;
                     }
                 }
             }
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 }

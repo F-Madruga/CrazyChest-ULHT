@@ -33,7 +33,7 @@ public class Lebre extends CrazyPiece {
 
     @Override
     public boolean verificarSeMove(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int[][] tabuleiro, int turno) {
-        if (turno % 2 == 0 && (xO - xD == 1 || xO - xD == -1) && (yO - yD == -1 || yO - yD == 1)){
+        if (turno % 2 == 0 && move(xO, yO, xD, yD) && moveDiagonal(xO, yO, xD, yD) && moveDentroLimite(xO, yO, xD, yD, 1)){
             return true;
         }
         return false;

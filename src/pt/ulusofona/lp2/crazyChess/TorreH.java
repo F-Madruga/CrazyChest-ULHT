@@ -1,5 +1,6 @@
 package pt.ulusofona.lp2.crazyChess;
 
+import java.util.List;
 import java.util.Map;
 
 public class TorreH extends CrazyPiece {
@@ -33,20 +34,11 @@ public class TorreH extends CrazyPiece {
 
     @Override
     public boolean verificarSeMove(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int[][] tabuleiro, int turno) {
-        if (yO == yD && xO != xD) {
-            int direcao = 1;
-            if (xO > xD) {
-                direcao = -1;
+        if (move(xO, yO, xD, yD) && moveHorizontal(yO, yD)) {
+            List<CrazyPiece> pecasNoCaminho = getPecasNoCaminho(xO, yO, xD, yD, pecas, tabuleiro);
+            if (pecas.isEmpty()) {
+                return true;
             }
-            while (xO != xD) {
-                if (Tabuleiro.existemCoordenadas(xO, yO, tabuleiro.length)) {
-                    if (tabuleiro[xO][yO] != 0 && tabuleiro[xO][yO] != this.idPeca) {
-                        return false;
-                    }
-                }
-                xO += direcao;
-            }
-            return true;
         }
         return false;
     }
