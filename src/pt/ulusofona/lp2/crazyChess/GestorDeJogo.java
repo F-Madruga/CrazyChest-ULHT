@@ -28,6 +28,7 @@ public class GestorDeJogo {
     private Map<Integer, Integer> capturas; // key = -idEquipa -> value = numero de capturas da equipa, key = turno -> value = equipa que capturou naquele turno
     private Map<Integer, Integer> jogadasValidas; // key = -idEquipa -> value = numero de jogadas valida da equipa, key = turno -> value = equipa que fez jogadas valida naquele turno
     private Map<Integer, Integer> jogadasInvalidas;// key = idEquipa -> value = numero de jogadas invalidas
+    private boolean load;
 
     public GestorDeJogo() {
         this.turno = 0;
@@ -49,6 +50,7 @@ public class GestorDeJogo {
         this.numReis.put(-PRETA, 0);
         this.numReis.put(-BRANCA, 0);
         Joker.ROTACAOTIPOPECA = turno;
+        this.load = false;
     }
 
     public int getTurno() {
@@ -85,7 +87,7 @@ public class GestorDeJogo {
         int capturasPreto = this.capturas.get(-GestorDeJogo.PRETA);
         int capturasBranco = this.capturas.get(-GestorDeJogo.BRANCA);
         int capturas = capturasBranco + capturasPreto;
-        if (capturas > 0) {
+        if (capturas > 0 && !this.load) {
             this.turnoSemCapturas++;
         }
         int numReisAnterior = this.numReis.get(quemEstaAJogar());
@@ -109,6 +111,7 @@ public class GestorDeJogo {
             numReis -= 1;
             this.numReis.put(idEquipa, numReis);
         }
+        this.load = false;
         this.turnoSemCapturasAnterior = this.turnoSemCapturas;
         this.turnoSemCapturas = 0;
         validarJogada();
@@ -190,18 +193,22 @@ public class GestorDeJogo {
         int jogadasValidasBranco = jogadasValidas.get(-BRANCA);
         turno = jogadasValidasBranco + jogadasValidasPreto;
         Joker.ROTACAOTIPOPECA = turno;
+        this.load = true;
     }
 
     public void loadCapturas(int idEquipa, int numCapturas) {
         this.capturas.put(-idEquipa, numCapturas);
+        this.load = true;
     }
 
     public void loadJogadasValidas(int idEquipa, int numJogadasValidas) {
         this.jogadasValidas.put(-idEquipa, numJogadasValidas);
+        this.load = true;
     }
 
     public void loadJogadasInvalidas(int idEquipa, int numJogadasInvalidas) {
         this.jogadasInvalidas.put(idEquipa, numJogadasInvalidas);
+        this.load = true;
     }
 
     public Map<Integer, Integer> getCapturas() {
