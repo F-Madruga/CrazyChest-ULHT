@@ -32,6 +32,8 @@ public class TestCrazyPiece {
         Rei rei = new Rei(1, 0, GestorDeJogo.BRANCA, "Rei" );
         assertTrue(rei.moveDiagonal(1,1,2,2));
         assertTrue(rei.moveDiagonal(1,1,0,0));
+        assertTrue(rei.moveDiagonal(2,3,1,4));
+        assertTrue(rei.moveDiagonal(3,2,4,3));
         assertFalse(rei.moveDiagonal(0,1,0,2));
         assertFalse(rei.moveDiagonal(0,1,1,1));
         assertFalse(rei.moveDiagonal(3,1,2,3));
@@ -51,6 +53,7 @@ public class TestCrazyPiece {
         assertTrue(rei.moveDentroLimite(1,1,2,2,1));
         assertTrue(rei.moveDentroLimite(1,1,0,2,1));
         assertTrue(rei.moveDentroLimite(3,2,0,5,3));
+        assertTrue(rei.moveDentroLimite(3,2,2,1,3));
         assertFalse(rei.moveDentroLimite(0,0,3,3,2));
     }
 
@@ -73,5 +76,16 @@ public class TestCrazyPiece {
         listaEsperada.add(lebre);
         assertThat(rei.getPecasNoCaminho(2,0,2,3, pecas, tabuleiroMatrix), is(listaEsperada));
         assertTrue(rei.getPecasNoCaminho(2,0,3,1, pecas, tabuleiroMatrix).isEmpty());
+        tabuleiroMatrix[2][0] = 0;
+        tabuleiroMatrix[2][1] = 0;
+        tabuleiroMatrix[2][1] = rei.getId();
+        tabuleiroMatrix[1][1] = lebre.getId();
+        listaEsperada.add(rei);
+        assertThat(rei.getPecasNoCaminho(3,1,0,1, pecas, tabuleiroMatrix), is(listaEsperada));
+        tabuleiroMatrix[2][1] = 0;
+        tabuleiroMatrix[1][1] = 0;
+        tabuleiroMatrix[3][3] = rei.getId();
+        tabuleiroMatrix[1][1] = lebre.getId();
+        assertThat(rei.getPecasNoCaminho(4,4,0,0, pecas, tabuleiroMatrix), is(listaEsperada));
     }
 }
