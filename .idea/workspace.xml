@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b1be8c10-7646-4fc7-9e53-9891c1a8ac13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/8x8ComJoker.txt" beforeDir="false" afterPath="$PROJECT_DIR$/8x8ComJoker.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -120,7 +120,7 @@
     <session id="-258842643">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="47" />
+          <entry key="project.closed" value="48" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.10" value="6" />
@@ -132,7 +132,7 @@
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.20" value="2" />
-          <entry key="project.open.time.21" value="2" />
+          <entry key="project.open.time.21" value="3" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.3" value="2" />
@@ -141,35 +141,35 @@
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="48" />
+          <entry key="project.opened" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="8x8ComJokerGravacao" value="1" />
           <entry key="Exemplo12x12" value="1" />
-          <entry key="java" value="393" />
+          <entry key="java" value="404" />
           <entry key="png" value="26" />
-          <entry key="txt" value="28" />
+          <entry key="txt" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="26" />
-          <entry key="JAVA" value="393" />
-          <entry key="PLAIN_TEXT" value="30" />
+          <entry key="JAVA" value="404" />
+          <entry key="PLAIN_TEXT" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="19839" />
-          <entry key="txt" value="202" />
+          <entry key="java" value="19842" />
+          <entry key="txt" value="256" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="19839" />
-          <entry key="PLAIN_TEXT" value="202" />
+          <entry key="JAVA" value="19842" />
+          <entry key="PLAIN_TEXT" value="256" />
         </counts>
       </usages-collector>
     </session>
@@ -214,7 +214,7 @@
         <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestCrazyPiece.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
-              <caret line="89" column="40" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
+              <caret line="89" column="40" lean-forward="true" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#test01MoveHorizonal#0;class#TestCrazyPiece#0" />
@@ -457,11 +457,11 @@
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestRei.java" />
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestLebre.java" />
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestPadreDaVila.java" />
-        <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java" />
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java" />
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestGestorDeJogo.java" />
-        <option value="$PROJECT_DIR$/8x8ComJoker.txt" />
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java" />
+        <option value="$PROJECT_DIR$/8x8ComJoker.txt" />
+        <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java" />
       </list>
     </option>
   </component>
@@ -513,7 +513,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546708113025" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546716084030" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -737,48 +737,49 @@
       <workItem from="1546696214274" duration="131000" />
       <workItem from="1546703743657" duration="640000" />
       <workItem from="1546706907497" duration="1209000" />
+      <workItem from="1546714478638" duration="1606000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestLebre - 2019.01.05 at 17h 07m 50s.xml">
+    <history-entry file="TestCrazyPiece - 2019.01.05 at 19h 20m 11s.xml">
+      <configuration name="TestCrazyPiece" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestGestorDeJogo - 2019.01.05 at 19h 20m 21s.xml">
+      <configuration name="TestGestorDeJogo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLebre - 2019.01.05 at 19h 20m 29s.xml">
       <configuration name="TestLebre" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestPadreDaVila - 2019.01.05 at 17h 07m 55s.xml">
+    <history-entry file="TestPadreDaVila - 2019.01.05 at 19h 20m 37s.xml">
       <configuration name="TestPadreDaVila" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestPadreDaVila - 2019.01.05 at 17h 07m 59s.xml">
-      <configuration name="TestPadreDaVila" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestPoneiMagico - 2019.01.05 at 17h 08m 03s.xml">
+    <history-entry file="TestPoneiMagico - 2019.01.05 at 19h 20m 43s.xml">
       <configuration name="TestPoneiMagico" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRainha - 2019.01.05 at 17h 08m 08s.xml">
+    <history-entry file="TestRainha - 2019.01.05 at 19h 20m 51s.xml">
       <configuration name="TestRainha" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRainha - 2019.01.05 at 17h 08m 11s.xml">
-      <configuration name="TestRainha" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestRei - 2019.01.05 at 17h 08m 16s.xml">
+    <history-entry file="TestRei - 2019.01.05 at 19h 20m 58s.xml">
       <configuration name="TestRei" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTabuleiro - 2019.01.05 at 17h 08m 21s.xml">
+    <history-entry file="TestTabuleiro - 2019.01.05 at 19h 21m 06s.xml">
       <configuration name="TestTabuleiro" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTorreH - 2019.01.05 at 17h 08m 25s.xml">
+    <history-entry file="TestTorreH - 2019.01.05 at 19h 21m 13s.xml">
       <configuration name="TestTorreH" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTorreV - 2019.01.05 at 17h 08m 30s.xml">
+    <history-entry file="TestTorreV - 2019.01.05 at 19h 21m 19s.xml">
       <configuration name="TestTorreV" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="346033000" />
+    <option name="totallyTimeSpent" value="347639000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2441421" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24792139" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -946,13 +947,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="217" column="5" lean-forward="true" selection-start-line="217" selection-start-column="5" selection-end-line="217" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -991,13 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/8x8ComJoker.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1008,10 +995,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Texte.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8x8ComJoker.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="139" column="52" selection-start-line="139" selection-start-column="52" selection-end-line="139" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestCrazyPiece.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
-          <caret line="89" column="40" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
+          <caret line="89" column="40" lean-forward="true" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#test01MoveHorizonal#0;class#TestCrazyPiece#0" />

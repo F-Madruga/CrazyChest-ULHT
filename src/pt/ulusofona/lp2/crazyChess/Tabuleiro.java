@@ -126,8 +126,8 @@ public class Tabuleiro {
                             yD = NOVOY;
                             ALTERARCOORDENADASDESTINO = false;
                         }
-                        atualizarAnterior();
                         if (this.tabuleiro[xD][yD] == 0) {
+                            atualizarAnterior();
                             this.gestor.naoHouveCaptura();
                             this.tabuleiro[xD][yD] = this.tabuleiro[xO][yO];
                             this.pecas.get(this.tabuleiro[xD][yD]).setCoordenadas(xD, yD);
@@ -137,6 +137,7 @@ public class Tabuleiro {
                         }
                         else {
                             if (this.pecas.get(this.tabuleiro[xD][yD]).getIdEquipa() != quemEstaAJogar()) {
+                                atualizarAnterior();
                                 this.gestor.adicionarCaptura( this.pecas.get(this.tabuleiro[xD][yD]).getIdTipo());
                                 this.pecas.get(this.tabuleiro[xD][yD]).resetCoordenadas();
                                 this.tabuleiro[xD][yD] = this.tabuleiro[xO][yO];
