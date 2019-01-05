@@ -10,29 +10,7 @@ import static org.junit.Assert.*;
 public class TestLebre {
 
     @Test
-    public void test01VerificaMovimentosPossiveis() {
-        int tabuleiroMatrix [][] = new int[4][4];
-        for (int x = 0; x < tabuleiroMatrix.length; x++) {
-            for (int y = 0; y < tabuleiroMatrix[x].length; y++) {
-                tabuleiroMatrix[x][y] = 0;
-            }
-        }
-        Lebre lebre = new Lebre(1, GestorDeJogo.LEBRE, GestorDeJogo.PRETA, "Lebre");
-        Map<Integer, CrazyPiece> pecas = new HashMap<>();
-        pecas.put(lebre.getId(), lebre);
-        tabuleiroMatrix[0][0] = lebre.getId();
-        lebre.setCoordenadas(0,0);
-        assertTrue(lebre.verificarSeMove(0,0, 1, 1, pecas, tabuleiroMatrix, 0));
-        tabuleiroMatrix[0][0] = 0;
-        tabuleiroMatrix[1][1] = lebre.getId();
-        lebre.setCoordenadas(1,1);
-        assertTrue(lebre.verificarSeMove(1,1, 0, 0, pecas, tabuleiroMatrix, 0));
-        assertTrue(lebre.verificarSeMove(1,1, 2, 0, pecas, tabuleiroMatrix, 0));
-        assertTrue(lebre.verificarSeMove(1,1, 0, 2, pecas, tabuleiroMatrix, 0));
-    }
-
-    @Test
-    public void test02VerificaMovimentoTurnoErrado() {
+    public void test01VerificaMovimentoTurnoErrado() {
         int tabuleiroMatrix [][] = new int[4][4];
         for (int x = 0; x < tabuleiroMatrix.length; x++) {
             for (int y = 0; y < tabuleiroMatrix[x].length; y++) {
@@ -48,23 +26,7 @@ public class TestLebre {
     }
 
     @Test
-    public void test03VerificaMovimentoDuasCasas() {
-        int tabuleiroMatrix [][] = new int[4][4];
-        for (int x = 0; x < tabuleiroMatrix.length; x++) {
-            for (int y = 0; y < tabuleiroMatrix[x].length; y++) {
-                tabuleiroMatrix[x][y] = 0;
-            }
-        }
-        Lebre lebre = new Lebre(1, GestorDeJogo.LEBRE, GestorDeJogo.PRETA, "Lebre");
-        Map<Integer, CrazyPiece> pecas = new HashMap<>();
-        pecas.put(lebre.getId(), lebre);
-        tabuleiroMatrix[1][1] = lebre.getId();
-        lebre.setCoordenadas(1,1);
-        assertFalse(lebre.verificarSeMove(1,1, 3, 3, pecas, tabuleiroMatrix, 0));
-    }
-
-    @Test
-    public void test04VerificaMovimentoVertical() {
+    public void test02VerificaMovimentoVertical() {
         int tabuleiroMatrix [][] = new int[4][4];
         for (int x = 0; x < tabuleiroMatrix.length; x++) {
             for (int y = 0; y < tabuleiroMatrix[x].length; y++) {
@@ -81,7 +43,7 @@ public class TestLebre {
     }
 
     @Test
-    public void test05VerificaMovimentoHorizontal() {
+    public void test03VerificaMovimentoHorizontal() {
         int tabuleiroMatrix [][] = new int[4][4];
         for (int x = 0; x < tabuleiroMatrix.length; x++) {
             for (int y = 0; y < tabuleiroMatrix[x].length; y++) {

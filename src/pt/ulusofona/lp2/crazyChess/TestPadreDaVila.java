@@ -10,67 +10,47 @@ import static org.junit.Assert.*;
 public class TestPadreDaVila {
 
     @Test
-    public void test01VerificaMovimentosPossiveis() {
+    public void test01VerificaMovimentosComPecas(){
         int tabuleiroMatrix [][] = new int[8][8];
+        Rainha rainha = new Rainha(2, GestorDeJogo.RAINHA, GestorDeJogo.BRANCA, "Rainha");
+        Map<Integer, CrazyPiece> pecas = new HashMap<>();
+        pecas.put(rainha.getId(), rainha);
         for (int x = 0; x < tabuleiroMatrix.length; x++) {
             for (int y = 0; y < tabuleiroMatrix[x].length; y++) {
-                tabuleiroMatrix[x][y] = 0;
+                tabuleiroMatrix[x][y] = rainha.getId();
             }
         }
-        PadreDaVila padre = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, GestorDeJogo.PRETA, "Padre da Vila");
-        Map<Integer, CrazyPiece> pecas = new HashMap<>();
-        pecas.put(padre.getId(), padre);
-        tabuleiroMatrix[4][4] = padre.getId();
-        padre.setCoordenadas(4,4);
-        assertTrue(padre.verificarSeMove(4,4, 3, 3, pecas, tabuleiroMatrix, 0));
-        assertTrue(padre.verificarSeMove(4,4, 2, 2, pecas, tabuleiroMatrix, 0));
-        assertTrue(padre.verificarSeMove(4,4, 1, 1, pecas, tabuleiroMatrix, 0));
-        assertTrue(padre.verificarSeMove(4,4, 5, 5, pecas, tabuleiroMatrix, 0));
-        assertTrue(padre.verificarSeMove(4,4, 6, 6, pecas, tabuleiroMatrix, 0));
-        assertTrue(padre.verificarSeMove(4,4, 7, 7, pecas, tabuleiroMatrix, 0));
-        assertTrue(padre.verificarSeMove(4,4, 3, 5, pecas, tabuleiroMatrix, 0));
-        assertTrue(padre.verificarSeMove(4,4, 2, 6, pecas, tabuleiroMatrix, 0));
-        assertTrue(padre.verificarSeMove(4,4, 1, 7, pecas, tabuleiroMatrix, 0));
-        assertTrue(padre.verificarSeMove(4,4, 5, 3, pecas, tabuleiroMatrix, 0));
-        assertTrue(padre.verificarSeMove(4,4, 6, 2, pecas, tabuleiroMatrix, 0));
-        assertTrue(padre.verificarSeMove(4,4, 7, 1, pecas, tabuleiroMatrix, 0));
-    }
-
-    @Test
-    public void test02VerificaMovimentosComPecas(){
-        int tabuleiroMatrix [][] = new int[8][8];
-        Rei rei = new Rei(2, GestorDeJogo.REI, GestorDeJogo.PRETA, "Rei");
-        Map<Integer, CrazyPiece> pecas = new HashMap<>();
-        pecas.put(rei.getId(), rei);
-        for (int x = 0; x < tabuleiroMatrix.length; x++) {
-            for (int y = 0; y < tabuleiroMatrix[x].length; y++) {
-                tabuleiroMatrix[x][y] = rei.getId();
-            }
-        }
-        PadreDaVila padre = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, GestorDeJogo.PRETA, "Padre da Vila");
-        pecas.put(padre.getId(), padre);
-        tabuleiroMatrix[4][4] = padre.getId();
-        padre.setCoordenadas(4,4);
-        tabuleiroMatrix[3][3] = 0;
+        tabuleiroMatrix[1][1] = 0;
+        tabuleiroMatrix[2][1] = 0;
+        tabuleiroMatrix[3][1] = 0;
+        tabuleiroMatrix[1][2] = 0;
         tabuleiroMatrix[2][2] = 0;
-        for (int i = 1; i < 3; i++) {
-            tabuleiroMatrix[4 - i][4 + i] = rei.getId();
-            tabuleiroMatrix[4 + i][4 + i] = rei.getId();
-            tabuleiroMatrix[4 - i][4 - i] = rei.getId();
-            tabuleiroMatrix[4 + i][4 - i] = rei.getId();
-            assertFalse(padre.verificarSeMove(4,4,1, 1, pecas, tabuleiroMatrix, 0));
-            assertFalse(padre.verificarSeMove(4,4,7, 7, pecas, tabuleiroMatrix, 0));
-            assertFalse(padre.verificarSeMove(4,4,7, 1, pecas, tabuleiroMatrix, 0));
-            assertFalse(padre.verificarSeMove(4,4,1, 7, pecas, tabuleiroMatrix, 0));
-            tabuleiroMatrix[4 - i][4 + i] = 0;
-            tabuleiroMatrix[4 + i][4 + i] = 0;
-            tabuleiroMatrix[4 - i][4 - i] = 0;
-            tabuleiroMatrix[4 + i][4 - i] = 0;
+        tabuleiroMatrix[3][2] = 0;
+        tabuleiroMatrix[1][3] = 0;
+        tabuleiroMatrix[2][3] = 0;
+        tabuleiroMatrix[3][3] = 0;
+        tabuleiroMatrix[4][4] = 0;
+        tabuleiroMatrix[5][5] = 0;
+
+
+
+        PadreDaVila padre = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, GestorDeJogo.PRETA, "Padre da Vila");
+        pecas.put(padre.getId(), padre);
+        tabuleiroMatrix[5][5] = padre.getId();
+        for (int x = 0; x < tabuleiroMatrix.length; x++) {
+            for (int y = 0; y < tabuleiroMatrix[x].length; y++) {
+                if (x == 2 && y == 2) {
+                    assertTrue(padre.verificarSeMove(5,5, x, y, pecas, tabuleiroMatrix, 0));
+                }else{
+                    System.out.println(x + "|" + y);
+                    assertFalse(padre.verificarSeMove(5,5, x, y, pecas, tabuleiroMatrix, 0));
+                }
+            }
         }
     }
 
     @Test
-    public void test03DistanciaRainha(){
+    public void test02DistanciaRainha(){
         int tabuleiroMatrix [][] = new int[8][8];
         for (int x = 0; x < tabuleiroMatrix.length; x++) {
             for (int y = 0; y < tabuleiroMatrix[x].length; y++) {
@@ -136,37 +116,37 @@ public class TestPadreDaVila {
     }
 
     @Test
-    public void test04PNGPreta() {
+    public void test03PNGPreta() {
         PadreDaVila padre = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, GestorDeJogo.PRETA, "Padre da Vila");
         assertEquals("preto_padre.png", padre.getImagePNG());
     }
 
     @Test
-    public void test05PNGNula() {
+    public void test04PNGNula() {
         PadreDaVila padre = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, -1, "Padre da Vila");
         assertEquals(null, padre.getImagePNG());
     }
 
     @Test
-    public void test06PNGBranca() {
+    public void test05PNGBranca() {
         PadreDaVila padre = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, GestorDeJogo.BRANCA, "Padre da Vila");
         assertEquals("branco_padre.png", padre.getImagePNG());
     }
 
     @Test
-    public void test07Nome() {
+    public void test06Nome() {
         PadreDaVila padre = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, GestorDeJogo.PRETA, "Padre da Vila");
         assertEquals("Padre da Vila", padre.getNome());
     }
 
     @Test
-    public void test08ValorRelativo() {
+    public void test07ValorRelativo() {
         PadreDaVila padre = new PadreDaVila(1, GestorDeJogo.PADREDAVILA, GestorDeJogo.PRETA, "Padre da Vila");
         assertEquals("3", padre.getValorRelativo());
     }
 
     @Test
-    public void test09Sugestoes(){
+    public void test08Sugestoes(){
         int tabuleiroMatrix [][] = new int[8][8];
         for (int x = 0; x < tabuleiroMatrix.length; x++) {
             for (int y = 0; y < tabuleiroMatrix[x].length; y++) {

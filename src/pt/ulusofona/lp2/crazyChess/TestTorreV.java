@@ -22,69 +22,49 @@ public class TestTorreV {
         pecas.put(torre.getId(), torre);
         tabuleiroMatrix[1][1] = torre.getId();
         torre.setCoordenadas(1,1);
-        assertTrue(torre.verificarSeMove(1,1, 1, 0, pecas, tabuleiroMatrix, 0));
-        assertTrue(torre.verificarSeMove(1,1, 1, 2, pecas, tabuleiroMatrix, 0));
         assertTrue(torre.verificarSeMove(1,1, 1, 3, pecas, tabuleiroMatrix, 0));
-    }
-
-    @Test
-    public void test02VerificaMovimentosComPecasNoMeio() {
-        int tabuleiroMatrix [][] = new int[12][12];
-        for (int x = 0; x < tabuleiroMatrix.length; x++) {
-            for (int y = 0; y < tabuleiroMatrix[x].length; y++) {
-                tabuleiroMatrix[x][y] = 0;
-            }
-        }
-        Map<Integer, CrazyPiece> pecas = new HashMap<>();
-        TorreV torre = new TorreV(1, GestorDeJogo.TORREV, GestorDeJogo.PRETA, "TorreV");
-        Rei rei = new Rei(2, GestorDeJogo.REI, GestorDeJogo.PRETA, "Rei");
-        Rei king = new Rei(3, GestorDeJogo.REI, GestorDeJogo.PRETA, "King");
+        Rei rei = new Rei(1, GestorDeJogo.REI, GestorDeJogo.PRETA, "Rei");
         pecas.put(rei.getId(), rei);
-        pecas.put(king.getId(), king);
-        pecas.put(torre.getId(), torre);
-        tabuleiroMatrix[6][6] = torre.getId();
-        for (int i = 1; i <= 4; i++) {
-            tabuleiroMatrix[6][6 + i] = rei.getId();
-            tabuleiroMatrix[6][6 - i] = king.getId();
-            assertFalse(torre.verificarSeMove(6, 6, 6, 0, pecas, tabuleiroMatrix, 0));
-            assertFalse(torre.verificarSeMove(6, 6, 6, 11, pecas, tabuleiroMatrix, 0));
-            tabuleiroMatrix[6][6 + i] = 0;
-            tabuleiroMatrix[6][6 - i] = 0;
-        }
+        tabuleiroMatrix[1][2] = rei.getId();
+        assertFalse(torre.verificarSeMove(1,1, 1, 3, pecas, tabuleiroMatrix, 0));
+        tabuleiroMatrix[1][2] = 0;
+        pecas.remove(rei.getId(), rei);
+        assertFalse(torre.verificarSeMove(1,1, 2, 2, pecas, tabuleiroMatrix, 0));
+        assertFalse(torre.verificarSeMove(1,1, 2, 1, pecas, tabuleiroMatrix, 0));
     }
 
     @Test
-    public void test03PNGPreta(){
+    public void test02PNGPreta(){
         TorreV torre = new TorreV(1, GestorDeJogo.TORREV, GestorDeJogo.PRETA, "TorreV");
         assertEquals("preto_torreV.png", torre.getImagePNG());
     }
 
     @Test
-    public void test04PNGNula() {
+    public void test03PNGNula() {
         TorreV torre = new TorreV(1, GestorDeJogo.TORREV, -1, "TorreV");
         assertEquals(null, torre.getImagePNG());
     }
 
     @Test
-    public void test05PNGBranca() {
+    public void test04PNGBranca() {
         TorreV torre = new TorreV(1, GestorDeJogo.TORREV, GestorDeJogo.BRANCA, "TorreV");
         assertEquals("branco_torreV.png", torre.getImagePNG());
     }
 
     @Test
-    public void test06Nome() {
+    public void test05Nome() {
         TorreV torre = new TorreV(1, GestorDeJogo.TORREV, GestorDeJogo.BRANCA, "TorreV");
         assertEquals("TorreV", torre.getNome());
     }
 
     @Test
-    public void test07ValorRelativo() {
+    public void test06ValorRelativo() {
         TorreV torre = new TorreV(1, GestorDeJogo.TORREV, GestorDeJogo.BRANCA, "TorreV");
         assertEquals("3", torre.getValorRelativo());
     }
 
     @Test
-    public void test08Sugestoes(){
+    public void test07Sugestoes(){
         int tabuleiroMatrix [][] = new int[12][12];
         for (int x = 0; x < tabuleiroMatrix.length; x++) {
             for (int y = 0; y < tabuleiroMatrix[x].length; y++) {
