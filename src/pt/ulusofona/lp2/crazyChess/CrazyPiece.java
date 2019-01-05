@@ -168,9 +168,11 @@ public abstract class CrazyPiece {
         List<CrazyPiece> pecasAvolta = new ArrayList<>();
         for (int i = -raio; i <= raio; i++) {
             for (int j = -raio; j <= raio; j++) {
-                if (Tabuleiro.existemCoordenadas(x + i, y + j, tabuleiro.length)) {
-                    if (tabuleiro[x + i][y + j] != 0) {
-                        pecasAvolta.add(pecas.get(tabuleiro[x + i][y + j]));
+                if (i != 0 || j != 0) {
+                    if (Tabuleiro.existemCoordenadas(x + i, y + j, tabuleiro.length)) {
+                        if (tabuleiro[x + i][y + j] != 0) {
+                            pecasAvolta.add(pecas.get(tabuleiro[x + i][y + j]));
+                        }
                     }
                 }
             }
