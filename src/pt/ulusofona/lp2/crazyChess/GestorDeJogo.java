@@ -123,7 +123,7 @@ public class GestorDeJogo {
     }
 
     public boolean possoTerminar() {
-        if (this.turnoSemCapturas >= 10 || (this.numReis.get(BRANCA) <= 1 && this.numReis.get(PRETA) <= 1)) {
+        if (this.turnoSemCapturas == 10 || (this.numReis.get(BRANCA) <= 1 && this.numReis.get(PRETA) <= 1)) {
             this.resultado = -1;
             return true;
         }

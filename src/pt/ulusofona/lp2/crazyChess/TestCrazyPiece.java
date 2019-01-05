@@ -2,10 +2,7 @@ package pt.ulusofona.lp2.crazyChess;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
@@ -87,5 +84,72 @@ public class TestCrazyPiece {
         tabuleiroMatrix[3][3] = rei.getId();
         tabuleiroMatrix[1][1] = lebre.getId();
         assertThat(rei.getPecasNoCaminho(4,4,0,0, pecas, tabuleiroMatrix), is(listaEsperada));
+    }
+
+    @Test
+    public void test07GetPecasNumRaio() {
+        Map<Integer, CrazyPiece> pecas = new HashMap<>();
+        Rainha rainha = new Rainha(1, 1, GestorDeJogo.BRANCA, "Rainha");
+        Rei rei = new Rei(2, 0, GestorDeJogo.PRETA, "Rei");
+        int tabuleiroMatrix[][] = new int[8][8];
+        for (int x = 0; x < tabuleiroMatrix.length; x++) {
+            for (int y = 0; y < tabuleiroMatrix[x].length; y++) {
+                tabuleiroMatrix[x][y] = 0;
+            }
+        }
+        pecas.put(rei.getId(), rei);
+        tabuleiroMatrix[4][5] = rei.getId();
+        List<CrazyPiece> pecasNumRaio = rainha.getPecasNumRaio(4, 4, 1, tabuleiroMatrix, pecas);
+        List<CrazyPiece> pecasPossiveis = new ArrayList<>();
+        pecasPossiveis.add(rei);
+        boolean pecasIguais = true;
+        for (CrazyPiece peca : pecasNumRaio) {
+            if (!pecasPossiveis.contains(peca)) {
+                pecasIguais = false;
+            }
+        }
+        assertTrue(pecasIguais);
+
+        pecasPossiveis = new ArrayList<>();
+        tabuleiroMatrix[0][2] = rei.getId();
+        tabuleiroMatrix[4][5] = 0;
+        pecasPossiveis.add(rei);
+        pecasNumRaio = rainha.getPecasNumRaio(0, 0, 2, tabuleiroMatrix, pecas);
+        pecasIguais = true;
+        for (CrazyPiece peca : pecasNumRaio) {
+            if (!pecasPossiveis.contains(peca)) {
+                pecasIguais = false;
+            }
+        }
+        assertTrue(pecasIguais);
+
+        tabuleiroMatrix[0][2] = 0;
+        pecasNumRaio = rainha.getPecasNumRaio(4, 4, 2, tabuleiroMatrix, pecas);
+        assertTrue(pecasNumRaio.isEmpty());
+
+        pecasIguais = true;
+        pecasPossiveis = new ArrayList<>();
+        tabuleiroMatrix[4][0] = rei.getId();
+        pecasPossiveis.add(rei);
+        pecasNumRaio = rainha.getPecasNumRaio(7, 0, 3, tabuleiroMatrix, pecas);
+        for (CrazyPiece peca : pecasNumRaio) {
+            if (!pecasPossiveis.contains(peca)) {
+                pecasIguais = false;
+            }
+        }
+        assertTrue(pecasIguais);
+
+        pecasIguais = true;
+        pecasPossiveis = new ArrayList<>();
+        tabuleiroMatrix[4][0] = 0;
+        tabuleiroMatrix[7][7] = rei.getId();
+        pecasPossiveis.add(rei);
+        pecasNumRaio = rainha.getPecasNumRaio(7, 7, 3, tabuleiroMatrix, pecas);
+        for (CrazyPiece peca : pecasNumRaio) {
+            if (!pecasPossiveis.contains(peca)) {
+                pecasIguais = false;
+            }
+        }
+        assertTrue(pecasIguais);
     }
 }
