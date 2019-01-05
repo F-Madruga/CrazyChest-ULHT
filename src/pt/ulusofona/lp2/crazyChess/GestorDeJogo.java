@@ -29,6 +29,7 @@ public class GestorDeJogo {
     private Map<Integer, Integer> jogadasValidas; // key = -idEquipa -> value = numero de jogadas valida da equipa, key = turno -> value = equipa que fez jogadas valida naquele turno
     private Map<Integer, Integer> jogadasInvalidas;// key = idEquipa -> value = numero de jogadas invalidas
     private boolean load;
+    private int numPecasTabuleiro;
 
     public GestorDeJogo() {
         this.turno = 0;
@@ -51,6 +52,7 @@ public class GestorDeJogo {
         this.numReis.put(-BRANCA, 0);
         Joker.ROTACAOTIPOPECA = turno;
         this.load = false;
+        this.numPecasTabuleiro = 0;
     }
 
     public int getTurno() {
@@ -64,6 +66,10 @@ public class GestorDeJogo {
         else {
             return BRANCA;
         }
+    }
+
+    public void contaPeca() {
+        this.numPecasTabuleiro++;
     }
 
     public void contaRei(int idEquipa) {
@@ -96,6 +102,7 @@ public class GestorDeJogo {
     }
 
     public void adicionarCaptura(int idTipo) {
+        this.numPecasTabuleiro--;
         int capturas = this.capturas.get(-quemEstaAJogar()) + 1;
         this.capturas.put(-quemEstaAJogar(), capturas);
         this.capturas.put(this.turno, quemEstaAJogar());
@@ -123,7 +130,7 @@ public class GestorDeJogo {
     }
 
     public boolean possoTerminar() {
-        if (this.turnoSemCapturas == 10 || (this.numReis.get(BRANCA) <= 1 && this.numReis.get(PRETA) <= 1)) {
+        if (this.turnoSemCapturas == 10 || (this.numPecasTabuleiro == 2 && this.numReis.get(BRANCA) == 1 && this.numReis.get(PRETA) == 1)) {
             this.resultado = -1;
             return true;
         }

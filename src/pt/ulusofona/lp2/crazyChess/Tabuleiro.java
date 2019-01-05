@@ -52,6 +52,7 @@ public class Tabuleiro {
         this.tabuleiro[x][y] = id;
         this.tabuleiroAnterior[x][y] = id;
         if (id != 0) {
+            this.gestor.contaPeca();
             this.pecas.get(id).setCoordenadas(x, y);
             if (pecas.get(id).getIdTipo() == GestorDeJogo.REI) {
                 this.gestor.contaRei(pecas.get(id).getIdEquipa());

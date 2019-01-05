@@ -42,7 +42,6 @@ public class TestPadreDaVila {
                 if (x == 2 && y == 2) {
                     assertTrue(padre.verificarSeMove(5,5, x, y, pecas, tabuleiroMatrix, 0));
                 }else{
-                    System.out.println(x + "|" + y);
                     assertFalse(padre.verificarSeMove(5,5, x, y, pecas, tabuleiroMatrix, 0));
                 }
             }
