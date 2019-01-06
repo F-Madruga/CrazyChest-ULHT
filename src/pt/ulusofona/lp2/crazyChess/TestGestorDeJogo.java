@@ -234,12 +234,14 @@ public class TestGestorDeJogo {
         assertEquals(1, jogadasInvalidas);
     }
 
-   /* @Test
+    @Test
     public void test09PossoTerminar() {
         GestorDeJogo gestor = new GestorDeJogo();
         assertTrue(gestor.getNumReis().get(GestorDeJogo.BRANCA) == 0);
         assertTrue(gestor.getNumReis().get(GestorDeJogo.PRETA) == 0);
         assertTrue(gestor.possoTerminar());
+        gestor.contaPeca();
+        gestor.contaPeca();
         gestor.contaRei(GestorDeJogo.PRETA);
         gestor.contaRei(GestorDeJogo.BRANCA);
         assertTrue(gestor.getNumReis().get(GestorDeJogo.BRANCA) == 1);
@@ -265,6 +267,11 @@ public class TestGestorDeJogo {
         GestorDeJogo gestor = new GestorDeJogo();
         assertTrue(gestor.getNumReis().get(GestorDeJogo.BRANCA) == 0);
         assertTrue(gestor.getNumReis().get(GestorDeJogo.PRETA) == 0);
+
+        gestor.contaRei(GestorDeJogo.PRETA);
+        gestor.contaRei(GestorDeJogo.BRANCA);
+        assertTrue(gestor.getNumReis().get(GestorDeJogo.BRANCA) == 1);
+        assertTrue(gestor.getNumReis().get(GestorDeJogo.PRETA) == 1);
         List<String> listaEsperada = new ArrayList<>();
         listaEsperada.add("JOGO DE CRAZY CHESS");
         listaEsperada.add("Resultado: EMPATE");
@@ -279,25 +286,6 @@ public class TestGestorDeJogo {
         listaEsperada.add(" Tentativas inválidas: 0");
         gestor.possoTerminar();
         List<String> listaObtida = gestor.getResultado();
-        assertThat(listaObtida, is (listaEsperada));
-        gestor.contaRei(GestorDeJogo.PRETA);
-        gestor.contaRei(GestorDeJogo.BRANCA);
-        assertTrue(gestor.getNumReis().get(GestorDeJogo.BRANCA) == 1);
-        assertTrue(gestor.getNumReis().get(GestorDeJogo.PRETA) == 1);
-        listaEsperada = new ArrayList<>();
-        listaEsperada.add("JOGO DE CRAZY CHESS");
-        listaEsperada.add("Resultado: EMPATE");
-        listaEsperada.add("---");
-        listaEsperada.add("Equipa das Pretas");
-        listaEsperada.add(" Capturas: 0");
-        listaEsperada.add(" Jogadas válidas: 0");
-        listaEsperada.add(" Tentativas inválidas: 0");
-        listaEsperada.add("Equipa das Brancas");
-        listaEsperada.add(" Capturas: 0");
-        listaEsperada.add(" Jogadas válidas: 0");
-        listaEsperada.add(" Tentativas inválidas: 0");
-        gestor.possoTerminar();
-        listaObtida = gestor.getResultado();
         assertThat(listaObtida, is (listaEsperada));
         gestor.contaRei(GestorDeJogo.PRETA);
         assertTrue(gestor.getNumReis().get(GestorDeJogo.BRANCA) == 1);
@@ -339,7 +327,7 @@ public class TestGestorDeJogo {
         gestor.possoTerminar();
         listaObtida = gestor.getResultado();
         assertThat(listaObtida, is (listaEsperada));
-    }*/
+    }
 
     @Test
     public void test11LoadEquipaAJogar() {
