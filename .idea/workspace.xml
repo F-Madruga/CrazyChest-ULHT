@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1be8c10-7646-4fc7-9e53-9891c1a8ac13" name="Default Changelist" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testes.docx" afterPath="$PROJECT_DIR$/Testes.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestRei.java" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestRei.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -220,74 +219,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Lebre.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Lebre.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="34" column="129" lean-forward="true" selection-start-line="34" selection-start-column="129" selection-end-line="34" selection-end-column="129" />
-              <folding>
-                <element signature="method#getImagePNG#0;class#Lebre#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestPadreDaVila.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestPadreDaVila.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="167" column="28" lean-forward="false" selection-start-line="167" selection-start-column="28" selection-end-line="167" selection-end-column="28" />
-              <folding>
-                <element signature="method#test01VerificaMovimentosComPecas#0;class#TestPadreDaVila#0" expanded="false" />
-                <element signature="method#test02DistanciaRainha#0;class#TestPadreDaVila#0" expanded="false" />
-                <element signature="method#test03PNGPreta#0;class#TestPadreDaVila#0" expanded="false" />
-                <element signature="method#test04PNGNula#0;class#TestPadreDaVila#0" expanded="false" />
-                <element signature="method#test05PNGBranca#0;class#TestPadreDaVila#0" expanded="false" />
-                <element signature="method#test06Nome#0;class#TestPadreDaVila#0" expanded="false" />
-                <element signature="method#test07ValorRelativo#0;class#TestPadreDaVila#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestPoneiMagico.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestPoneiMagico.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-152">
-              <caret line="100" column="34" lean-forward="true" selection-start-line="100" selection-start-column="34" selection-end-line="100" selection-end-column="34" />
-              <folding>
-                <element signature="method#test01PNGPreta#0;class#TestPoneiMagico#0" expanded="false" />
-                <element signature="method#test02PNGNula#0;class#TestPoneiMagico#0" expanded="false" />
-                <element signature="method#test03PNGBranca#0;class#TestPoneiMagico#0" expanded="false" />
-                <element signature="method#test04Nome#0;class#TestPoneiMagico#0" expanded="false" />
-                <element signature="method#test05ValorRelativo#0;class#TestPoneiMagico#0" expanded="false" />
-                <element signature="method#test06Sugestoes#0;class#TestPoneiMagico#0" expanded="false" />
-                <element signature="method#test08SemSugestoes#0;class#TestPoneiMagico#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CrazyPiece.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-              <folding>
-                <element signature="method#equals#0;class#CrazyPiece#0" expanded="false" />
-                <element signature="method#darSugestao#0;class#CrazyPiece#0" expanded="false" />
-                <element signature="method#toString#0;class#CrazyPiece#0" expanded="false" />
-                <element signature="method#moveDiagonal#0;class#CrazyPiece#0" expanded="false" />
-                <element signature="method#moveDentroLimite#0;class#CrazyPiece#0" expanded="false" />
-                <element signature="method#getPecasNoCaminho#0;class#CrazyPiece#0" expanded="false" />
-                <element signature="method#getPecasNumRaio#0;class#CrazyPiece#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -358,7 +290,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -387,17 +319,6 @@
             <path>
               <item name="LP2-21705328-21703091" type="b2602c69:ProjectViewProjectNode" />
               <item name="LP2-21705328-21703091" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LP2-21705328-21703091" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LP2-21705328-21703091" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LP2-21705328-21703091" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LP2-21705328-21703091" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="crazyChess" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -446,7 +367,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.TestCrazyPiece">
     <configuration name="AppLauncher" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.guiSimulator.AppLauncher" />
@@ -461,8 +382,8 @@
       <module name="CrazyChess" />
       <envs />
     </configuration>
-    <configuration name="TestRainha" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" runner="idea">
+    <configuration name="TestCrazyPiece" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="pt.ulusofona.lp2.crazyChess.*" />
           <option name="ENABLED" value="true" />
@@ -472,7 +393,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="pt.ulusofona.lp2.crazyChess" />
-      <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.crazyChess.TestRainha" />
+      <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.crazyChess.TestCrazyPiece" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
@@ -587,20 +508,20 @@
       <patterns />
     </configuration>
     <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.TestRainha" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.TestTorreV" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TestTabuleiro" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TestTorreH" />
-      <item index="4" class="java.lang.String" itemvalue="Application.AppLauncher" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.TestRei" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.TestTorreV" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TestTabuleiro" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TestTorreH" />
+      <item index="3" class="java.lang.String" itemvalue="Application.AppLauncher" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TestRei" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.TestCrazyPiece" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TestRei" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TestTorreH" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestTabuleiro" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TestTorreV" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TestRainha" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TestCrazyPiece" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestRei" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TestTorreH" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestTabuleiro" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestTorreV" />
       </list>
     </recent_temporary>
   </component>
@@ -706,13 +627,13 @@
       <workItem from="1546729575705" duration="1119000" />
       <workItem from="1546731504288" duration="2080000" />
       <workItem from="1546799691456" duration="5289000" />
-      <workItem from="1546806333899" duration="4540000" />
+      <workItem from="1546806333899" duration="6958000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestPadreDaVila - 2019.01.06 at 19h 57m 22s.xml">
-      <configuration name="TestPadreDaVila" configurationId="JUnit" />
+    <history-entry file="TestCrazyPiece - 2019.01.06 at 22h 33m 25s.xml">
+      <configuration name="TestCrazyPiece" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TestGestorDeJogo - 2019.01.06 at 19h 57m 54s.xml">
       <configuration name="TestGestorDeJogo" configurationId="JUnit" />
@@ -743,25 +664,25 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="362958000" />
+    <option name="totallyTimeSpent" value="365376000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="697" height="735" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06020558" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22767204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -785,7 +706,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -921,6 +842,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="method#Bebado#0;class#Bebado#0" expanded="false" />
+            <element signature="method#getImagePNG#0;class#Bebado#0" expanded="false" />
+            <element signature="method#verificarSeMove#0;class#Bebado#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -964,74 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestBebado.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#test01MovimentosPossiveis#0;class#TestBebado#0" expanded="false" />
-            <element signature="method#test02GetValorRelativo#0;class#TestBebado#0" expanded="false" />
-            <element signature="method#test03GetNome#0;class#TestBebado#0" expanded="false" />
-            <element signature="method#test04GetPNGBranca#0;class#TestBebado#0" expanded="false" />
-            <element signature="method#test05GetPNGPreta#0;class#TestBebado#0" expanded="false" />
-            <element signature="method#test06GetPNGNula#0;class#TestBebado#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestCrazyPiece.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#test01MoveHorizonal#0;class#TestCrazyPiece#0" expanded="false" />
-            <element signature="method#test02MoveVertical#0;class#TestCrazyPiece#0" expanded="false" />
-            <element signature="method#test03MoveDiagonal#0;class#TestCrazyPiece#0" expanded="false" />
-            <element signature="method#test04Move#0;class#TestCrazyPiece#0" expanded="false" />
-            <element signature="method#test05MoveDentroLimite#0;class#TestCrazyPiece#0" expanded="false" />
-            <element signature="method#test06GetPecasNoCaminho#0;class#TestCrazyPiece#0" expanded="false" />
-            <element signature="method#test07GetPecasNumRaio#0;class#TestCrazyPiece#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestGestorDeJogo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="265" column="38" lean-forward="false" selection-start-line="265" selection-start-column="38" selection-end-line="265" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestRainha.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="103" column="41" lean-forward="false" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestTabuleiro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="184" column="42" lean-forward="false" selection-start-line="184" selection-start-column="42" selection-end-line="184" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestTorreH.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="52" lean-forward="false" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestTorreV.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="52" lean-forward="true" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Rei.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -1043,10 +901,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Lebre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="34" column="129" lean-forward="false" selection-start-line="34" selection-start-column="129" selection-end-line="34" selection-end-column="129" />
+          <folding>
+            <element signature="method#getImagePNG#0;class#Lebre#0" expanded="false" />
+            <element signature="method#verificarSeMove#0;class#Lebre#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding>
+            <element signature="method#CrazyPiece#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#equals#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#setCoordenadas#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#resetCoordenadas#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#darSugestao#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#toString#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#moveDiagonal#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#moveDentroLimite#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#getPecasNoCaminho#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#getPecasNumRaio#0;class#CrazyPiece#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestTorreV.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="66" column="33" lean-forward="false" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
+          <folding>
+            <element signature="method#test01VerificaMovimentosPossiveis#0;class#TestTorreV#0" expanded="false" />
+            <element signature="method#test02PNGPreta#0;class#TestTorreV#0" expanded="false" />
+            <element signature="method#test03PNGNula#0;class#TestTorreV#0" expanded="false" />
+            <element signature="method#test04PNGBranca#0;class#TestTorreV#0" expanded="false" />
+            <element signature="method#test05Nome#0;class#TestTorreV#0" expanded="false" />
+            <element signature="method#test06ValorRelativo#0;class#TestTorreV#0" expanded="false" />
+            <element signature="method#test07Sugestoes#0;class#TestTorreV#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestTorreH.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="method#test01VerificaMovimentosPossiveis#0;class#TestTorreH#0" expanded="false" />
+            <element signature="method#test02PNGPreta#0;class#TestTorreH#0" expanded="false" />
+            <element signature="method#test03PNGNula#0;class#TestTorreH#0" expanded="false" />
+            <element signature="method#test04PNGBranca#0;class#TestTorreH#0" expanded="false" />
+            <element signature="method#test05Nome#0;class#TestTorreH#0" expanded="false" />
+            <element signature="method#test06ValorRelativo#0;class#TestTorreH#0" expanded="false" />
+            <element signature="method#test07Sugestoes#0;class#TestTorreH#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestTabuleiro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="184" column="42" lean-forward="false" selection-start-line="184" selection-start-column="42" selection-end-line="184" selection-end-column="42" />
+          <folding>
+            <element signature="method#test01ExistemCoordenadas#0;class#TestTabuleiro#0" expanded="false" />
+            <element signature="method#test02GetTamanho#0;class#TestTabuleiro#0" expanded="false" />
+            <element signature="method#test03AcrescentaPeca#0;class#TestTabuleiro#0" expanded="false" />
+            <element signature="method#test04ColocarNoTabuleiro#0;class#TestTabuleiro#0" expanded="false" />
+            <element signature="method#test05GetPecas#0;class#TestTabuleiro#0" expanded="false" />
+            <element signature="method#test06GetPeca#0;class#TestTabuleiro#0" expanded="false" />
+            <element signature="method#test07ObterSugestoesJogada#0;class#TestTabuleiro#0" expanded="false" />
+            <element signature="method#test08ProcessaJogada#0;class#TestTabuleiro#0" expanded="false" />
+            <element signature="method#test09AtualizarAnterior#0;class#TestTabuleiro#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestRei.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="68" column="4" lean-forward="false" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
+        <state relative-caret-position="506">
+          <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding>
             <element signature="method#test01PNGPreta#0;class#TestRei#0" expanded="false" />
             <element signature="method#test02PNGNula#0;class#TestRei#0" expanded="false" />
@@ -1058,25 +996,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java">
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestRainha.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        <state relative-caret-position="616">
+          <caret line="121" column="45" lean-forward="false" selection-start-line="121" selection-start-column="45" selection-end-line="121" selection-end-column="45" />
           <folding>
-            <element signature="method#equals#0;class#CrazyPiece#0" expanded="false" />
-            <element signature="method#darSugestao#0;class#CrazyPiece#0" expanded="false" />
-            <element signature="method#toString#0;class#CrazyPiece#0" expanded="false" />
-            <element signature="method#moveDiagonal#0;class#CrazyPiece#0" expanded="false" />
-            <element signature="method#moveDentroLimite#0;class#CrazyPiece#0" expanded="false" />
-            <element signature="method#getPecasNoCaminho#0;class#CrazyPiece#0" expanded="false" />
-            <element signature="method#getPecasNumRaio#0;class#CrazyPiece#0" expanded="false" />
+            <element signature="method#test01PNGPreta#0;class#TestRainha#0" expanded="false" />
+            <element signature="method#test02PNGNula#0;class#TestRainha#0" expanded="false" />
+            <element signature="method#test03PNGBranca#0;class#TestRainha#0" expanded="false" />
+            <element signature="method#test04Nome#0;class#TestRainha#0" expanded="false" />
+            <element signature="method#test05ValorRelativo#0;class#TestRainha#0" expanded="false" />
+            <element signature="method#test06Sugestoes#0;class#TestRainha#0" expanded="false" />
+            <element signature="method#test07PactoEntreRainhas#0;class#TestRainha#0" expanded="false" />
+            <element signature="method#test08MovimentosImpossiveis#0;class#TestRainha#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestPoneiMagico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="65" column="34" lean-forward="false" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
+          <folding>
+            <element signature="method#test01PNGPreta#0;class#TestPoneiMagico#0" expanded="false" />
+            <element signature="method#test02PNGNula#0;class#TestPoneiMagico#0" expanded="false" />
+            <element signature="method#test03PNGBranca#0;class#TestPoneiMagico#0" expanded="false" />
+            <element signature="method#test04Nome#0;class#TestPoneiMagico#0" expanded="false" />
+            <element signature="method#test05ValorRelativo#0;class#TestPoneiMagico#0" expanded="false" />
+            <element signature="method#test06Sugestoes#0;class#TestPoneiMagico#0" expanded="false" />
+            <element signature="method#test07SaltarReis#0;class#TestPoneiMagico#0" expanded="false" />
+            <element signature="method#test08SemSugestoes#0;class#TestPoneiMagico#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestPadreDaVila.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="147" column="33" lean-forward="false" selection-start-line="147" selection-start-column="33" selection-end-line="147" selection-end-column="33" />
+          <folding>
+            <element signature="method#test01VerificaMovimentosComPecas#0;class#TestPadreDaVila#0" expanded="false" />
+            <element signature="method#test02DistanciaRainha#0;class#TestPadreDaVila#0" expanded="false" />
+            <element signature="method#test03PNGPreta#0;class#TestPadreDaVila#0" expanded="false" />
+            <element signature="method#test04PNGNula#0;class#TestPadreDaVila#0" expanded="false" />
+            <element signature="method#test05PNGBranca#0;class#TestPadreDaVila#0" expanded="false" />
+            <element signature="method#test06Nome#0;class#TestPadreDaVila#0" expanded="false" />
+            <element signature="method#test07ValorRelativo#0;class#TestPadreDaVila#0" expanded="false" />
+            <element signature="method#test08Sugestoes#0;class#TestPadreDaVila#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestLebre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
+        <state relative-caret-position="1298">
           <caret line="176" column="1" lean-forward="true" selection-start-line="176" selection-start-column="1" selection-end-line="176" selection-end-column="1" />
           <folding>
             <element signature="method#test01VerificaMovimentoTurnoErrado#0;class#TestLebre#0" expanded="false" />
@@ -1101,44 +1074,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Lebre.java">
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestGestorDeJogo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="34" column="129" lean-forward="true" selection-start-line="34" selection-start-column="129" selection-end-line="34" selection-end-column="129" />
+        <state relative-caret-position="748">
+          <caret line="265" column="38" lean-forward="false" selection-start-line="265" selection-start-column="38" selection-end-line="265" selection-end-column="38" />
           <folding>
-            <element signature="method#getImagePNG#0;class#Lebre#0" expanded="false" />
+            <element signature="method#test01GetTurno#0;class#TestGestorDeJogo#0" expanded="false" />
+            <element signature="method#test02QuemEstaAJogar#0;class#TestGestorDeJogo#0" expanded="false" />
+            <element signature="method#test03ContaRei#0;class#TestGestorDeJogo#0" expanded="false" />
+            <element signature="method#tes04ValidarJogada#0;class#TestGestorDeJogo#0" expanded="false" />
+            <element signature="method#test05NaoHouveCaptura#0;class#TestGestorDeJogo#0" expanded="false" />
+            <element signature="method#test06AdicionarCaptura#0;class#TestGestorDeJogo#0" expanded="false" />
+            <element signature="method#test07InvalidarJogada#0;class#TestGestorDeJogo#0" expanded="false" />
+            <element signature="method#tes08Undo#0;class#TestGestorDeJogo#0" expanded="false" />
+            <element signature="method#test09PossoTerminar#0;class#TestGestorDeJogo#0" expanded="false" />
+            <element signature="method#test10GetResultados#0;class#TestGestorDeJogo#0" expanded="false" />
+            <element signature="method#test11LoadEquipaAJogar#0;class#TestGestorDeJogo#0" expanded="false" />
+            <element signature="method#test12LoadJogadasValidas#0;class#TestGestorDeJogo#0" expanded="false" />
+            <element signature="method#test13LoadJogadasInvalidas#0;class#TestGestorDeJogo#0" expanded="false" />
+            <element signature="method#test14LoadCapturas#0;class#TestGestorDeJogo#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestPadreDaVila.java">
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestCrazyPiece.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="167" column="28" lean-forward="false" selection-start-line="167" selection-start-column="28" selection-end-line="167" selection-end-column="28" />
+        <state relative-caret-position="198">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
-            <element signature="method#test01VerificaMovimentosComPecas#0;class#TestPadreDaVila#0" expanded="false" />
-            <element signature="method#test02DistanciaRainha#0;class#TestPadreDaVila#0" expanded="false" />
-            <element signature="method#test03PNGPreta#0;class#TestPadreDaVila#0" expanded="false" />
-            <element signature="method#test04PNGNula#0;class#TestPadreDaVila#0" expanded="false" />
-            <element signature="method#test05PNGBranca#0;class#TestPadreDaVila#0" expanded="false" />
-            <element signature="method#test06Nome#0;class#TestPadreDaVila#0" expanded="false" />
-            <element signature="method#test07ValorRelativo#0;class#TestPadreDaVila#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#test01MoveHorizonal#0;class#TestCrazyPiece#0" expanded="false" />
+            <element signature="method#test02MoveVertical#0;class#TestCrazyPiece#0" expanded="false" />
+            <element signature="method#test03MoveDiagonal#0;class#TestCrazyPiece#0" expanded="false" />
+            <element signature="method#test04Move#0;class#TestCrazyPiece#0" expanded="false" />
+            <element signature="method#test05MoveDentroLimite#0;class#TestCrazyPiece#0" expanded="false" />
+            <element signature="method#test06GetPecasNoCaminho#0;class#TestCrazyPiece#0" expanded="false" />
+            <element signature="method#test07GetPecasNumRaio#0;class#TestCrazyPiece#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestPoneiMagico.java">
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/TestBebado.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-152">
-          <caret line="100" column="34" lean-forward="true" selection-start-line="100" selection-start-column="34" selection-end-line="100" selection-end-column="34" />
+        <state relative-caret-position="242">
+          <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
           <folding>
-            <element signature="method#test01PNGPreta#0;class#TestPoneiMagico#0" expanded="false" />
-            <element signature="method#test02PNGNula#0;class#TestPoneiMagico#0" expanded="false" />
-            <element signature="method#test03PNGBranca#0;class#TestPoneiMagico#0" expanded="false" />
-            <element signature="method#test04Nome#0;class#TestPoneiMagico#0" expanded="false" />
-            <element signature="method#test05ValorRelativo#0;class#TestPoneiMagico#0" expanded="false" />
-            <element signature="method#test06Sugestoes#0;class#TestPoneiMagico#0" expanded="false" />
-            <element signature="method#test08SemSugestoes#0;class#TestPoneiMagico#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#test01MovimentosPossiveis#0;class#TestBebado#0" expanded="false" />
+            <element signature="method#test02GetValorRelativo#0;class#TestBebado#0" expanded="false" />
+            <element signature="method#test03GetNome#0;class#TestBebado#0" expanded="false" />
+            <element signature="method#test04GetPNGBranca#0;class#TestBebado#0" expanded="false" />
+            <element signature="method#test05GetPNGPreta#0;class#TestBebado#0" expanded="false" />
+            <element signature="method#test06GetPNGNula#0;class#TestBebado#0" expanded="false" />
           </folding>
         </state>
       </provider>
