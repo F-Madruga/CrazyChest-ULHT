@@ -38,7 +38,7 @@ public class Joker extends CrazyPiece {
         }
     }
 
-    public CrazyPiece getMascara() {
+    public CrazyPiece getMascara() { //receber o turno
         int index = ROTACAOTIPOPECA;
         while (index >= mascaras.length) {
             index -= mascaras.length;
