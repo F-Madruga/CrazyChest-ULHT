@@ -126,7 +126,7 @@ public class Tabuleiro {
         if (existemCoordenadas(xO, yO, this.tamanho)) {
             if (this.tabuleiro[xO][yO] != 0) {
                 if (this.pecas.get(this.tabuleiro[xO][yO]).getIdEquipa() == quemEstaAJogar()) {
-                    return this.pecas.get(this.tabuleiro[xO][yO]).darSugestao(xO, yO, this.pecas, this.tabuleiro, this.gestor.getTurno());
+                    return this.pecas.get(this.tabuleiro[xO][yO]).darSugestao(xO, yO, this.pecas, this.tabuleiro, this.gestor.getTurno()).stream().distinct().collect(Collectors.toList());
                 }
             }
         }
@@ -261,7 +261,7 @@ public class Tabuleiro {
                 .collect(Collectors.toList()));
 
         estatisticas.put("3PecasMaisBaralhadas", getPecas().stream()
-                .sorted((p1, p2) -> p2.getJogadasInvalidas() - p1.getJogadasInvalidas())
+                .sorted((p1, p2) -> Double.compare(p2.getRacio(), p1.getRacio()))
                 .limit(3)
                 .map(Tabuleiro::jogadasToString)
                 .collect(Collectors.toList()));

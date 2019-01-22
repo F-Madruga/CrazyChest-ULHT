@@ -22,6 +22,15 @@ public class Sugestao implements  Comparable<Sugestao> {
 
     @Override
     public String toString() {
+        if (this.pontos == 1000) {
+            return this.x + ", " + this.y + ", " + "(infinito)";
+        }
         return this.x + ", " + this.y + ", " + this.pontos;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Sugestao sugestao = (Sugestao)obj;
+        return this.x == sugestao.x && this.y == sugestao.y && this.pontos == sugestao.pontos;
     }
 }

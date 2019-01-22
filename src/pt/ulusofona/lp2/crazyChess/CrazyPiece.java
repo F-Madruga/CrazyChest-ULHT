@@ -225,4 +225,11 @@ public abstract class CrazyPiece {
         }
         return pontos;
     }
+
+    public double getRacio() {
+        if ((this.jogadasInvalidas + this.jogadasValidas) > 0) {
+            return (double) (this.jogadasInvalidas / (this.jogadasInvalidas + this.jogadasValidas));
+        }
+        return 0;
+    }
 }
