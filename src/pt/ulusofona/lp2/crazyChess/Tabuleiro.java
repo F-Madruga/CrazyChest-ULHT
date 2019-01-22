@@ -15,13 +15,6 @@ public class Tabuleiro {
         return peca1.getAlcunha().compareTo(peca2.getAlcunha());
     }
 
-    public static int contarParaMap(Map<Integer, Integer> tipoPecaCapturados, int tipoPeca) {
-        if (!tipoPecaCapturados.containsKey(tipoPeca)) {
-            return 1;
-        }
-        return tipoPecaCapturados.get(tipoPeca) + 1;
-    }
-
     public static int compararPecasPorPontos(CrazyPiece peca1, CrazyPiece peca2) {
         if (peca2.getPontos() - peca1.getPontos() != 0) {
             return peca2.getPontos() - peca1.getPontos();
@@ -273,16 +266,15 @@ public class Tabuleiro {
                 .map(Tabuleiro::jogadasToString)
                 .collect(Collectors.toList()));
 
-
         Map<Integer, Integer> numCapturaTipo = new HashMap<>();
         getPecas().stream()
                 .forEach((p) -> numCapturaTipo.put(p.getIdTipo(), 0));
         getPecas().stream()
-                .forEach((p) -> p.getCapturas().stream()
-                        .forEach((c) -> numCapturaTipo.put(c.getIdTipo(), numCapturaTipo.get(c.getIdTipo()) + 1)));
+                .forEach((p) -> numCapturaTipo.put(p.getIdTipo(), numCapturaTipo.get(p.getIdTipo()) + p.getCapturas().size()));
         List<String> tiposPecaCapturados = new ArrayList<>();
-       new ArrayList<Integer>(numCapturaTipo.keySet()).stream()
+        new ArrayList<Integer>(numCapturaTipo.keySet()).stream()
                .filter((n) -> numCapturaTipo.get(n) > 0)
+               .sorted((n1, n2) -> numCapturaTipo.get(n2) - numCapturaTipo.get(n1))
                .forEach((n) -> tiposPecaCapturados.add(n + ":" + numCapturaTipo.get(n)));
         estatisticas.put("tiposPecaCapturados", tiposPecaCapturados);
         return estatisticas;
