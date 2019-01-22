@@ -1,7 +1,5 @@
 package pt.ulusofona.lp2.crazyChess;
 
-import com.sun.corba.se.spi.ior.IdentifiableContainerBase;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -117,6 +115,8 @@ public class Tabuleiro {
             this.gestor.undo();
             for (CrazyPiece peca: getPecas()) {
                 peca.undo(this.ultimaPecaCapturada, this.ultimaPecaJogada);
+                ultimaPecaCapturada = null;
+                ultimaPecaJogada = null;
             }
             for (int x = 0; x < this.tamanho; x++) {
                 for (int y = 0; y < this.tamanho; y++) {
