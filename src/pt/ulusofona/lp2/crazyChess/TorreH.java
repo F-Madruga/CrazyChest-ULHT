@@ -15,8 +15,8 @@ public class TorreH extends CrazyPiece {
     }
 
     @Override
-    protected String getValorRelativo() {
-        return "3";
+    protected int getValorRelativo() {
+        return 3;
     }
 
     @Override

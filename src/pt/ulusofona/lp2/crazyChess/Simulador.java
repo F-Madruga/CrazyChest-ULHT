@@ -2,8 +2,10 @@ package pt.ulusofona.lp2.crazyChess;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Simulador {
@@ -36,13 +38,10 @@ public class Simulador {
         if (idTipo == GestorDeJogo.JOKER) {
             peca = new Joker(idPeca, idTipo, idEquipa, alcunha);
         }
-        if (idTipo == GestorDeJogo.BEBADO) {
-            peca = new Bebado(idPeca, idTipo, idEquipa, alcunha);
-        }
         return peca;
     }
 
-    public boolean iniciaJogo(File ficheiroInicial) {
+    public void iniciaJogo(File ficheiroInicial) throws InvalidSimulatorInputException, IOException {
         try {
             Scanner scanner = new Scanner(ficheiroInicial);
             int numPecas = 0;
@@ -50,22 +49,36 @@ public class Simulador {
             while (scanner.hasNextLine()) {
                 String linha = scanner.nextLine();
                 if (numLinha == 0) {
+                    String dados [] = linha.split(":");
+                    if (dados.length != 1) {
+                        throw new InvalidSimulatorInputException(numLinha, dados, 0, 0);
+                    }
                     this.tabuleiro = new Tabuleiro(Integer.parseInt(linha));
                 }
                 else if (numLinha == 1) {
+                    String dados [] = linha.split(":");
+                    if (dados.length != 1) {
+                        throw new InvalidSimulatorInputException(numLinha, dados,0, tabuleiro.getTamanho());
+                    }
                     numPecas = Integer.parseInt(linha);
                 }
                 else {
                     String dados [] = linha.split(":");
                     //Caracterizaçao das pecas
                     if (numLinha < numPecas + 2) {
+                        if (dados.length != 3) {
+                            throw new InvalidSimulatorInputException(numLinha, dados, numPecas, tabuleiro.getTamanho());
+                        }
                         CrazyPiece peca = definirPeca(Integer.parseInt(dados[0]), Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), dados[3]);
                         if (peca != null) {
                             this.tabuleiro.acrescentaPeca(peca);
                         }
                     }
                     //Estado inicial do tabuleiro
-                    else if (numLinha < numPecas + 2 + tabuleiro.getTamanho()){
+                    else if (numLinha < numPecas + 2 + tabuleiro.getTamanho()) {
+                        if (dados.length != tabuleiro.getTamanho() - 1) {
+                            throw new InvalidSimulatorInputException(numLinha, dados, numPecas, tabuleiro.getTamanho());
+                        }
                         for (int coluna = 0; coluna < dados.length; coluna++) {
                             this.tabuleiro.colocarNoTabuleiro(Integer.parseInt(dados[coluna]), coluna,numLinha - numPecas - 2);
                         }
@@ -77,10 +90,9 @@ public class Simulador {
                 numLinha++;
             }
             scanner.close();
-            return true;
         }
         catch (FileNotFoundException exception) {
-            return false;
+            throw new IOException();
         }
     }
 
@@ -125,7 +137,7 @@ public class Simulador {
         return this.tabuleiro.quemEstaAJogar();
     }
 
-    public List<String> obterSugestoesJogada(int xO, int yO) {
+    public List<Sugestao> obterSugestoesJogada(int xO, int yO) {
         return this.tabuleiro.obterSugestoesJogada(xO, yO);
     }
 
@@ -137,4 +149,7 @@ public class Simulador {
         return this.tabuleiro.gravarJogo(ficheiroDestino);
     }
 
+    public Map<String, List<String>> getEstatisticas() {
+        return tabuleiro.getEstatisticas();
+    }
 }

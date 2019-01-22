@@ -12,6 +12,9 @@ public abstract class CrazyPiece {
     protected String alcunha;
     protected String coordenadas;
     protected String coordenadasAnterior;
+    protected int jogadasInvalidas;
+    protected int jogadasValidas;
+    protected List<CrazyPiece> capturas;
 
     public CrazyPiece(int idPeca, int idTipo, int idEquipa, String alcunha) {
         this.idPeca = idPeca;
@@ -20,6 +23,9 @@ public abstract class CrazyPiece {
         this.alcunha = alcunha;
         this.coordenadas = "(n/a)";
         this.coordenadasAnterior = this.coordenadas;
+        this.jogadasInvalidas = 0;
+        this.jogadasValidas = 0;
+        this.capturas = new ArrayList<>();
     }
 
     @Override
@@ -54,24 +60,32 @@ public abstract class CrazyPiece {
         this.coordenadas = "(n/a)";
     }
 
-    public void undo() {
+    public void undo(CrazyPiece ultimaPecaCapturada, CrazyPiece ultimaPecaJogada) {
         this.coordenadas = this.coordenadasAnterior;
+        if (ultimaPecaCapturada != null) {
+            this.capturas.remove(ultimaPecaCapturada);
+        }
+        if (ultimaPecaJogada.equals(this)) {
+            this.jogadasValidas--;
+        }
     }
 
-    public List<String> darSugestao(int xO, int yO, Map<Integer, CrazyPiece> pecas, int [][] tabuleiro, int turno) {
-        List<String> sugestoes = new ArrayList<>();
+    public List<Sugestao> darSugestao(int xO, int yO, Map<Integer, CrazyPiece> pecas, int [][] tabuleiro, int turno) {
+        List<Sugestao> sugestoes = new ArrayList<>();
         if (Tabuleiro.existemCoordenadas(xO, yO, tabuleiro.length)) {
             if (tabuleiro[xO][yO] == this.idPeca) {
                 for (int x = 0; x < tabuleiro.length; x++) {
                     for (int y = 0; y < tabuleiro[x].length; y++) {
                         if (tabuleiro[x][y] == 0) {
                             if (verificarSeMove(xO, yO, x, y, pecas, tabuleiro, turno)) {
-                                sugestoes.add(x + ", " + y);
+                                sugestoes.add(new Sugestao(x, y));
                             }
                         }
                         else if (pecas.get(tabuleiro[x][y]).getIdEquipa() != this.idEquipa) {
                             if (verificarSeMove(xO, yO, x, y, pecas, tabuleiro, turno)) {
-                                sugestoes.add(x + ", " + y);
+                                Sugestao sugestao = new Sugestao(x, y);
+                                sugestao.setPontos(pecas.get(tabuleiro[x][y]).getValorRelativo());
+                                sugestoes.add(sugestao);
                             }
                         }
                     }
@@ -81,7 +95,7 @@ public abstract class CrazyPiece {
         return sugestoes;
     }
 
-    protected abstract String getValorRelativo();
+    protected abstract int getValorRelativo();
 
     protected abstract String getNome();
 
@@ -178,5 +192,37 @@ public abstract class CrazyPiece {
             }
         }
         return pecasAvolta;
+    }
+
+    public void contarJogadaInvalida() {
+        this.jogadasInvalidas++;
+    }
+
+    public void contarJogadaValida() {
+        this.jogadasValidas++;
+    }
+
+    public void captura(CrazyPiece peca) {
+        this.capturas.add(peca);
+    }
+
+    public int getJogadasInvalidas() {
+        return jogadasInvalidas;
+    }
+
+    public int getJogadasValidas() {
+        return jogadasValidas;
+    }
+
+    public List<CrazyPiece> getCapturas() {
+        return capturas;
+    }
+
+    public int getPontos() {
+        int pontos = 0;
+        for (CrazyPiece peca: capturas) {
+            pontos += peca.getValorRelativo();
+        }
+        return pontos;
     }
 }

@@ -10,8 +10,8 @@ public class Rainha extends CrazyPiece {
     }
 
     @Override
-    protected String getValorRelativo() {
-        return "8";
+    protected int getValorRelativo() {
+        return 8;
     }
 
     @Override

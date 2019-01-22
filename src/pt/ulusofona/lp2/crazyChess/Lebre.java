@@ -9,8 +9,8 @@ public class Lebre extends CrazyPiece {
     }
 
     @Override
-    protected String getValorRelativo(){
-        return "2";
+    protected int getValorRelativo(){
+        return 2;
     }
 
     @Override

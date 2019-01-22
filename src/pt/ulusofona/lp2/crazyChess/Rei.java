@@ -9,8 +9,8 @@ public class Rei extends CrazyPiece {
     }
 
     @Override
-    protected String getValorRelativo() {
-        return "(infinito)";
+    protected int getValorRelativo() {
+        return 1000;
     }
 
     @Override
@@ -37,5 +37,10 @@ public class Rei extends CrazyPiece {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return this.idPeca + " | " + this.getNome() + " | (infinito) | " + this.idEquipa + " | " + this.alcunha + " @ " + this.coordenadas;
     }
 }

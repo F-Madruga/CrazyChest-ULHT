@@ -1,14 +1,43 @@
 package pt.ulusofona.lp2.crazyChess;
 
+import com.sun.corba.se.spi.ior.IdentifiableContainerBase;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Tabuleiro {
+
+    public static int compararPecasPorCapturas(CrazyPiece peca1, CrazyPiece peca2) {
+        if (peca2.getCapturas().size() - peca1.getCapturas().size() != 0) {
+            return peca2.getCapturas().size() - peca1.getCapturas().size();
+        }
+        return peca1.getAlcunha().compareTo(peca2.getAlcunha());
+    }
+
+    public static int contarParaMap(Map<Integer, Integer> tipoPecaCapturados, int tipoPeca) {
+        if (!tipoPecaCapturados.containsKey(tipoPeca)) {
+            return 1;
+        }
+        return tipoPecaCapturados.get(tipoPeca) + 1;
+    }
+
+    public static int compararPecasPorPontos(CrazyPiece peca1, CrazyPiece peca2) {
+        if (peca2.getPontos() - peca1.getPontos() != 0) {
+            return peca2.getPontos() - peca1.getPontos();
+        }
+        return peca1.getAlcunha().compareTo(peca2.getAlcunha());
+    }
+
+    public static String capturasToString(CrazyPiece peca) {
+        return peca.getIdEquipa() + ":" + peca.getAlcunha() + ":" + peca.getPontos() + ":" + peca.getCapturas().size();
+    }
+
+    public static String jogadasToString(CrazyPiece peca) {
+        return peca.getIdEquipa() + ":" + peca.getAlcunha() + ":" + peca.getJogadasInvalidas() + ":" + peca.getJogadasValidas();
+    }
 
     public static boolean existemCoordenadas(int x, int y, int tamanho) {
         if (x >= 0 && x < tamanho && y >= 0 && y < tamanho) {
@@ -18,16 +47,14 @@ public class Tabuleiro {
         }
     }
 
-    public static boolean ALTERARCOORDENADASDESTINO = false;
-    public static int NOVOX = 0;
-    public static int NOVOY = 0;
-
     private int tamanho;
     private Map<Integer, CrazyPiece> pecas;
     private int [][] tabuleiro;
     private int [][] tabuleiroAnterior;
     private GestorDeJogo gestor;
     public boolean fazerUndo;
+    public CrazyPiece ultimaPecaCapturada;
+    public CrazyPiece ultimaPecaJogada;
 
     public Tabuleiro(int tamanho) {
         this.tamanho = tamanho;
@@ -36,7 +63,7 @@ public class Tabuleiro {
         this.pecas = new HashMap<>();
         this.gestor = new GestorDeJogo();
         this.fazerUndo = false;
-        ALTERARCOORDENADASDESTINO = false;
+        this.ultimaPecaCapturada = null;
         Joker.ROTACAOTIPOPECA = gestor.getTurno();
     }
 
@@ -89,7 +116,7 @@ public class Tabuleiro {
         if(this.fazerUndo && gestor.getTurno() > 0) {
             this.gestor.undo();
             for (CrazyPiece peca: getPecas()) {
-                peca.undo();
+                peca.undo(this.ultimaPecaCapturada, this.ultimaPecaJogada);
             }
             for (int x = 0; x < this.tamanho; x++) {
                 for (int y = 0; y < this.tamanho; y++) {
@@ -100,9 +127,9 @@ public class Tabuleiro {
         }
     }
 
-    public List<String> obterSugestoesJogada(int xO, int yO) {
+    public List<Sugestao> obterSugestoesJogada(int xO, int yO) {
         Joker.ROTACAOTIPOPECA = gestor.getTurno();
-        List<String> sugestoes = new ArrayList<>();
+        List<Sugestao> sugestoes = new ArrayList<>();
         if (existemCoordenadas(xO, yO, this.tamanho)) {
             if (this.tabuleiro[xO][yO] != 0) {
                 if (this.pecas.get(this.tabuleiro[xO][yO]).getIdEquipa() == quemEstaAJogar()) {
@@ -110,22 +137,15 @@ public class Tabuleiro {
                 }
             }
         }
-        sugestoes.add("Pedido inválido");
         return sugestoes;
     }
 
     public boolean processaJogada(int xO, int yO, int xD, int yD) {
         Joker.ROTACAOTIPOPECA = gestor.getTurno();
-        ALTERARCOORDENADASDESTINO = false;
         if (existemCoordenadas(xO, yO, this.tamanho) && existemCoordenadas(xD, yD, this.tamanho)) {
             if (this.tabuleiro[xO][yO] != 0) {
                 if (this.pecas.get(this.tabuleiro[xO][yO]).getIdEquipa() == quemEstaAJogar()) {
                     if (this.pecas.get(this.tabuleiro[xO][yO]).verificarSeMove(xO, yO, xD, yD, this.pecas, this.tabuleiro, this.gestor.getTurno())) {
-                        if (ALTERARCOORDENADASDESTINO) {
-                            xD = NOVOX;
-                            yD = NOVOY;
-                            ALTERARCOORDENADASDESTINO = false;
-                        }
                         if (this.tabuleiro[xD][yD] == 0) {
                             atualizarAnterior();
                             this.gestor.naoHouveCaptura();
@@ -133,21 +153,29 @@ public class Tabuleiro {
                             this.pecas.get(this.tabuleiro[xD][yD]).setCoordenadas(xD, yD);
                             this.tabuleiro[xO][yO]  = 0;
                             this.fazerUndo = true;
+                            this.pecas.get(tabuleiro[xD][yD]).contarJogadaValida();
+                            this.ultimaPecaJogada = this.pecas.get(tabuleiro[xD][yD]);
+                            this.ultimaPecaCapturada = null;
                             return true;
                         }
                         else {
                             if (this.pecas.get(this.tabuleiro[xD][yD]).getIdEquipa() != quemEstaAJogar()) {
                                 atualizarAnterior();
+                                this.pecas.get(tabuleiro[xO][yO]).captura(this.pecas.get(tabuleiro[xD][yD]));
+                                this.ultimaPecaCapturada = this.pecas.get(tabuleiro[xD][yD]);
                                 this.gestor.adicionarCaptura( this.pecas.get(this.tabuleiro[xD][yD]).getIdTipo());
                                 this.pecas.get(this.tabuleiro[xD][yD]).resetCoordenadas();
                                 this.tabuleiro[xD][yD] = this.tabuleiro[xO][yO];
                                 this.pecas.get(this.tabuleiro[xD][yD]).setCoordenadas(xD, yD);
                                 this.tabuleiro[xO][yO]  = 0;
                                 this.fazerUndo = true;
+                                this.pecas.get(tabuleiro[xD][yD]).contarJogadaValida();
+                                this.ultimaPecaJogada = this.pecas.get(tabuleiro[xD][yD]);
                                 return true;
                             }
                         }
                     }
+                    this.pecas.get(tabuleiro[xO][yO]).contarJogadaInvalida();
                 }
             }
         }
@@ -162,6 +190,7 @@ public class Tabuleiro {
         this.gestor.loadCapturas(GestorDeJogo.BRANCA, Integer.parseInt(dados[5]));
         this.gestor.loadJogadasValidas(GestorDeJogo.BRANCA, Integer.parseInt(dados[4]));
         this.gestor.loadJogadasInvalidas(GestorDeJogo.BRANCA, Integer.parseInt(dados[6]));
+        this.gestor.loadTurnoSemCapturas(Integer.parseInt(dados[7]));
         this.gestor.loadEquipaAJogar();
     }
 
@@ -189,7 +218,7 @@ public class Tabuleiro {
                 }
                 writer.write(newLine);
             }
-            writer.write(Integer.toString(quemEstaAJogar()) + ":" + Integer.toString(this.gestor.getJogadasValidas().get(-GestorDeJogo.PRETA)) + ":" + Integer.toString(this.gestor.getCapturas().get(-GestorDeJogo.PRETA)) + ":" + Integer.toString(this.gestor.getJogadasInvalidas().get(GestorDeJogo.PRETA)) + ":" + Integer.toString(this.gestor.getJogadasValidas().get(-GestorDeJogo.BRANCA)) + ":" + Integer.toString(this.gestor.getCapturas().get(-GestorDeJogo.BRANCA)) + ":" + Integer.toString(this.gestor.getJogadasInvalidas().get(GestorDeJogo.BRANCA)));
+            writer.write(Integer.toString(quemEstaAJogar()) + ":" + Integer.toString(this.gestor.getJogadasValidas().get(-GestorDeJogo.PRETA)) + ":" + Integer.toString(this.gestor.getCapturas().get(-GestorDeJogo.PRETA)) + ":" + Integer.toString(this.gestor.getJogadasInvalidas().get(GestorDeJogo.PRETA)) + ":" + Integer.toString(this.gestor.getJogadasValidas().get(-GestorDeJogo.BRANCA)) + ":" + Integer.toString(this.gestor.getCapturas().get(-GestorDeJogo.BRANCA)) + ":" + Integer.toString(this.gestor.getJogadasInvalidas().get(GestorDeJogo.BRANCA)) + ":" + Integer.toString(this.gestor.getTurnoSemCapturas()));
             writer.close();
             return true;
         }
@@ -216,5 +245,46 @@ public class Tabuleiro {
 
     public int[][] getTabuleiroAnterior() {
         return tabuleiroAnterior;
+    }
+
+   public Map<String, List<String>> getEstatisticas() {
+        Map<String, List<String>> estatisticas = new HashMap<>();
+
+        estatisticas.put("top5Capturas", getPecas().stream()
+                .sorted(Tabuleiro::compararPecasPorCapturas)
+                .limit(5)
+                .map(Tabuleiro::capturasToString)
+                .collect(Collectors.toList()));
+
+        estatisticas.put("top5Pontos", getPecas().stream()
+                .sorted(Tabuleiro::compararPecasPorPontos)
+                .limit(5)
+                .map(Tabuleiro::capturasToString)
+                .collect(Collectors.toList()));
+
+        estatisticas.put("pecasMais5Capturas", getPecas().stream()
+                .filter((p) -> p.getCapturas().size() > 5)
+                .map(Tabuleiro::capturasToString)
+                .collect(Collectors.toList()));
+
+        estatisticas.put("3PecasMaisBaralhadas", getPecas().stream()
+                .sorted((p1, p2) -> p2.getJogadasInvalidas() - p1.getJogadasInvalidas())
+                .limit(3)
+                .map(Tabuleiro::jogadasToString)
+                .collect(Collectors.toList()));
+
+
+        Map<Integer, Integer> numCapturaTipo = new HashMap<>();
+        getPecas().stream()
+                .forEach((p) -> numCapturaTipo.put(p.getIdTipo(), 0));
+        getPecas().stream()
+                .forEach((p) -> p.getCapturas().stream()
+                        .forEach((c) -> numCapturaTipo.put(c.getIdTipo(), numCapturaTipo.get(c.getIdTipo()) + 1)));
+        List<String> tiposPecaCapturados = new ArrayList<>();
+       new ArrayList<Integer>(numCapturaTipo.keySet()).stream()
+               .filter((n) -> numCapturaTipo.get(n) > 0)
+               .forEach((n) -> tiposPecaCapturados.add(n + ":" + numCapturaTipo.get(n)));
+        estatisticas.put("tiposPecaCapturados", tiposPecaCapturados);
+        return estatisticas;
     }
 }

@@ -18,7 +18,6 @@ public class GestorDeJogo {
     public final static int TORREV = 5;
     public final static int LEBRE = 6;
     public final static int JOKER = 7;
-    public final static int BEBADO = 8;
 
     private int turno;
     private int turnoSemCapturas;
@@ -233,5 +232,9 @@ public class GestorDeJogo {
 
     public int getTurnoSemCapturasAnterior() {
         return turnoSemCapturasAnterior;
+    }
+
+    public void loadTurnoSemCapturas(int turnoSemCapturas) {
+        this.turnoSemCapturas = turnoSemCapturas;
     }
 }

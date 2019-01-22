@@ -11,8 +11,8 @@ public class PoneiMagico extends CrazyPiece {
     }
 
     @Override
-    protected String getValorRelativo(){
-        return "5";
+    protected int getValorRelativo(){
+        return 5;
     }
 
     @Override

@@ -13,8 +13,8 @@ public class Joker extends CrazyPiece {
         this.mascaras = new CrazyPiece[] {new Rainha(idPeca, GestorDeJogo.RAINHA, idEquipa, alcunha) ,new PoneiMagico(idPeca, GestorDeJogo.PONEIMAGICO, idEquipa, alcunha) , new PadreDaVila(idPeca, GestorDeJogo.PADREDAVILA, idEquipa, alcunha), new TorreH(idPeca, GestorDeJogo.TORREH, idEquipa, alcunha), new TorreV(idPeca, GestorDeJogo.TORREV, idEquipa, alcunha), new Lebre(idPeca, GestorDeJogo.LEBRE, idEquipa, alcunha)};
     }
 
-    protected String getValorRelativo(){
-        return "4";
+    protected int getValorRelativo(){
+        return 4;
     }
 
     protected String getNome(){
