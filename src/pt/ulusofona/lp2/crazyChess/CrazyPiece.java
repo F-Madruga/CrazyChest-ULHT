@@ -70,8 +70,8 @@ public abstract class CrazyPiece {
         }
     }
 
-    public List<Sugestao> darSugestao(int xO, int yO, Map<Integer, CrazyPiece> pecas, int [][] tabuleiro, int turno) {
-        List<Sugestao> sugestoes = new ArrayList<>();
+    public List<Comparable> darSugestao(int xO, int yO, Map<Integer, CrazyPiece> pecas, int [][] tabuleiro, int turno) {
+        List<Comparable> sugestoes = new ArrayList<>();
         if (Tabuleiro.existemCoordenadas(xO, yO, tabuleiro.length)) {
             if (tabuleiro[xO][yO] == this.idPeca) {
                 for (int x = 0; x < tabuleiro.length; x++) {

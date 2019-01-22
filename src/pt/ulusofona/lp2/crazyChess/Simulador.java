@@ -151,7 +151,7 @@ public class Simulador {
         return this.tabuleiro.quemEstaAJogar();
     }
 
-    public List<Sugestao> obterSugestoesJogada(int xO, int yO) {
+    public List<Comparable> obterSugestoesJogada(int xO, int yO) {
         return this.tabuleiro.obterSugestoesJogada(xO, yO);
     }
 

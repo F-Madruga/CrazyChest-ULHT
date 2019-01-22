@@ -120,9 +120,9 @@ public class Tabuleiro {
         }
     }
 
-    public List<Sugestao> obterSugestoesJogada(int xO, int yO) {
+    public List<Comparable> obterSugestoesJogada(int xO, int yO) {
         Joker.ROTACAOTIPOPECA = gestor.getTurno();
-        List<Sugestao> sugestoes = new ArrayList<>();
+        List<Comparable> sugestoes = new ArrayList<>();
         if (existemCoordenadas(xO, yO, this.tamanho)) {
             if (this.tabuleiro[xO][yO] != 0) {
                 if (this.pecas.get(this.tabuleiro[xO][yO]).getIdEquipa() == quemEstaAJogar()) {
