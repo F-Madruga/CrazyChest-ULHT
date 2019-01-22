@@ -265,18 +265,18 @@ public class Tabuleiro {
                 .limit(3)
                 .map(Tabuleiro::jogadasToString)
                 .collect(Collectors.toList()));
-
-        Map<Integer, Integer> numCapturaTipo = new HashMap<>();
-        getPecas().stream()
-                .forEach((p) -> numCapturaTipo.put(p.getIdTipo(), 0));
-        getPecas().stream()
-                .forEach((p) -> numCapturaTipo.put(p.getIdTipo(), numCapturaTipo.get(p.getIdTipo()) + p.getCapturas().size()));
-        List<String> tiposPecaCapturados = new ArrayList<>();
-        new ArrayList<Integer>(numCapturaTipo.keySet()).stream()
+        
+       Map<Integer, Integer> numCapturaTipo = new HashMap<>();
+       getPecas().stream()
+               .forEach((p) -> numCapturaTipo.put(p.getIdTipo(), 0));
+       getPecas().stream()
+               .forEach((p) -> p.getCapturas().stream()
+                       .forEach((c) -> numCapturaTipo.put(c.getIdTipo(), numCapturaTipo.get(c.getIdTipo()) + 1)));
+       List<String> tiposPecaCapturados = new ArrayList<>();
+       new ArrayList<Integer>(numCapturaTipo.keySet()).stream()
                .filter((n) -> numCapturaTipo.get(n) > 0)
-               .sorted((n1, n2) -> numCapturaTipo.get(n2) - numCapturaTipo.get(n1))
                .forEach((n) -> tiposPecaCapturados.add(n + ":" + numCapturaTipo.get(n)));
-        estatisticas.put("tiposPecaCapturados", tiposPecaCapturados);
+       estatisticas.put("tiposPecaCapturados", tiposPecaCapturados);
         return estatisticas;
     }
 }
