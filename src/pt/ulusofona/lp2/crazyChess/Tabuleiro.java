@@ -108,9 +108,9 @@ public class Tabuleiro {
             this.gestor.undo();
             for (CrazyPiece peca: getPecas()) {
                 peca.undo(this.ultimaPecaCapturada, this.ultimaPecaJogada);
-                ultimaPecaCapturada = null;
-                ultimaPecaJogada = null;
             }
+            ultimaPecaCapturada = null;
+            ultimaPecaJogada = null;
             for (int x = 0; x < this.tamanho; x++) {
                 for (int y = 0; y < this.tamanho; y++) {
                     this.tabuleiro[x][y] = this.tabuleiroAnterior[x][y];

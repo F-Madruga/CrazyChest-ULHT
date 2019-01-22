@@ -65,7 +65,7 @@ public abstract class CrazyPiece {
         if (ultimaPecaCapturada != null) {
             this.capturas.remove(ultimaPecaCapturada);
         }
-        if (ultimaPecaJogada.equals(this)) {
+        if (ultimaPecaCapturada != null && ultimaPecaJogada.equals(this)) {
             this.jogadasValidas--;
         }
     }
