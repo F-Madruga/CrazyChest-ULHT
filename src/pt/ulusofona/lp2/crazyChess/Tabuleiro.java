@@ -15,13 +15,6 @@ public class Tabuleiro {
         return peca1.getAlcunha().compareTo(peca2.getAlcunha());
     }
 
-    public static int contarParaMap(Map<Integer, Integer> tipoPecaCapturados, int tipoPeca) {
-        if (!tipoPecaCapturados.containsKey(tipoPeca)) {
-            return 1;
-        }
-        return tipoPecaCapturados.get(tipoPeca) + 1;
-    }
-
     public static int compararPecasPorPontos(CrazyPiece peca1, CrazyPiece peca2) {
         if (peca2.getPontos() - peca1.getPontos() != 0) {
             return peca2.getPontos() - peca1.getPontos();
@@ -115,9 +108,9 @@ public class Tabuleiro {
             this.gestor.undo();
             for (CrazyPiece peca: getPecas()) {
                 peca.undo(this.ultimaPecaCapturada, this.ultimaPecaJogada);
-                ultimaPecaCapturada = null;
-                ultimaPecaJogada = null;
             }
+            ultimaPecaCapturada = null;
+            ultimaPecaJogada = null;
             for (int x = 0; x < this.tamanho; x++) {
                 for (int y = 0; y < this.tamanho; y++) {
                     this.tabuleiro[x][y] = this.tabuleiroAnterior[x][y];
@@ -127,13 +120,13 @@ public class Tabuleiro {
         }
     }
 
-    public List<Sugestao> obterSugestoesJogada(int xO, int yO) {
+    public List<Comparable> obterSugestoesJogada(int xO, int yO) {
         Joker.ROTACAOTIPOPECA = gestor.getTurno();
-        List<Sugestao> sugestoes = new ArrayList<>();
+        List<Comparable> sugestoes = new ArrayList<>();
         if (existemCoordenadas(xO, yO, this.tamanho)) {
             if (this.tabuleiro[xO][yO] != 0) {
                 if (this.pecas.get(this.tabuleiro[xO][yO]).getIdEquipa() == quemEstaAJogar()) {
-                    return this.pecas.get(this.tabuleiro[xO][yO]).darSugestao(xO, yO, this.pecas, this.tabuleiro, this.gestor.getTurno());
+                    return this.pecas.get(this.tabuleiro[xO][yO]).darSugestao(xO, yO, this.pecas, this.tabuleiro, this.gestor.getTurno()).stream().distinct().collect(Collectors.toList());
                 }
             }
         }
@@ -268,21 +261,20 @@ public class Tabuleiro {
                 .collect(Collectors.toList()));
 
         estatisticas.put("3PecasMaisBaralhadas", getPecas().stream()
-                .sorted((p1, p2) -> p2.getJogadasInvalidas() - p1.getJogadasInvalidas())
+                .sorted((p1, p2) -> Double.compare(p2.getRacio(), p1.getRacio()))
                 .limit(3)
                 .map(Tabuleiro::jogadasToString)
                 .collect(Collectors.toList()));
-
 
         Map<Integer, Integer> numCapturaTipo = new HashMap<>();
         getPecas().stream()
                 .forEach((p) -> numCapturaTipo.put(p.getIdTipo(), 0));
         getPecas().stream()
-                .forEach((p) -> p.getCapturas().stream()
-                        .forEach((c) -> numCapturaTipo.put(c.getIdTipo(), numCapturaTipo.get(c.getIdTipo()) + 1)));
+                .forEach((p) -> numCapturaTipo.put(p.getIdTipo(), numCapturaTipo.get(p.getIdTipo()) + p.getCapturas().size()));
         List<String> tiposPecaCapturados = new ArrayList<>();
-       new ArrayList<Integer>(numCapturaTipo.keySet()).stream()
+        new ArrayList<Integer>(numCapturaTipo.keySet()).stream()
                .filter((n) -> numCapturaTipo.get(n) > 0)
+               .sorted((n1, n2) -> numCapturaTipo.get(n2) - numCapturaTipo.get(n1))
                .forEach((n) -> tiposPecaCapturados.add(n + ":" + numCapturaTipo.get(n)));
         estatisticas.put("tiposPecaCapturados", tiposPecaCapturados);
         return estatisticas;

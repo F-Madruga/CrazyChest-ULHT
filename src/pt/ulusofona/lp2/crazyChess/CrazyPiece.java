@@ -65,13 +65,13 @@ public abstract class CrazyPiece {
         if (ultimaPecaCapturada != null) {
             this.capturas.remove(ultimaPecaCapturada);
         }
-        if (ultimaPecaJogada.equals(this)) {
+        if (ultimaPecaCapturada != null && ultimaPecaJogada.equals(this)) {
             this.jogadasValidas--;
         }
     }
 
-    public List<Sugestao> darSugestao(int xO, int yO, Map<Integer, CrazyPiece> pecas, int [][] tabuleiro, int turno) {
-        List<Sugestao> sugestoes = new ArrayList<>();
+    public List<Comparable> darSugestao(int xO, int yO, Map<Integer, CrazyPiece> pecas, int [][] tabuleiro, int turno) {
+        List<Comparable> sugestoes = new ArrayList<>();
         if (Tabuleiro.existemCoordenadas(xO, yO, tabuleiro.length)) {
             if (tabuleiro[xO][yO] == this.idPeca) {
                 for (int x = 0; x < tabuleiro.length; x++) {
@@ -224,5 +224,12 @@ public abstract class CrazyPiece {
             pontos += peca.getValorRelativo();
         }
         return pontos;
+    }
+
+    public double getRacio() {
+        if ((this.jogadasInvalidas + this.jogadasValidas) > 0) {
+            return (double) (this.jogadasInvalidas / (this.jogadasInvalidas + this.jogadasValidas));
+        }
+        return 0;
     }
 }

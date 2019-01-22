@@ -34,8 +34,16 @@ public class Rainha extends CrazyPiece {
     public boolean verificarSeMove(int xO, int yO, int xD, int yD, Map<Integer, CrazyPiece> pecas, int[][] tabuleiro, int turno) {
         if (move(xO, yO, xD, yD) && moveDentroLimite(xO, yO, xD, yD, 5) && (moveVertical(xO, xD) || moveHorizontal(yO, yD) || moveDiagonal(xO, yO, xD, yD))) {
             if (tabuleiro[xD][yD] != 0) {
-                if (pecas.get(tabuleiro[xD][yD]).getIdTipo() == this.idTipo) {
-                    return false;
+                if (pecas.get(tabuleiro[xD][yD]).getIdTipo() == this.idTipo || pecas.get(tabuleiro[xD][yD]).getIdTipo() == GestorDeJogo.JOKER) {
+                    if (pecas.get(tabuleiro[xD][yD]).getIdTipo() == this.idTipo) {
+                        return false;
+                    }
+                    if (pecas.get(tabuleiro[xD][yD]).getIdTipo() == GestorDeJogo.JOKER) {
+                        Joker joker = new Joker(pecas.get(tabuleiro[xD][yD]).getId(), GestorDeJogo.JOKER, pecas.get(tabuleiro[xD][yD]).getIdEquipa(), pecas.get(tabuleiro[xD][yD]).getAlcunha());
+                        if (joker.getMascara().getIdTipo() == this.idTipo) {
+                            return false;
+                        }
+                    }
                 }
             }
             List<CrazyPiece> pecasNoCaminho = getPecasNoCaminho(xO, yO, xD, yD, pecas, tabuleiro);

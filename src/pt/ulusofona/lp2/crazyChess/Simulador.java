@@ -49,16 +49,21 @@ public class Simulador {
             while (scanner.hasNextLine()) {
                 String linha = scanner.nextLine();
                 if (numLinha == 0) {
-                    String dados [] = linha.split(":");
-                    if (dados.length != 1) {
-                        throw new InvalidSimulatorInputException(numLinha, dados, 0, 0);
+                    if (linha.equals("")) {
+                        throw new InvalidSimulatorInputException(numLinha, 1, 0);
+                    }
+                    if (linha.split(":").length != 1) {
+                        throw new InvalidSimulatorInputException(numLinha, 1, linha.split(":").length);
                     }
                     this.tabuleiro = new Tabuleiro(Integer.parseInt(linha));
                 }
                 else if (numLinha == 1) {
-                    String dados [] = linha.split(":");
-                    if (dados.length != 1) {
-                        throw new InvalidSimulatorInputException(numLinha, dados,0, tabuleiro.getTamanho());
+
+                    if (linha.equals("")) {
+                        throw new InvalidSimulatorInputException(numLinha, 1, 0);
+                    }
+                    if (linha.split(":").length != 1) {
+                        throw new InvalidSimulatorInputException(numLinha, 1, linha.split(":").length);
                     }
                     numPecas = Integer.parseInt(linha);
                 }
@@ -66,8 +71,11 @@ public class Simulador {
                     String dados [] = linha.split(":");
                     //Caracterizaçao das pecas
                     if (numLinha < numPecas + 2) {
-                        if (dados.length != 3) {
-                            throw new InvalidSimulatorInputException(numLinha, dados, numPecas, tabuleiro.getTamanho());
+                        if (linha.equals("")) {
+                            throw new InvalidSimulatorInputException(numLinha, 4, 0);
+                        }
+                        if (dados.length != 4) {
+                            throw new InvalidSimulatorInputException(numLinha, 4, dados.length);
                         }
                         CrazyPiece peca = definirPeca(Integer.parseInt(dados[0]), Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), dados[3]);
                         if (peca != null) {
@@ -76,14 +84,20 @@ public class Simulador {
                     }
                     //Estado inicial do tabuleiro
                     else if (numLinha < numPecas + 2 + tabuleiro.getTamanho()) {
-                        if (dados.length != tabuleiro.getTamanho() - 1) {
-                            throw new InvalidSimulatorInputException(numLinha, dados, numPecas, tabuleiro.getTamanho());
+                        if (linha.equals("")) {
+                            throw new InvalidSimulatorInputException(numLinha, tabuleiro.getTamanho(), 0);
+                        }
+                        if (dados.length != tabuleiro.getTamanho()) {
+                            throw new InvalidSimulatorInputException(numLinha, tabuleiro.getTamanho(), dados.length);
                         }
                         for (int coluna = 0; coluna < dados.length; coluna++) {
                             this.tabuleiro.colocarNoTabuleiro(Integer.parseInt(dados[coluna]), coluna,numLinha - numPecas - 2);
                         }
                     }
                     else {
+                        if (!linha.equals("") && dados.length != 8) {
+                            throw new InvalidSimulatorInputException(numLinha, 8, dados.length);
+                        }
                         tabuleiro.load(dados);
                     }
                 }
@@ -137,7 +151,7 @@ public class Simulador {
         return this.tabuleiro.quemEstaAJogar();
     }
 
-    public List<Sugestao> obterSugestoesJogada(int xO, int yO) {
+    public List<Comparable> obterSugestoesJogada(int xO, int yO) {
         return this.tabuleiro.obterSugestoesJogada(xO, yO);
     }
 
