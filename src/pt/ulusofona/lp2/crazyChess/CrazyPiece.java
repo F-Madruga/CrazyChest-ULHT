@@ -228,7 +228,7 @@ public abstract class CrazyPiece {
 
     public double getRacio() {
         if ((this.jogadasInvalidas + this.jogadasValidas) > 0) {
-            return (double) (this.jogadasInvalidas / (this.jogadasInvalidas + this.jogadasValidas));
+            return ((double)this.jogadasInvalidas / ((double)this.jogadasInvalidas + (double)this.jogadasValidas));
         }
         return 0;
     }

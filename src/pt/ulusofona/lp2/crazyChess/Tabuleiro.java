@@ -261,6 +261,7 @@ public class Tabuleiro {
                 .collect(Collectors.toList()));
 
         estatisticas.put("3PecasMaisBaralhadas", getPecas().stream()
+                .filter((p) -> p.getRacio() != 0)
                 .sorted((p1, p2) -> Double.compare(p2.getRacio(), p1.getRacio()))
                 .limit(3)
                 .map(Tabuleiro::jogadasToString)
