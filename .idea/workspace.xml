@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ca03722c-5ff0-4901-8bc2-681b028919a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyChess/pt/ulusofona/lp2/crazyChess/Tabuleiro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyChess/pt/ulusofona/lp2/crazyChess/Tabuleiro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectLP.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectLP.mdj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,21 +17,23 @@
     <session id="-258842643">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="4" />
+          <entry key="java" value="7" />
           <entry key="txt" value="1" />
           <entry key="xml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="4" />
+          <entry key="JAVA" value="7" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="6" />
         </counts>
@@ -54,57 +55,47 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="263" column="49" selection-start-line="263" selection-start-column="49" selection-end-line="263" selection-end-column="49" />
+            <state relative-caret-position="604">
+              <caret line="283" column="1" selection-start-line="283" selection-start-column="1" selection-end-line="283" selection-end-column="1" />
+              <folding>
+                <element signature="method#Tabuleiro#0;class#Tabuleiro#0" />
+                <element signature="method#colocarNoTabuleiro#0;class#Tabuleiro#0" />
+                <element signature="method#getPeca#0;class#Tabuleiro#0" />
+                <element signature="method#undo#0;class#Tabuleiro#0" />
+                <element signature="method#obterSugestoesJogada#0;class#Tabuleiro#0" />
+                <element signature="method#processaJogada#0;class#Tabuleiro#0" />
+                <element signature="method#load#0;class#Tabuleiro#0" />
+                <element signature="method#gravarJogo#0;class#Tabuleiro#0" />
+                <element signature="method#atualizarAnterior#0;class#Tabuleiro#0" />
+                <element signature="method#getEstatisticas#0;class#Tabuleiro#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java">
+        <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Sugestao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="235" lean-forward="true" selection-start-line="235" selection-end-line="235" />
+            <state relative-caret-position="306">
+              <caret line="31" column="25" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="25" />
               <folding>
-                <element signature="e#3796#3797#0" expanded="true" />
-                <element signature="e#3827#3828#0" expanded="true" />
-                <element signature="e#4230#4231#0" expanded="true" />
-                <element signature="e#4273#4274#0" expanded="true" />
-                <element signature="e#6685#6686#0" expanded="true" />
-                <element signature="e#6724#6725#0" expanded="true" />
-                <element signature="method#getPontos#0;class#CrazyPiece#0" />
+                <element signature="method#Sugestao#0;class#Sugestao#0" />
+                <element signature="method#toString#0;class#Sugestao#0" />
+                <element signature="method#equals#0;class#Sugestao#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Joker.java">
+        <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/InvalidSimulatorInputException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/PadreDaVila.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="36" column="16" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/8x8ComJoker.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+            <state relative-caret-position="68">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -119,8 +110,8 @@
       <list>
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/8x8ComJoker.txt" />
-        <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java" />
         <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java" />
+        <option value="$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java" />
       </list>
     </option>
   </component>
@@ -142,6 +133,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,7 +167,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -215,27 +206,24 @@
       <option name="presentableId" value="Default" />
       <updated>1548247800463</updated>
       <workItem from="1548247805697" duration="3941000" />
+      <workItem from="1548253954880" duration="170000" />
+      <workItem from="1548261518635" duration="1773000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3941000" />
+    <option name="totallyTimeSpent" value="5884000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494331" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25699168" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32891247" />
@@ -243,15 +231,20 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,18 +252,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java</url>
-          <line>115</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
@@ -286,46 +267,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/8x8ComJoker.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Joker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/PadreDaVila.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="527">
           <caret line="36" column="16" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java">
+    <entry file="file://$PROJECT_DIR$/8x8ComJoker.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="263" column="49" selection-start-line="263" selection-start-column="49" selection-end-line="263" selection-end-column="49" />
+        <state relative-caret-position="119">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/CrazyPiece.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="235" lean-forward="true" selection-start-line="235" selection-end-line="235" />
+        <state relative-caret-position="493">
+          <caret line="216" column="39" selection-start-line="216" selection-start-column="28" selection-end-line="216" selection-end-column="39" />
           <folding>
-            <element signature="e#3796#3797#0" expanded="true" />
-            <element signature="e#3827#3828#0" expanded="true" />
-            <element signature="e#4230#4231#0" expanded="true" />
-            <element signature="e#4273#4274#0" expanded="true" />
-            <element signature="e#6685#6686#0" expanded="true" />
-            <element signature="e#6724#6725#0" expanded="true" />
+            <element signature="method#toString#0;class#CrazyPiece#0" />
+            <element signature="method#moveDiagonal#0;class#CrazyPiece#0" />
+            <element signature="method#moveDentroLimite#0;class#CrazyPiece#0" />
+            <element signature="method#getPecasNoCaminho#0;class#CrazyPiece#0" />
+            <element signature="method#getPecasNumRaio#0;class#CrazyPiece#0" />
             <element signature="method#getPontos#0;class#CrazyPiece#0" />
+            <element signature="method#getRacio#0;class#CrazyPiece#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/InvalidSimulatorInputException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/GestorDeJogo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="236" column="36" selection-start-line="236" selection-start-column="16" selection-end-line="236" selection-end-column="36" />
+          <folding>
+            <element signature="method#GestorDeJogo#0;class#GestorDeJogo#0" />
+            <element signature="method#quemEstaAJogar#0;class#GestorDeJogo#0" />
+            <element signature="method#contaRei#0;class#GestorDeJogo#0" />
+            <element signature="method#validarJogada#0;class#GestorDeJogo#0" />
+            <element signature="method#naoHouveCaptura#0;class#GestorDeJogo#0" />
+            <element signature="method#adicionarCaptura#0;class#GestorDeJogo#0" />
+            <element signature="method#invalidarJogada#0;class#GestorDeJogo#0" />
+            <element signature="method#possoTerminar#0;class#GestorDeJogo#0" />
+            <element signature="method#getResultado#0;class#GestorDeJogo#0" />
+            <element signature="method#undo#0;class#GestorDeJogo#0" />
+            <element signature="method#loadEquipaAJogar#0;class#GestorDeJogo#0" />
+            <element signature="method#loadJogadasValidas#0;class#GestorDeJogo#0" />
+            <element signature="method#loadJogadasInvalidas#0;class#GestorDeJogo#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Tabuleiro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="283" column="1" selection-start-line="283" selection-start-column="1" selection-end-line="283" selection-end-column="1" />
+          <folding>
+            <element signature="method#Tabuleiro#0;class#Tabuleiro#0" />
+            <element signature="method#colocarNoTabuleiro#0;class#Tabuleiro#0" />
+            <element signature="method#getPeca#0;class#Tabuleiro#0" />
+            <element signature="method#undo#0;class#Tabuleiro#0" />
+            <element signature="method#obterSugestoesJogada#0;class#Tabuleiro#0" />
+            <element signature="method#processaJogada#0;class#Tabuleiro#0" />
+            <element signature="method#load#0;class#Tabuleiro#0" />
+            <element signature="method#gravarJogo#0;class#Tabuleiro#0" />
+            <element signature="method#atualizarAnterior#0;class#Tabuleiro#0" />
+            <element signature="method#getEstatisticas#0;class#Tabuleiro#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pt/ulusofona/lp2/crazyChess/Sugestao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="25" />
+          <folding>
+            <element signature="method#Sugestao#0;class#Sugestao#0" />
+            <element signature="method#toString#0;class#Sugestao#0" />
+            <element signature="method#equals#0;class#Sugestao#0" />
           </folding>
         </state>
       </provider>
