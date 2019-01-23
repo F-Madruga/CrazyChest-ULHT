@@ -275,6 +275,7 @@ public class Tabuleiro {
        List<String> tiposPecaCapturados = new ArrayList<>();
        new ArrayList<Integer>(numCapturaTipo.keySet()).stream()
                .filter((n) -> numCapturaTipo.get(n) > 0)
+               .sorted((n1, n2) -> numCapturaTipo.get(n2) - numCapturaTipo.get(n1))
                .forEach((n) -> tiposPecaCapturados.add(n + ":" + numCapturaTipo.get(n)));
        estatisticas.put("tiposPecaCapturados", tiposPecaCapturados);
         return estatisticas;
