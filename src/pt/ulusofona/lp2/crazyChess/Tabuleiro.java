@@ -240,7 +240,7 @@ public class Tabuleiro {
         return tabuleiroAnterior;
     }
 
-   public Map<String, List<String>> getEstatisticas() {
+    public Map<String, List<String>> getEstatisticas() {
         Map<String, List<String>> estatisticas = new HashMap<>();
 
         estatisticas.put("top5Capturas", getPecas().stream()
