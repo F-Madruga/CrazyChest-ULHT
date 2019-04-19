@@ -1,6 +1,3 @@
-# CrazyChest
-
-
 # Objetivo
 
   Este projeto foi realizado no ambito da dilciplina de Linguagens de Programação 2 e tinha como objetivo avaliar conhecimentos de programação orientada a objetos e programação funcional.
