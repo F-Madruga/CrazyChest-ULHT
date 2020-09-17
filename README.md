@@ -14,6 +14,7 @@ Acções possiveis
   - Mostrar estatisticas
 
 # O que aprendi
+  - Programação Orientada a Objetos
   - Principio do encapsulamento
   - Hierarquia
   - Polimorfismo
